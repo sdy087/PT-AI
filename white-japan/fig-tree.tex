@@ -1,0 +1,71 @@
+\begin{figure}[ht]
+
+  \def\s{0.5}
+
+  \centering
+      \begin{tikzpicture}[scale=\s,every node/.style={circle, draw}]
+        \tikzset{every node/.style={very thick, yshift=2em}}
+        \fill[fill=blue!10!green!10!,draw=blue,dotted,thick] (3em,1em) circle (2em); 
+        \node (b) at (1.0, -1.0) {$b$};
+
+%        \draw[->, >=latex,left] node {$d$} (5em,-2em) -> (8em,-5em);
+%        \draw[->, >=latex] (1em,-2em) -> (-1.5em,-5.5em);
+        
+        \tikzset{every node/.style={very thick, yshift=-10em, xshift=-6em}} 
+        \fill[fill=blue!10!green!10!,draw=blue,dotted,thick, yshift=-10em, xshift=-6em] (1.6,0.5) circle (3em); 
+        \node (b) at (1.0, -1.0) {$b$};
+        \node (d) at (1.0, 0.5) {$d$};
+        % top level
+        \tikzset{every node/.style={solid}}; 
+        \tikzset{mystyle/.style={->,thick}};  
+        \path (d) edge [mystyle,bend right] node {} (b);
+  
+        \tikzset{every node/.style={very thick, yshift=-10em, xshift=7em}} 
+        \fill[fill=blue!10!green!10!,draw=blue,dotted,thick, yshift=-10em, xshift=7em] (1.7,0.5) circle (5em); 
+        \node (b) at (1.0, -1.0) {$b$};
+        \node (g) at (3.4, 0.7) {$g$};
+
+
+        \tikzset{every node/.style={very thick, yshift=-23em, xshift=-3em}} 
+        \fill[fill=blue!10!green!10!,draw=blue,dotted,thick, yshift=-23em, xshift=-3em] (6em,4em) circle (5em); 
+        \node (b) at (1.0, -1.0) {$b$};
+        \node (d) at (1.0, 0.5) {$d$};
+        \node (g) at (3.4, 0.7) {$g$};
+        % top level
+        \tikzset{every node/.style={solid}}; 
+        \tikzset{mystyle/.style={->,thick}};  
+        \path (d) edge [mystyle,bend right] node {} (b);
+        \path (g) edge [mystyle,bend right] node {} (d);
+
+        \tikzset{every node/.style={very thick, yshift=-37em}}
+        \fill[fill=blue!10!green!10!,draw=blue,dotted,thick, yshift=-37em] (6em,0em) circle (5em);  
+        \node (b) at (1.0, -1.0) {$b$};
+        \node (d) at (1.0, 0.5) {$d$};
+        \node (e) at (1.9, -1.3) {$e$};
+        \node (g) at (3.4, 0.7) {$g$};
+        % top level
+        \tikzset{every node/.style={solid}}; 
+        \tikzset{mystyle/.style={->,thick}};  
+        \path (d) edge [mystyle,bend right] node {} (b);
+        \path (d) edge [mystyle,bend left] node {} (e);
+        \path (e) edge [mystyle,bend left] node {} (b);
+        \path (g) edge [mystyle,bend right] node {} (d);
+
+        \tikzset{every node/.style={very thick, yshift=-50em}} 
+        \fill[fill=blue!10!green!10!,draw=blue,dotted,thick, yshift=-50em] (6em,-2em) circle (6em); 
+        \node (b) at (1.0, -1.0) {$b$};
+        \node (d) at (1.0, 0.5) {$d$};
+        \node (e) at (1.9, -1.3) {$e$};
+        \node (g) at (3.4, 0.7) {$g$};
+        \node (h) at (1.9, -2.6) {$h$};
+        % top level
+        \tikzset{every node/.style={solid}}; 
+        \tikzset{mystyle/.style={->,thick}};  
+        \path (d) edge [mystyle,bend right] node {} (b);
+        \path (d) edge [mystyle,bend left] node {} (e);
+        \path (e) edge [mystyle,bend left] node {} (b);
+        \path (g) edge [mystyle,bend right] node {} (d);
+        \path (h) edge [mystyle,bend right] node {} (e);
+
+      \end{tikzpicture}
+\end{figure}

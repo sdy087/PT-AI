@@ -1,0 +1,49 @@
+\begin{tikzpicture}[every node/.style={circle, draw, scale=1}, scale=0.8]
+  \tikzset{every node/.style={scale=0.8, very thick}} 
+  \node (a) at (-0.5, 0.0) {$a$};
+  \node (b) at (1.0, -1.0) {$b$};
+  \node (c) at (1.8, 2.0) {$c$};
+  \node (d) at (1.0, 0.5) {$d$};
+  \node (e) at (1.9, -1.3) {$e$};
+  \node (f) at (3.2, -2.1) {$f$};
+  \node (g) at (3.4, 0.7) {$g$};
+  \node (h) at (1.9, -2.6) {$h$};
+  \node (i) at (2.8, -0.9) {$i$};
+  \node (j) at (3.2, -0.2) {$j$};
+  \node (k) at (5.6, 0.9) {$k$};
+  \node (l) at (6.6, 1.2) {$l$};
+  \node (m) at (5.9, 1.8) {$m$};
+  \node (n) at (4.4, -0.8) {$n$};
+  \node (p) at (5.6, -0.5) {$p$};
+  \node (q) at (6.4, -1.2) {$q$};
+  
+  
+  % top level
+  \tikzset{every node/.style={solid}}; 
+  \tikzset{mystyle/.style={->,thick}};  
+  \path (c) edge [mystyle,bend right] node {} (a);
+  \path (c) edge [mystyle,bend right] node {} (d);
+  \path (d) edge [mystyle,bend right] node {} (a);
+  \path (d) edge [mystyle,bend right] node {} (b);
+  \path (d) edge [mystyle,bend left] node {} (e);
+  \path (e) edge [mystyle,bend left] node {} (b);
+  \path (g) edge [mystyle,bend right] node {} (d);
+  \path (h) edge [mystyle,bend left] node {} (a);
+  \path (h) edge [mystyle,bend right] node {} (e);
+  \path (h) edge [mystyle,bend right] node {} (p);
+  \path (i) edge [mystyle,bend left] node {} (e);
+  \path (i) edge [mystyle,bend left] node {} (j);
+  \path (i) edge [mystyle,bend right] node {} (n);
+  \path (j) edge [mystyle,bend left] node {} (i);
+  \path (j) edge [mystyle,bend left] node {} (n);
+  \path (k) edge [mystyle,bend right] node {} (l);
+  \path (l) edge [mystyle,bend right] node {} (m);
+  \path (m) edge [mystyle,bend right] node {} (k);
+  \path (m) edge [mystyle,bend right] node {} (c);
+  \path (n) edge [mystyle,bend left] node {} (f);
+  \path (n) edge [mystyle] node {} (p);
+  \path (p) edge [mystyle] node {} (g);
+  \path (p) edge [mystyle,bend right] node {} (c);
+  \path (p) edge [mystyle,bend right] node {} (l);
+  \path (p) edge [mystyle,bend left] node {} (q);
+\end{tikzpicture}
