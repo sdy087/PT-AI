@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: pt-ai.aux
+The style file: abbrv.bst
+I couldn't open database file cites.bib
+---line 42 of file pt-ai.aux
+ : \bibdata{cites
+ :               ,more_cites}
+I'm skipping whatever remains of this command
+I found no database files---while reading file pt-ai.aux
+Warning--I didn't find a database entry for "Dung"
+Warning--I didn't find a database entry for "BaroniEval"
+Warning--I didn't find a database entry for "manipulation"
+Warning--I didn't find a database entry for "lying"
+Warning--I didn't find a database entry for "caminada06"
+Warning--I didn't find a database entry for "Arieli"
+Warning--I didn't find a database entry for "Sjur-SYNT"
+(There were 2 error messages)

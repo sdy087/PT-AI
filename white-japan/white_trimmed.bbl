@@ -1,0 +1,63 @@
+\begin{thebibliography}{10}
+
+\bibitem{Arieli}
+O.~Arieli and M.~W. Caminada.
+\newblock A {QBF}-based formalization of abstract argumentation semantics.
+\newblock {\em Journal of Applied Logic}, 11(2):229 -- 252, 2013.
+
+\bibitem{BaroniEval}
+P.~Baroni and M.~Giacomin.
+\newblock On principle-based evaluation of extension-based argumentation
+  semantics.
+\newblock {\em Artificial Intelligence}, 171(10--15):675--700, 2007.
+
+\bibitem{caminada06}
+M.~Caminada.
+\newblock On the issue of reinstatement in argumentation.
+\newblock In M.~Fisher, W.~van~der Hoek, B.~Konev, and A.~Lisitsa, editors,
+  {\em JELIA}, volume 4160 of {\em Lecture Notes in Computer Science}, pages
+  111--123. Springer, 2006.
+
+\bibitem{manipulation}
+M.~Caminada, G.~Pigozzi, and M.~Podlaszewski.
+\newblock Manipulation in group argument evaluation.
+\newblock In T.~Walsh, editor, {\em IJCAI}, pages 121--126. IJCAI/AAAI, 2011.
+
+\bibitem{Dung}
+P.~M. Dung.
+\newblock On the acceptability of arguments and its fundamental role in
+  nonmonotonic reasoning, logic programming and $n$-person games.
+\newblock {\em Artificial Intelligence}, 77:321--357, 1995.
+
+\bibitem{Sjur-SYNT}
+S.~Dyrkolbotn and M.~Walicki.
+\newblock Propositional discourse logic.
+\newblock {\em Synthese}, pages 1--37, 2013.
+\newblock [Online first publication,
+  http://dx.doi.org/10.1007/s11229-013-0297-x].
+
+\bibitem{grossi2}
+D.~Grossi.
+\newblock Argumentation in the view of modal logic.
+\newblock In P.~McBurney, I.~Rahwan, and S.~Parsons, editors, {\em ArgMAS},
+  volume 6614 of {\em Lecture Notes in Computer Science}, pages 190--208.
+  Springer, 2010.
+
+\bibitem{grossi1}
+D.~Grossi.
+\newblock On the logic of argumentation theory.
+\newblock In W.~van~der Hoek, G.~A. Kaminka, Y.~Lesp{\'e}rance, M.~Luck, and
+  S.~Sen, editors, {\em AAMAS}, pages 409--416. IFAAMAS, 2010.
+
+\bibitem{Argbook}
+I.~Rahwan, editor.
+\newblock {\em Argumentation in artificial intelligence}.
+\newblock Springer, 2009.
+
+\bibitem{lying}
+C.~Sakama, M.~Caminada, and A.~Herzig.
+\newblock A logical account of lying.
+\newblock In T.~Janhunen and I.~Niemel{\"a}, editors, {\em JELIA}, volume 6341
+  of {\em Lecture Notes in Computer Science}, pages 286--299. Springer, 2010.
+
+\end{thebibliography}

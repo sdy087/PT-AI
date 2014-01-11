@@ -1,0 +1,33 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: white_trimmed.aux
+The style file: abbrv.bst
+Database file #1: cites.bib
+Database file #2: more_cites.bib
+I was expecting a `,' or a `}'---line 238 of file more_cites.bib
+ : 
+ : @inproceedings{respref,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 255 of file more_cites.bib
+ : 
+ : @inproceedings{roles,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 470 of file more_cites.bib
+ : 
+ : publisher = {MIT Press}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 627 of file more_cites.bib
+ : 
+ : %publisher =  {http://loriweb.org/ESSLLI2012StuS/wp-content/uploads/2012/08/ESSLLI2012StuS_Proceedings.pdf}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 2262 of file more_cites.bib
+ : @inproceedings{Caminada06
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2273 of file more_cites.bib
+ : @proceedings{DBLP:conf/jelia/2006
+ :                                  ,
+I'm skipping whatever remains of this entry
+(There were 6 error messages)
