@@ -1,5 +1,7 @@
-\documentclass{llncs}
+\documentclass{article}
 
+\usepackage{proof}
+\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{cancel}
@@ -11,12 +13,15 @@
 \usepackage[curve]{xypic}
 \usetikzlibrary{arrows}
 \usepackage{algorithm2e}
-\usepackage{fontenc}
+%\usepackage{fontenc}
 
 \graphicspath{{./white-japan/img/}}
 
 \input{./white-japan/acros.tex}
 
+\newcommand{\outa}[2]{#1^+(#2)}
+\newcommand{\ina}[2]{#1^-(#2)}
+\newcommand{\neu}[2]{#1^n(#2)}
 \newcommand{\proto}{\mathbf C}
 \newcommand{\clab}{\sf c}
 \newcommand{\iterate}[1]{{\cal I}(#1)}
@@ -96,6 +101,52 @@ In our opinion, this makes argumentation frameworks highly suited as a technical
 
 While much work on multi-agent argumentation has already been carried out in a formal and semi-formal context, we note that this work is mostly based on a traditional view of argumentation theory. For instance, we think this is implicit in recent formal work such as that of  (M. Caminada, Pigozzi, and Podlaszewski 2011; M. Caminada and Pigozzi 2011) and even more so in the survey of the field given in (Rahwan 2009). In our opinion, however, this view is inappropriate when attempting to formalize the argumentative theory.
 The problem is that the representation of the argumentation scenario is fixed and not open to dispute and dynamic change, except with respect to the question of how it should be evaluated. But to model the argumentative theory, we need to depart from this starting point, since it is crucial that the basic representation of the surrounding semantic reality is itself a subjective construction, distinctly produced in each individual agent. This is why we use argumentation frameworks as models of the agents' internal view of the relevant arguments and how they are related.
+
+In the following subsection we develop this idea in formal detail, starting with the necessary preliminaries regarding argumentation frameworks.
+
+\subsection{Argumentation frameworks, agents and semantic views}\label{subsec:arg}
+
+Given a set of atoms $\Pi$ -- acting as names of arguments -- an argumentation framework (AF) over $\Pi$ is a relation $E \subseteq \Pi \times \Pi$. Intuitively, an element $(x,y) \in E$ encodes the fact that arguments $x$ attacks argument $y$ and we can depict $E$ as a directed graph, giving a nice visualization of how the atoms in $\Pi$ are related as arguments, see Figure \ref{fig:af1} for an example. We introduce the notation $\outa E x = \{y \in \Pi \mid (x,y) \in E\}, \ina E x = \{y \in \Pi \mid (y,x) \in E\}$ and $\neu = \Pi \setminus \outa E x \cup \ina E x$.
+
+Given an AF $E$, the purpose of an argumentation semantics is to identify, using the structure of $E$, the collection of sets of arguments that can be accepted if taken together, typically called \emph{extensions}, see e.g., \cite{....} For instance, if $E = \{(p,q),(r,p)\}$, then the semantics might prescribe $\{r,q\}$ as a set that can be accepted, since $r$ defends $q$ against the argument made by $p$ and $r$ is not in turn attacked. There are many different argumentation semantics, each catering to a different set of intuitions about what should be required for a given set of arguments to count as acceptable.
+
+Given an AF $E$, it is natural to represent an extension $A \subseteq \Pi$ as a three-valued assignment $\clab_A:\Pi \to \three$ such that 
+$$
+\clab_A(x) = \begin{cases} 1 \text{ if } x \in A \\ 0 \text{ if } x \in \outa E A \\ \frac{1}{2} \text{ otherwise } \end{cases}
+$$
+Then a possible intuitive reading is that arguments in $A$ are regarded as true propositions, arguments attacked by one of these are regarded as false proposition, while all other arguments are taken to correspond to propositions which have an undecided semantic status. The three-valued representation of extensions also lead to an alternative view on argumentation semantics, due to \cite{camlab}, which takes a semantics to be a collection of three-valued assignments. In this way, a semantics for argumentation can be reasoned about using three-valued logic, an idea that has been explored in some recent work \cite{usSynthese,meESSLLI,Arieli}. This will be exploited in the coming sections, as we will rely on three-valued {\L}ukasiewicz logic when we reason statically, i.e., either about a given agents' subjective view or the current deliberative state.
+
+In Figure \ref{fig:sem} we provide definitions of the most commonly known semantics based on argumentation frameworks. The logic introduced in the next section is parameterized by an argumentation semantics and the choice of such a semantics will not crucial be for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria of acceptability of arguments. Intuitively, it requires that an acceptable set must be free from internal conflict and that it must also be able to defend itself against all attacks. The other semantics in Figure \ref{fig:sem} are all based on the same idea, but adds other requirements that are less obviously reasonable. In the following we will assume only that whatever our argumentation semantics returns as an acceptable set, it is always also acceptable under the admissible semantics.
+
+\begin{figure}
+$\begin{array}{ll}
+\text{\footnotesize{Admissible: }} & a(E) = \{\clab \in \proto(E) \mid  E^-(\clab^1) \subseteq \clab^0\} \\
+\text{\footnotesize{Complete:}} & c(E) =  \{\clab \in \proto(E) \mid \clab^1 = \{x \in \Pi \mid E^-(x) \subseteq \clab^0\}\} \\
+%\forall x \in \Pi: \\ & \clab(x) = 1 \iff \forall y \in E^-(x): \clab(y) = 0\} \\
+\text{\footnotesize{Grounded:}} & g(E) = \{\bigcap c(E)\} \\
+\text{\small{Preferred:}} \ \ & p(E) = \{\clab_1 \in a(E) \mid \forall \clab_2 \in a(E): \clab^1_1 \not \subset \clab^1_2\} \\
+\text{\small{Semi-stable:}} \ \ & ss(E) = \{\clab_1 \in a(E) \mid \forall \clab_2 \in a(E): \clab^{\frac{1}{2}}_1 \not \supset \clab^{\frac{1}{2}}_2\} \\
+\text{\small{Stable:}} \ \ & s(E) = \{\clab \in a(E) \mid \clab^{\frac{1}{2}} = \emptyset\} 
+\end{array}$
+\caption{Various semantics, defined for any $E \subseteq \Pi \times \Pi$}
+\label{fig:sem}
+\end{figure}
+
+Towards the definition of an argumentative agent, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration, specified in keeping with the idea that his reasoning is based on an \emph{argumentative} understanding of meaning. Then an \emph{argumentative state} is a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the dynamic framework developed in the next section.
+
+To reason about AFs we will use a simple propositional language with negation and implication, as defined by the grammar below.
+$$
+\phi := p \ \mid \ \neg \phi \ \mid \phi \to \phi 
+$$
+where $p \in \Pi$. Then we can define static argumentative truth following {\L}ukasiewicz three-valued logic, by defining extensions of $\clab: \Pi \to \three$ inductively as follows
+\begin{align*}
+&\overline \clab(p) = \clab(p) \text{ for } p \in \Phi \\
+&\overline \clab(\neg \phi) = 1 - \overline \clab(\phi) \\
+&\overline \clab(\phi \to \psi) = min\{1,1-(\overline \clab(\phi) - \overline \clab(\psi))\}
+\end{align*}
+
+
+
 
 The crucial challenge that remains, and which will be addressed in this project, is a mechanism for formally introducing an appropriate kind of multi-agent dynamics, suitable for representing the argumentative theory. 
 This is the question we address in the following section.
