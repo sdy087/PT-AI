@@ -143,7 +143,7 @@ $\begin{array}{ll}
 
 Towards the definition of an argumentative agent, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration, specified in keeping with the idea that his reasoning is based on an \emph{argumentative} understanding of meaning. Then an \emph{argumentative state} is a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the dynamic framework developed in the next section.
 
-To reason about AFs we will use a simple propositional language with negation and implication, as defined by the grammar below.
+To reason about AFs we will use a simple propositional language $\lang$, with negation and implication, as defined by the grammar below.
 $$
 \alpha := p \ \mid \ \neg \alpha \ \mid \alpha \to \alpha 
 $$
@@ -155,24 +155,23 @@ where $p \in \Pi$. Then we can define static argumentative truth following {\L}u
 \overline \clab(\alpha \to \beta) = min\{1,1-(\overline \clab(\alpha) - \overline \clab(\beta))\}
 \end{array}
 \end{equation}
-Then, given an AF $E$ and a semantics $\sem$ we can add the modality $\cdia$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs. In particular, we use the following language.
+Then, given an agent $a \in \agents$ with a view $V_A$, we can add the modality $\cdia_a$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. In particular, we get the following multi-agent language $\lblack$
 $$
-\phi := \cdia \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and we define truth for formulas inductively as follows, for all formulas $\phi$
+\phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
 \begin{equation}\label{eq:asem}
 \begin{array}{l}
-E \models_\sem \cdia \alpha \text{ if there is } \clab \in \sem(E) \text{ s.t. } \overline \clab(\alpha) = 1 \\
-E \models_\sem \neg \phi \text{ if not } E \models_\sem \phi \\
-E \models_\sem \phi \land \psi \text{ if } E \models_\sem \phi \text{ and } E \models_\sem \psi 
+\views \models_\sem \cdia_a \alpha \text{ if there is } \clab \in \sem(V_a) \text{ s.t. } \overline \clab(\alpha) = 1 \\
+\views \models_\sem \neg \phi \text{ if not } \views \models_\sem \phi \\
+\views \models_\sem \phi \land \psi \text{ if } \views \models_\sem \phi \text{ and } \views \models_\sem \psi 
 \end{array}
 \end{equation}
 
-The crucial challenge that remains, and which will be addressed in this project, is a mechanism for formally introducing an appropriate kind of multi-agent dynamics, suitable for representing the argumentative theory. 
-This is the question we address in the following section.
-
+The crucial challenge that remains, and which will be addressed in the next section, is to find a mechanism for formally introducing an appropriate kind of multi-agent interaction and dynamics, suitable for representing the argumentative theory. This is the question we address in the following section.
 
 \section{Argumentative deliberation: Towards formalization of rational interaction using dynamic argumentation logic}\label{sec:ddl}
 
 Given a basis which encodes agents' view of the arguments, we are interested in the possible ways in which agents can deliberate to reach \emph{agreement} on how arguments are related. That is, we are interested in the set of all AFs that can plausibly be seen as resulting from a \emph{consensus} regarding the status of the arguments in $\Pi$. What restrictions is it reasonable to place on a consensus? It seems that while many restrictions might arise from pragmatic considerations, and be implemented by specific protocols for ``good'' deliberation in specific contexts, there are few restrictions that can be regarded as completely general. For instance, while there is often good reason to think that the position held by the majority will be part of a consensus, it is hardly possible to stipulate an axiomatic restriction on the notion of consensus amounting to the principle of majority rule. Indeed, sometimes deliberation takes place and leads to a single dissenting voice convincing all the others, and often, these deliberative processes are far more interesting than those that transpire along more conventional lines. However, it seems reasonable to assume that whenever \emph{all} agents agree on how an argument $p$ is related to an argument $q$, then this relationship is part of any consensus. This, indeed, is the only restriction we will place on the notion of a consensus; that when the AF $\af$ is a consensus for $\basis$, it must satisfy the following \emph{faithfulness} requirement.
+
 \begin{itemize}
 \item \emph{For all $p,q \in \Pi$, if there is no disagreement about $p$'s relationship to $q$ (attack/not attack), then this relationship is part of $\af$}
 \end{itemize}
@@ -184,6 +183,27 @@ This leads to the following definition of the set $\cons \views$, which we will 
 \end{equation}
 
 An element of $\cons \views$ represents a possible consensus among agents in $\agents$, but it is an \emph{idealization} of the notion of assent, since it disregards the fact that in practice, assent tends to be \emph{partial}, since it results from a dynamic process, emerging through \emph{deliberation}. Indeed, as long as the number of arguments is not bounded we can \emph{never} hope to arrive at complete assent via deliberation. We can, however, initiate a process by which we reach agreement on more and more arguments, in the hope that this will approximate some complete assent, or maybe even be \emph{robust}, in the sense that there is \emph{no} deliberative future where the results of current partial agreement end up being undermined. Complete assent, however, arises only in the limit.
+
+In practice, we can only every analyze this limit by looking at smaller parts of the whole, some partial consensus that has been obtained through deliberation. Hence we define a \emph{deliberative state} as a tuple $q = (q_S,q_E)$ such that $q_S \subseteq \Pi$ and 
+\begin{equation}\label{eq:ds}
+\bigcap_{a \in \agents}\restr {V_a} {q_S} \subseteq q_E \subseteq \bigcup_{a\in \agents} \restr{V_a}{q_S}
+\end{equation}
+So a deliberative state $q$ is an AF $q_E$ such that all attacks of $q_E$ are between arguments of $q_S$. Moreover, $q$ is faithfully generated from the views of the agents; $q_E$ only contains semantic information that is present in at least one agents' view. Now we are ready to define deliberative Kripke models.
+
+\begin{definition}\label{main}
+Given a basis $\views$, a deliberative Kripke model with respect to $\views$ is a tuple $(Q,R)$ where $Q$ is a set of deliberative states for $\views$ and $R \subseteq Q \times Q$ is a relation on $Q$.
+\end{definition}
+We will reason about deliberative Kripke models using the following language.
+$$ \phi \quad ::= \cdia \alpha \ \mid \ \cdia_a \alpha ~|~ \neg \phi ~|~ \phi \wedge \phi ~|~ \ddia p \phi ~|~ \adia \phi$$ 
+where $p \in \Pi$, $\alpha \in \lang$ and $a \in \agents$.
+
+\section{Discussion and future work}\label{sec:fut}
+
+\section{Conclusion}\label{sec:conc}
+
+\end{document}
+
+
 
 When and how deliberation might successfully lead to an approximation of complete assent is a question well suited to investigation with the help of dynamic logic. The dynamic element will be encoded using a notion of a deliberative event -- centered on an argument -- such that the set of ways in which to relate this arguments to arguments previously considered gives rise to a space of possible deliberative time-lines, each encoding the continued stepwise construction of a joint point of view. This, in turn, will be encoded as a monotonically growing AF $\af = (S,E)$ where $S \subseteq \Pi, E \subseteq S \times S$ and such that faithfulness is observed by all deliberative events. That is, an event consists in adding to $\af$ the agents' combined view of $p$ with respect to the set $S \cup \{p\}$. This leads to the following collection of possible events, given a basis $\views$, a partial consensus\footnote{These ``partial consensuses'' are sometimes referred to as ``contexts'' when they are used to describe graphs inductively, as we will do later.} $\af = (S,E)$ and an argument $p \in \Pi$:
 
@@ -211,10 +231,7 @@ $$succ(q) \quad := \quad \{~q' \mid \exists p \in \Pi: q' \in succ(q,p)\}$$
 Notice that in the last point, we essentially map $q$ to the sets of extensions prescribed by $\sem$ when $q$ is viewed as an AF. We encode this extension as a three-valued labeling, however, following \cite{caminada06}. Notice that the default status, attributed to all arguments not in $q_S$, is $\frac{1}{2}$. The logical language we will use consists in two levels. For the lower level, used to talk about static argumentation, we follow \cite{Arieli,Sjur-SYNT} in using {\L}ukasiewicz three-valued logic. Then, for the next level, we use a dynamic modal language which allows us to express consequences of updating with a given argument, and also provides us with existential quantification over arguments, allowing us to express claims like ``there is an update such that $\phi$''. This leads to the language $\dlangm$ defined by the following \acro{bnf}'s
 
 $$ \phi \quad ::= \cdia \alpha ~|~ \neg \phi ~|~ \phi \wedge \phi ~|~ \ddia p \phi ~|~ \adia \phi$$ 
-where $p \in \Pi$ and $\alpha \in \lblack$ where $\lblack$ is defined by the following grammar:
-$$
-\alpha ::= p \ | \ \neg \phi \ | \ \phi \to \phi $$
-for $p \in \Pi$.
+where $p \in \Pi$ and $\alpha \in \lang$.
 
 We also use standard abbreviations such that $\abox \phi = \neg \adia \neg \phi$, $\dbox p \phi = \neg \ddia p \neg \phi$ and $\cbox \alpha = \neg \cdia \neg \alpha$. We also consider that standard boolean connectives abbreviated as usual for connectives not occurring inside a $\cdia$-connective and abbreviations for connectives of {\L}ukasiewicz logic in the scope of $\cdia$-connectives.
 
@@ -240,12 +257,6 @@ Given an argumentation semantics $\sem$ and a basis $\views$, truth on $\kmod \v
 \kmod \views \sem, q \vDash \adia \phi & \iff \quad \exists (q,q') \in \rels \views(\exists): \kmod \views \sem,q' \vDash \phi \\
 \end{align*}
 \end{definition}
-
-\section{Discussion and future work}\label{sec:fut}
-
-\section{Conclusion}\label{sec:conc}
-
-\end{document}
 
 sjur{Needs rewriting, but this is easy.}
 
