@@ -190,10 +190,27 @@ If some information regarding the semantic relationship between two arguments is
 
 In particular, we do not allow deliberation to result in interpretations that deviate from interpretations that are held unanimously by the agents. If everyone agrees on the meaning of an argument, the argument has this meaning, no matter how deliberation proceeds. As we will see, however, this does not entail that a possible  unanimity regarding the acceptance status of an argument is necessarily reflected in the view aggregated by deliberation. For instance, even if all agents agree that $p$ should be accepted, it is quite possible that $p$ will not be accepted after deliberation. If the agents differ in their account of \emph{why} $p$ should be accepted, in particular, deliberation might lead to the rejection of $p$, initial unanimity regarding $p$ notwithstanding, see Example ... for a concrete scenario. This in itself is interesting, and it suggests that subtle questions and phenomena arise when we attempt to be more precise about our normative claims regarding deliberative rationality.
 
-The idea implicit in \cite{whyreason} -- that deliberation not only can, but \emph{should}, result in classically sound conclusions -- is a particularly strong normative claim that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle)) is observed.
+The idea implicit in \cite{whyreason} -- that deliberation not only can, but \emph{should}, result in classically sound conclusions -- is a particularly strong normative claim that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
+
+The following is a formalization of the principle of classical soundness:
+
+$$
+\views \models \neg \cdia \neg \phi \to \cdia \phi
+$$
+If, in every deliberative state, the impossibility of $\neg \phi$ implies the existence of $\phi$, then the model maintains adherence to classical principles as a semantic invariant, both in terms of interpretation and evaluation.
+
+The problem is that not all argumentative states give rise to any non-trivial deliberative models that satisfy this constraint. Hence the requirement is not possible to express merely as a requirement on the process of deliberation. It also requires imposing normative, non-argumentative, requirements on individual reasoners. It is easy to see this. For instance, in cases when all reasoners agree already, and they are all unsound in their reasoning, irrationality will prevail regardless of deliberation. Hence the strict classical assumption is not warranted on the basis of the argumentative theory, if we take seriously the stipulation that argument production, rather than soundness, is the function of reasoning. 
+
+However, we can consider other standards which are influenced by the classical standard, and perhaps seeks to reach it in as many cases as possible. For instance, we can stipulate that everyone should have their voices hears, so as to minimize the chance of one view being enforced against all others. Thus we arrive at the principle that deliberation should be organized in an egalitarian manner. How can we formalize such an idea?
+
+One possible protocol is arrived at if we say that the majority opinion should always be adhered to, regarding what interpretation we should regard as successful following deliberation. This, however, appears to be rather too strict as well, albeit in a different way. In fact, if we break ties arbitrarily, it defines a unique deliberative state which is the eventual outcome of every debate: the one defined by taking the relationship between every $x,y$ to be determined by whether or not a majority of the agents believe that one attacks the other. In this case there is hardly any need for further logical analysis -- the outcome is given, once and for all. However, it is also a highly unsatisfactory account of deliberation, the purpose of which is precisely to allow positions and semantic interpretations to develop dynamically as agents interact in various ways, attempting to influence each other and the common ground. 
+
+In fact, we believe it is not the role of logic to pinpoint the exact outcome of deliberation, but to explore rather the space of possibilities, describing restrictions by stipulating invariant formulas -- logical principles that should be true across all possibilities -- not by explicitly defining the set of possible outcomes by way of mathematical models.
 
 
-to impose. It might be too strong, in particular, 
+
+This, then, suggests that the notion is too strong. 
+
 
 given a set of deliberative states $Q$ and a relation between them, encoding how deliberation unfolds, we can use modal logic to reason about the deliberative structure that results. This leads to the following definition of a deliberative Kripke model.
 
