@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  13 JAN 2014 19:09
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  14 JAN 2014 16:17
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai.tex
@@ -730,31 +730,36 @@ LaTeX Warning: Citation `whyreason' on page 7 undefined on input line 177.
 LaTeX Warning: Citation `whyreason' on page 8 undefined on input line 193.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 210--213
 
- []
+LaTeX Warning: Reference `sec:modeling' on page 9 undefined on input line 210.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--213
+LaTeX Warning: Reference `sec:truls' on page 9 undefined on input line 210.
 
- []
+
+LaTeX Warning: Reference `sec:sjur' on page 9 undefined on input line 210.
 
 [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 217.
+Overfull \hbox (1.1848pt too wide) in paragraph at lines 214--214
+[]\OT1/cmr/bx/n/12 Using re-stricted classes of de-lib-er-a-tive mod-els to stu
+dy
+ []
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 222.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 217.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
 
 
-LaTeX Warning: Reference `sec:truls' on page 10 undefined on input line 217.
+LaTeX Warning: Reference `sec:truls' on page 10 undefined on input line 222.
 
 
-LaTeX Warning: Reference `sec:sjur' on page 10 undefined on input line 218.
+LaTeX Warning: Reference `sec:sjur' on page 10 undefined on input line 223.
 
-[10] [11] (C:\Users\Student\Desktop\PT-AI\pt-ai.aux)
+[10] [11] [12] (C:\Users\Student\Desktop\PT-AI\pt-ai.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -763,13 +768,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16299 strings out of 494045
- 280594 string characters out of 3148380
+ 16300 strings out of 494045
+ 280608 string characters out of 3148380
  367031 words of memory out of 3000000
- 19280 multiletter control sequences out of 15000+200000
+ 19281 multiletter control sequences out of 15000+200000
  16185 words of font info for 61 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,12n,55p,1526b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,12n,55p,2176b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\allrunes\d
 pi600\fruamn.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -790,9 +795,9 @@ c/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sam7.pfb>
-Output written on pt-ai.pdf (11 pages, 260546 bytes).
+Output written on pt-ai.pdf (12 pages, 264648 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
