@@ -1,0 +1,404 @@
+\documentclass[greybox]{svmult}
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+
+%\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{allrunes}
+\usepackage{graphics}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[curve]{xypic}
+\usetikzlibrary{arrows}
+\usepackage{algorithm2e}
+%\usepackage{fontenc}
+
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{cor}[thm]{Corollary}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{conjecture}[thm]{Conjecture}
+%\newtheorem{definition}[thm]{Definition}
+%\newtheorem{proposition}[thm]{Proposition}
+%\newtheorem{example}[thm]{Example}
+%\newtheorem{exer}[thm]{}
+
+\graphicspath{{./white-japan/img/}}
+
+\input{./white-japan/acros.tex}
+
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\outa}[2]{#1^+(#2)}
+\newcommand{\ina}[2]{#1^-(#2)}
+\newcommand{\neu}[2]{#1^n(#2)}
+\newcommand{\proto}{\mathbf C}
+\newcommand{\clab}{\sf c}
+\newcommand{\iterate}[1]{{\cal I}(#1)}
+\newcommand{\cl}{cl}
+\newcommand{\dstate}[1]{\sf D({#1}) }
+\newcommand{\witness}[1]{{\sf w^{#1}}}
+\newcommand{\buffer}[2]{{\sf b}_{#1}(#2)}
+\newcommand{\sdepth}[2]{d_{#1}(#2)}
+\newcommand{\shrink}[2]{\rho_{#1}(#2)}
+\newcommand{\comp}[2]{C(#1,#2)}
+\newcommand{\test}[1]{{#1}?}
+\newcommand{\dlangm}{{\mathcal L}_{\acro{DDL}}}
+\newcommand{\pis}[1]{{\mathbf e}_{#1}}
+\newcommand{\carriers}[1]{Q_{#1}}
+\newcommand{\kmod}[2]{{\cal K}_{(#1,#2)}}
+\newcommand{\rels}[1]{{\sf R_{#1}}}
+\newcommand{\update}[3]{{\mathcal U}_{#1}(#2,#3)}
+\newcommand{\cons}[1]{{\textara{\ea}}(#1)}
+\newcommand{\af}{{\sf F}}
+\newcommand{\afn}{S}
+\newcommand{\afe}{E}
+\newcommand{\seq}[1]{\overrightarrow{#1}}
+\newcommand{\basis}{basis }
+\newcommand{\state}{state }
+\newcommand{\views}{\mathcal B}
+\newcommand{\viewsv}{\left(V_a\right)_{(a \in \agents)}}
+\newcommand{\carrier}{Q_\views}
+\newcommand{\sem}{\varepsilon}
+\newcommand{\depth}[1]{|{#1}|^\adia}
+\newcommand{\bisim}{\underline{\leftrightarrow}}
+
+\begin{document}
+\title*{Arguably argumentative: A formal approach to the argumentative theory of reason}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+The idea that thought entails existence, or at least presupposes it, is a conceptual pillar of analytic philosophy. It is hard to disagree that is has a certain appeal: "I think, so I am, so I might as well go on thinking". For the skeptic, however, it also begs the following question: what is the "I" in such a line of thought? The armchair philosopher might be too busy with his thoughts to worry about it, but in the field of social psychology, particularly in the tradition going back to the work of George Herbert Mead and the Chicago school, it has come to occupy a well established pride of place (Mead 1967).
+
+The best known theories developed in this field all agree that any "I" is essentially a social construction; you exist as a thinker only because you interact with other thinkers. In particular, social interaction is partly constitutive of self, not merely emergent from it. Consequently, reason itself is emergent from social contact, and the view that individual rationality is the basis for rational interaction must be rejected. Rather, interaction and reasoning should be seen as mutually dependent notions, on the basis of which more subtle notions of rationality and sound reasoning can be explored.
+
+This idea is both convincing and powerful, and it is becoming increasingly important to many different fields of research, including economy, law, biology and artificial intelligence (Blume and Durlauf 2001; Dworkin 1986; Waal and Ferrari 2010; Benthem 2011; Ossowski 2013). In all these research areas, there is a trend towards  viewing rationality as fundamentally embedded in a social context. Importantly, this context is seen as important not only because people are social and tend to interact, but also because \emph{who} they are, \emph{what} they want, and \emph{why} they want it, tends to depend on how they engage with each other and their environment. Hence the individual -- the \emph{agent} in the context of formal models -- is himself in need of more subtle analysis, in terms of the same structures that are used to describe important aspects of the economic, legal, environmental and computational worlds that contain him. 
+
+To accommodate this point of view across different domains, we are in need of better theoretical foundations, allowing us to investigate the relationship between reasoning and interaction, taking into account that they are co-dependent and co-evolving. In this paper, we argue that this challenge can be taken on using formal logic, drawing on tools and techniques developed in the context of multi-agent systems. The connection between various branches of social science and formal logic and computer science has received much attention in recent years, and it has led to a surge of interesting interdisciplinary research (Wooldridge 2009; Benthem 2008; Verbrugge 2009; Ditmarsch, van der Hoek, and Kooi 2007; Parikh 2001).
+
+However, while much recent work in applied logic has been devoted to modeling agency and interaction, the standard starting point is still that agents reason in strict adherence to some common standard of correctness, specified by some given formal logic. Also, it is typically assumed that rational interaction emerges from the fact that agents are individually rational in some appropriate sense, for instance because they seek to maximize some given utility function. In this paper, we argue that in order to provide adequate formal foundations for rational interaction we need to depart from such reductionist assumptions. In search of an alternative approach, we start from the argumentative theory of reason, introduced in (Mercier and Sperber 2011). We consider its implications for logical modeling, and we sketch the development of a general logical framework that enables us to capture key aspects of the theory. Our overreaching aim is to argue that a formal approach to the argumentative theory can provide interesting insights into the nature of rational interaction, and that further work in this vein can serve as a fruitful meeting point between different fields, and make a valuable contribution to the search for new, social, foundations for notions such as rationality and intelligence.
+%using existing tools and techniques in contemporary logic. for multi-agent argumentation which can be used to encode and explore key theoretical aspects, as well as facilitate modelling of concrete systems.
+
+The structure of the paper is as follows. In Section \ref{sec:arg} we present the necessary background on the argumentative theory of reason. We note that the notion of argumentation used to formulate this theory is conceptually distinct from the notion of argumentation relied on in the theory of argumentation frameworks, as studied in artificial intelligence. We discuss the differences and common elements between the two notions,  and we conclude we can only use argumentation frameworks to arrive at logics for representing the argumentative theory if we conceptualize argumentation frameworks as subjective representations of semantic content, on the basis of which deliberation can take place. We go on to argue that a fundamental question raised by the argumentative theory, which can then be analyzed by formal tools, is the question of how argumentative deliberation works, and how it can sometimes result in desirable outcomes, even if the individual participants are not classically sound in their own reasoning. We propose, in particular, that the argumentative theory implicitly relies on, and suggests further study of, \emph{social} rationality constraint -- imposed at the deliberative level, and formulated with respect to the outcome of deliberation. Moreover, we argue that these constraints are \emph{not} reducible to corresponding notions of rationality that applies to individual reasoners, who are instead characterized by a distinct form of \emph{argumentative rationality}, in that they seek primarily to maximize their influence, to win as many arguments as possible.
+
+In Section \ref{sec:ddl} we introduce \emph{deliberative Kripke frames}, a versatile formal semantics based on modal logic which gives us access to an abstract view of argumentative deliberation, well suited for further exploration of core theoretical aspects. We provide some examples of semantic modeling facilitated by this formalism, and we go on to present a simple modal language to reason about argumentative social processes.
+We then motivate what we believe to be the main challenge for future work: how to characterize interesting notions of social rationality using theories in modal logic. We present a few preliminary suggestions in this regard, to suggest that more work is needed in this area, to map the different notions of rationality we can defined in various languages of different complexity and expressive power.  
+
+In Section \ref{sec:fut} we discuss the limitations of our own approach, and suggest directions for future work, and in Section \ref{sec:conc} we conclude. % We note that the formalism presented in this paper does not include representation of strategic aspects of deliberation -- it does not allow us to represent scenarios where agents form coalitions to coordinate their arguments in order to derive mutual benefit in terms of winning more arguments as a group.  To model this requires giving an account of higher-order deliberation, where coalitions first deliberate to decide how to choose a joint contribution to the higher-level deliberation scenario based on the differing views of their members. We think developing better techniques for expressing this enhancement is an important 
+
+\section{Argumentative agents: Towards a semantics for individual reasoning based on argumentation}\label{sec:arg}
+
+The argumentative theory of reason is formulated on the basis of a vast amount of experimental evidence, and its core idea is that the notion of argumentation can serve a foundational role in cognitive science. The theory holds that human reasoning evolved to facilitate efficient argumentation, and that the function of reason is not in arriving at logically correct forms of inference but to contribute to social interaction in such a way as to maximize the positive effect of  deliberation. This, for instance, can serve to shed light on why humans so often reason in a way that most theories would judge to be fallacious. According to the argumentative theory, they sometimes do so because fallacies can be useful in the context of argumentation.
+
+It is important to note that the theory involves a notion of argumentation which is conceptually distinct from that found in traditional argumentation theory, going back to (Toulmin 2003) (first edition from 1958). In this research tradition, the theories developed to account for argumentation tend to be highly normative, focusing on recognizing and categorizing fallacies and on designing argumentation schemes and models that are meant to facilitate sound and rational reasoning, particularly regarding what arguments we should accept in a given scenario. The argumentative theory, on the other hand, asks us to look at human reasoning only as an element of more complex social processes that may or may not have outcomes that we judge desirable. In particular, to define more interesting normative forms of rationality, the argumentative theory suggests specifying them with respect to deliberative processes, not with respect to the reasoning processes taking place inside individuals.
+
+Individual reasoning, on the other hand, is understood descriptively, in terms of how people reason, but in such a way that the theory explicitly tackles the normatively laden question of \emph{why} people reason the way they do. According to the argumentative theory, reason developed in order to facilitate successful argumentation, and the evidence we have about the nature of human reasoning supports the hypothesis that people reason in order to maximize their chances of exerting influence in the context of argumentative deliberation; They reason in order to win arguments.
+
+This also explains why people often make ``mistakes" when they reason, and why they often make decisions that are not optimal, or even rational, in terms of a classical normative understanding. But as the argumentative theory explains, the outcome of deliberation can still resemble what traditional accounts of rationality deems to be desirable outcomes of individual reasoning. Hence it might be that established normative ideas about reason still have a role to play. They should be formulated differently, however, with respect to social processes. This latter point is not explicitly made in \cite{whyreason}, but the presentation given there is highly suggestive of it, as most of the examples and arguments used in favor of an argumentative view of reason relies on showing how the ``quality" of individual reasoning -- understood in a classical sense -- improves when the social conditions are favorable. We believe one of the most interesting questions raised by the argumentative theory is how to be more precise about the way in which constraints imposed at a social level can replace or at least support notions of individual rationality as a basis for exploring intelligent interaction.
+
+In the following we will attempt to shed light on it by the use of multi-agent logic, and the first step is to identify the appropriate notion of agency. In particular, we need to provide a formalization of the \emph{argumentative agent}, the agent who reasons in order to win arguments. To do this, we will make use of argumentation frameworks, introduced in (Dung 1995). These are simple mathematical objects, essentially directed graphs, which facilitate the investigation of a whole range of interesting semantics (Baroni and Giacomin 2007). 
+
+The theory of argumentation frameworks has been influential in the context of artificial intelligence (Rahwan 2009). It is capable of capturing many different semantic notions, including semantics for multi-valued and non-monotonic logics, logic programs and games (Dung 1995; Dyrkolbotn and Walicki 2013). More recently, the work in (Brewka, Dunne, and Woltran 2011) shows how argumentation frameworks can be used to provide a faithful (and computationally efficient) representation also of semantics that are formulated with respect to the much more fine-grained formalism of abstract dialectical frameworks (Brewka and Woltran 2010). For our project, it is also important to note that much recent work focuses on providing logical foundations the theory (Grossi 2010a; Grossi 2010b; M. W. A. Caminada and Gabbay 2009; Arieli and Caminada 2013; Dyrkolbotn and Walicki 2013; Dyrkolbotn 2013).
+
+In our opinion, this makes argumentation frameworks highly suited as a technical starting point towards logics for argumentative deliberation. However, we propose to make use of them in a novel way, not to model actual argumentation scenarios, but to model agents' interpretations of semantic meaning -- in argumentative terms -- of the propositions that are up for debate.  In terms of each individual agent, using terminology from cognitive science, it places the argumentation framework at the informational level of cognitive processing, where previous work have already shown that logical tools can have a particularly crucial role to play, also serving to shed new light on established truths arrived at through empirical work, see e.g., (Stenning and van Lambalgen 2005). 
+
+While much work on multi-agent argumentation has already been carried out in a formal and semi-formal context, we note that this work is mostly based on a traditional view of argumentation theory. For instance, we think this is implicit in recent formal work such as that of  (M. Caminada, Pigozzi, and Podlaszewski 2011; M. Caminada and Pigozzi 2011) and even more so in the survey of the field given in (Rahwan 2009). In our opinion, however, this view is inappropriate when attempting to formalize the argumentative theory.
+The problem is that the representation of the argumentation scenario is fixed and not open to dispute and dynamic change, except with respect to the question of how it should be evaluated. But to model the argumentative theory, we need to depart from this starting point, since it is crucial that the basic representation of the surrounding semantic reality is itself a subjective construction, distinctly produced in each individual agent. This is why we use argumentation frameworks as models of the agents' internal view of the relevant arguments and how they are related. Such models only provide a starting point, however, and the real challenge becomes how to describe deliberative processes that can take place on the basis of the agents' diverging interpretations of the world.
+
+We return to this question in Section \ref{sec:del}, after we have formalized our definition of the argumentative agent, using argumentation frameworks.
+
+\subsection{Argumentation frameworks, agents and semantic views}\label{subsec:arg}
+
+Given a set of semantic atoms $\Pi$, which we tend to think of as names of arguments, an argumentation framework (AF) over $\Pi$ is a relation $E \subseteq \Pi \times \Pi$. Intuitively, an element $(x,y) \in E$ encodes the fact that arguments $x$ attacks argument $y$ and we can depict $E$ as a directed graph, giving a nice visualization of how the atoms in $\Pi$ are related as arguments, see Figure \ref{fig:af1} for an example. We introduce the notation $\outa E x = \{y \in \Pi \mid (x,y) \in E\}, \ina E x = \{y \in \Pi \mid (y,x) \in E\}$ and $\neu = \Pi \setminus \outa E x \cup \ina E x$.
+
+Given an AF $E$, the purpose of an argumentation semantics is to identify, using the structure of $E$, the collection of sets of arguments that can be accepted if taken together, typically called \emph{extensions}, see e.g., \cite{....} For instance, if $E = \{(p,q),(r,p)\}$, then the semantics might prescribe $\{r,q\}$ as a set that can be accepted, since $r$ defends $q$ against the argument made by $p$ and $r$ is not in turn attacked. There are many different argumentation semantics, each catering to a different set of intuitions about what should be required for a given set of arguments to count as acceptable.
+
+Given an AF $E$, it is natural to represent an extension $A \subseteq \Pi$ as a three-valued assignment $\clab_A:\Pi \to \three$ such that 
+$$
+\clab_A(x) = \begin{cases} 1 \text{ if } x \in A \\ 0 \text{ if } x \in \outa E A \\ \frac{1}{2} \text{ otherwise } \end{cases}
+$$
+Then a possible intuitive reading is that arguments in $A$ are regarded as true propositions, arguments attacked by one of these are regarded as false proposition, while all other arguments are taken to correspond to propositions which have an undecided semantic status. The three-valued representation of extensions also lead to an alternative view on argumentation semantics, due to \cite{camlab}, which takes a semantics to be a collection of three-valued assignments. In this way, a semantics for argumentation can be reasoned about using three-valued logic, an idea that has been explored in some recent work \cite{usSynthese,meESSLLI,Arieli}. This will be exploited in the coming sections, as we will rely on three-valued {\L}ukasiewicz logic when we reason statically, i.e., either about a given agents' subjective view or the current deliberative state.
+
+In Figure \ref{fig:sem} we provide definitions of the most commonly known semantics based on argumentation frameworks. The logic introduced in the next section is parameterized by an argumentation semantics and the choice of such a semantics will not crucial be for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria of acceptability of arguments. Intuitively, it requires that an acceptable set must be free from internal conflict and that it must also be able to defend itself against all attacks. The other semantics in Figure \ref{fig:sem} are all based on the same idea, but adds other requirements that are less obviously reasonable. In the following we will assume only that whatever our argumentation semantics returns as an acceptable set, it is always also acceptable under the admissible semantics.
+
+\begin{figure}
+$\begin{array}{ll}
+\text{\footnotesize{Admissible: }} & a(E) = \{\clab \in \proto(E) \mid  E^-(\clab^1) \subseteq \clab^0\} \\
+\text{\footnotesize{Complete:}} & c(E) =  \{\clab \in \proto(E) \mid \clab^1 = \{x \in \Pi \mid E^-(x) \subseteq \clab^0\}\} \\
+%\forall x \in \Pi: \\ & \clab(x) = 1 \iff \forall y \in E^-(x): \clab(y) = 0\} \\
+\text{\footnotesize{Grounded:}} & g(E) = \{\bigcap c(E)\} \\
+\text{\small{Preferred:}} \ \ & p(E) = \{\clab_1 \in a(E) \mid \forall \clab_2 \in a(E): \clab^1_1 \not \subset \clab^1_2\} \\
+\text{\small{Semi-stable:}} \ \ & ss(E) = \{\clab_1 \in a(E) \mid \forall \clab_2 \in a(E): \clab^{\frac{1}{2}}_1 \not \supset \clab^{\frac{1}{2}}_2\} \\
+\text{\small{Stable:}} \ \ & s(E) = \{\clab \in a(E) \mid \clab^{\frac{1}{2}} = \emptyset\} 
+\end{array}$
+\caption{Various semantics, defined for any $E \subseteq \Pi \times \Pi$}
+\label{fig:sem}
+\end{figure}
+
+Towards the definition of an argumentative agent, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration, specified in keeping with the idea that his reasoning is based on an \emph{argumentative} understanding of meaning. Then an \emph{argumentative state} is a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the dynamic framework developed in the next section.
+
+To reason about AFs we will use a simple propositional language $\lang$, with negation and implication, as defined by the grammar below.
+$$
+\alpha := p \ \mid \ \neg \alpha \ \mid \alpha \to \alpha 
+$$
+where $p \in \Pi$. Then we can define static argumentative truth following {\L}ukasiewicz three-valued logic, by defining extensions of $\clab: \Pi \to \three$ inductively as follows
+\begin{equation}\label{eq:lsem}
+\begin{array}{l}
+\overline \clab(p) = \clab(p) \text{ for } p \in \Phi \\
+\overline \clab(\neg \alpha) = 1 - \overline \clab(\alpha) \\
+\overline \clab(\alpha \to \beta) = min\{1,1-(\overline \clab(\alpha) - \overline \clab(\beta))\}
+\end{array}
+\end{equation}
+Then, given an agent $a \in \agents$ with a view $V_A$, we can add the modality $\cdia_a$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. In particular, we get the following multi-agent language $\lblack$
+$$
+\phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
+\begin{equation}\label{eq:asem}
+\begin{array}{l}
+\views \models_\sem \cdia_a \alpha \text{ if there is } \clab \in \sem(V_a) \text{ s.t. } \overline \clab(\alpha) = 1 \\
+\views \models_\sem \neg \phi \text{ if not } \views \models_\sem \phi \\
+\views \models_\sem \phi \land \psi \text{ if } \views \models_\sem \phi \text{ and } \views \models_\sem \psi 
+\end{array}
+\end{equation}
+
+\begin{example}[Rain in Bergen]\label{ex:run}
+
+We consider a simple example which motivates the need for introducing subjective views, suggesting also some shortcomings of a traditional approach to argumentation in the context of multi-agent deliberation. We assume given two agents $a,b$ who argue about whether it will rain in Bergen today, where $r$ represent the claim that it will rain, while $\overline r$ represent the claim that it will not. Let us first assume that none of the agents actually argue in favor of their positions. However, assuming that the disagreeing parties recognize that they disagree, the positions themselves play an argumentative role, and the AF shown on the left below represents the initial state of disagreement. So far, in particular, the model appears to be an uncontroversial objective representation of the state of affairs. There is not yet any discernible need for introducing subjective views. 
+$$
+\begin{array}{ccc}
+\xymatrix{ r \ar@/_/[r] & \overline r \ar@/_/[l] } & \hspace{3em} &
+\xymatrix{ r \ar@/_/[r]_{{\bf a},{\bf b}} & \bar r \ar@/_/[l]_{{\bf a},{\bf b}} }
+\end{array}
+$$
+On the right above, we show a simple agent-indexed AF which illustrates a naive attempt at introducing agency to the initial AF. We label the two attacks, from $r$ to $\overline r$ and from $\overline r$ to $r$, by both $a$ and $b$ to encode that they are \emph{common} to the agents. That is, both agents acknowledge that these attacks are present -- they agree that they disagree.
+
+In this case, the rational outcome, the position that \emph{should} be adopted, is unclear. It seems, in particular, that both $r$ and $\bar r$ are acceptable, since no further arguments have been made. This, indeed, also follows from the admissibility criterion in pure argumentation theory -- both $\{r\}$ and $\{\bar r\}$ are acceptable, for all semantics defined in Figure \ref{fig:sem}. Admissibility also informs us that we cannot include \emph{both} $r$ and $\neg r$, since then we would get a set with an internal conflict; It cannot both rain and not rain, so agents $a$ and $b$ cannot both be right.
+
+Let us now assume that $a$ and $b$ begin to argue in favor of their claims. We keep it simple and consider only two further steps of debate: first ${\bf a}$ introduces the argument that the weather report says that it will not rain, and then ${\bf b}$ counters this by announcing that he has seen a puddle on the pavement, suggesting that it has already been raining today. Let us call the arguments provided by the weather report and the puddle $w$ and $p$ respectively. Then, noting that $w$ is an argument used by ${\bf a}$ against $r$ and that $p$ is an argument used by ${\bf b}$ as a retort against $w$ and also, let us assume, directly against $\bar r$, a naive representation in the traditional spirit would be to view the debate as progressing from $(a)$ to $(c)$, as depicted below.
+
+$$
+\begin{array}{ccc}
+(a): & (b): & (c): \\
+\xymatrix{ \\ r\ar@/_/[r]_{{\bf a},{\bf b}} & \bar{r}\ar@/_/[l]_{{\bf a},{\bf b}} } &
+\xymatrix{
+        w\ar[d]_{{\bf a}} & \\
+        r\ar@/_/[r]_{{\bf a},{\bf b}} & \bar{r}\ar@/_/[l]_{{\bf a},{\bf b}} } &
+\xymatrix{
+        w\ar[d]_{{\bf a}} & p \ar[l]_{{\bf b}} \ar[d]^{{\bf b}} \\
+        r\ar@/_/[r]_{{\bf a},{\bf b}} & \bar{r}\ar@/_/[l]_{{\bf a},{\bf b}} }
+\end{array}
+$$
+
+Certainly, this is a neat and uncontroversial depiction of the actual utterance made. It is tempting to ask, then: Who won the debate? Looking at the depictions and thinking of $(c)$ above as a normal AF, forgetting about the agent labels, we conclude that $p, r$ are the successful arguments, and that $\bar r, w$ are both defeated. So ${\bf b}$ won the debate -- the rational consensus is that it will rain in Bergen? Applying admissibility directly to the actual exchange between $a$ and $b$, it would seem so. Intuitively, however, this conclusion seems entirely unwarranted. Why would a puddle be conclusive evidence, and stronger evidence than a weather report? No, it seems that a clear answer of who won the debate cannot be provided at all; for an objective bystander, a weather report might carry some weight, and so might a puddle, but neither appear  particularly conclusive. This is where we recognize the shortcoming of the operational depiction given above, where we focused on the actual utterances, and the order in which they were made.
+
+The problem, we believe, is that in this representation we failed to include information about the agents' view on each other's utterances. In a perfect world, this might not matter -- all debate might eventually be settled conclusively by brute empirical fact, such as observing actual rain as opposed to consulting weather reports and puddles. However, in such a world, deliberation would certainly not be very interesting, and it is not how it tends to play out in the real one. Rather, a debate involves crucially a search for consensus, and consensus depends crucially on how agents perceive the statements made by others, as they reflect on the totality of the debate. This is why we need to be explicit about subjective views, and always ask for a representation of how each individual agent interprets the semantic meaning of all those claims that are relevant to the scenario at hand.
+
+In particular, what is missing in the naive model of the Bergen rain debate is some account of how agent $a$ views puddles, and what agent $b$ thinks of weather reports. Let us assume that their views on this are in fact the following.
+$$
+\begin{array}{cc}
+V_{a} \hspace{3em} & V_{b} \\
+\xymatrix{ w \ar[d] \ar[r] & p \ar[d] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } \hspace{3em} &
+\xymatrix{w \ar[d] & p \ar[d] \ar[l] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] }
+\end{array}
+$$
+It seems clear that these views are consistent with the actual exchange of arguments described earlier, and that they might easily come to result in deliberative events that appear in this form. We notice, moreover, that according to the views depicted here, both $b$ and $a$ acknowledge that their respective arguments for and against rain are correct, yet they also both think that their own argument is stronger, in that it attacks also the other agent's argument, but not vice versa. This might result, for instance, because the weather report gives $a$ reason to doubt that $b$ is telling the truth about the puddle, while seeing the puddle gives $b$ reason to doubt the relevance of the weather report. Importantly, it might not be rational of $a$ and $b$ to disagree about how their arguments are related, but that they would do so is nevertheless consistent with the fact that reasoners often tend to display confirmation bias, putting more weight on evidence in support of their own beliefs.
+
+Importantly, if we now look at the AFs encoding their views rather than the AF encoding the actual exchange of arguments, there is no longer any intuitive reason to think that the outcome of deliberation should permit us to conclude that it rains in Bergen. This, in particular, is a conclusion that relies on an interpretation that recognizes the attack $(p,w)$ to encode correct semantic information about $p$ and $w$. But his view shows that agent $a$ disagrees with agent $b$ in this regard, and so we reach the more appropriate conclusion that it is unwarranted to assume that $(p,q)$ will come to influence the outcome of deliberation. In order to even begin talking about this outcome, in particular, we need first to specify an aggregated view on the semantic meaning of the arguments involved. Depending on how this interpretation is constructed, the outcome will be different. A dynamic logic based on this starting point, focusing on the development of an aggregated interpretation of meaning, is what we are aiming at. We already see how subjective views are needed to facilitate its development.
+\end{example}
+
+The crucial challenge that remains, and which will be addressed in the next section, is to find a mechanism for formally introducing an appropriate kind of multi-agent interaction and dynamics, suitable for representing the argumentative theory. This is the question we address in the following section.
+
+\section{Argumentative deliberation: Towards formalization of rational interaction using dynamic argumentation logic}\label{sec:ddl}
+
+Given a basis which encodes agents' views of the arguments, we are interested in the possible ways in which agents can deliberate, and how deliberation can serve to create new, socially defined, interpretations of the arguments, interpretations that are aggregated in a non-trivial way from the views of the individual agents.  We are interested, in particular, in characterizing and studying the \emph{effect} of deliberation on semantic meaning. This, in our opinion, is the crucial question that needs to be addressed in the search for new foundations for rational interaction.
+
+The argumentative theory, for instance, makes the assertion that unsound reasoning on the individual level, motivated by agents' desire to win arguments, can lead to sound results when embedded in a suitable deliberative context. The challenge, then, is to attempt to characterize such suitable contexts, and to define conditions of deliberation that helps promote certain normative standards of soundness that can not, and should not, be imposed at the individual level. 
+
+This is a challenge that points beyond the work already done in \cite{whyreason}, and we believe a possible criticism against the argumentative theory, as it stands today, is that it fails to make clear how the deliberative process can take unsound reasoning and produce a sound outcome.  What mechanisms are in play here, and what standards of soundness can we apply to them? Clearly, they cannot be reduced to mechanisms and standards that we should apply to reasoners individually, but need to be formulated in terms of the deliberative circumstances themselves.
+
+This is clear from the reasoning used to support the argumentative theory, for instance when it is pointed out that groups of people tend to perform ``better" in reasoning tasks when each individual is challenged by people that have views which diverge from his own. That this is so has been established in much empirical work, but how are we to make sense of it as a normative claim, and how can we express it in a theoretical and formally precise setting? This is the question we embark on now, developing a dynamic logic framework for defining and studying various notions of deliberative soundness and rationality.
+
+We propose to think of deliberation as a process which consists in moving between possible interpretations of the meaning of arguments, where the idea is that each move is caused by some deliberative event, the exact nature and structure of which we leave unspecified the initial suggestion presented here. The intention is that each possible interpretation represents a possible aggregation of the views of the involved agents. In particular, given an argumentative state $\views$, we say that $q \subseteq \Pi \times \Pi$ is a \emph{deliberative state} for $\views$ if
+\begin{equation}\label{eq:ds}
+\bigcap_{a \in \agents}V_a \subseteq q \subseteq \bigcup_{a \in \agents}V_a
+\end{equation}
+We collect all deliberative states for $\views$ in the set $\dstate \views$ and we use $\Pi(q) = \{x \in \Pi \mid \neu q x \not = \Pi\}$ to denote the set of arguments that appear in some attack from $q$. That is, $\Pi(q)$ contains the arguments that are not neutral with respect to all other arguments, according to the AF $q$. The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
+
+\begin{quote}\label{principle}
+If some information regarding the semantic relationship between two arguments is included in a deliberative state, the correctness of this information is endorsed by at least one agent. 
+\end{quote}
+
+In particular, we do not allow deliberation to result in interpretations that deviate from interpretations that are held unanimously by the agents. If everyone agrees on the meaning of an argument, the argument has this meaning, no matter how deliberation proceeds. As we will see, this does not mean that a possible unanimity regarding the acceptance status of an argument is necessarily reflected in the view aggregated by deliberation. For instance, even if all agents agree that $p$ should be accepted, it is quite possible that $p$ will not be accepted after deliberation. If the agents differ in their account of \emph{why} $p$ should be accepted, in particular, deliberation might lead to the rejection of $p$. This in itself is interesting, and it suggests that subtle questions and phenomena arise when we attempt to be more precise about our normative claims regarding deliberative rationality.
+
+Towards formal precision, we now define the core notion of a \emph{deliberative Kripke model}
+
+\begin{definition}\label{def:dk}
+Given a deliberative state $\views$, a deliberative Kripke model for $\views$ is a tuple $(Q,R)$ such that
+\begin{itemize}
+\item $Q \subseteq \dstate \views$ is a set of deliberative states for $\views$
+\item $R$ is a relation $R \subseteq Q \times Q$
+\end{itemize}
+\end{definition}
+
+The idea is that the relation $R$ encodes a process of deliberation based on the views in $\views$. If $(q_1,q_2) \in Q$ the intuition is that there is some event that can take place in the deliberative state $q_1$ so that the aggregated views of the arguments is updated, taking us to the deliberative state $q_2$. In the first instance, we abstract away from events that can induce such a link, but this could be some agent presenting his point of view, or it could be some joint effort to reach a decision about some argument. The latter type of event will be encoded in Subsection \ref{sec:truls} where we take it as the basis for defining the class of open deliberations, which we propose as a possible candidate for a rationality constraint at the social level. For now, we are content with leaving the exact content of event unspecified. 
+
+As an example of a deliberative model, consider the framework in Figure \ref{fig:del1}. Here, the argumentative state is problematic from the point of view of classical logic. In particular, we have $\views \models_\sem \neg \cdia_a x \land \neg \cdia_a \neg x$ under all $\sem$ from Figure \ref{fig:sem}, encoding that for agent $a$, the argument $x$ attacks itself and is not defeated. Hence it cannot be regarded as either true or false without leading to contradiction, and agent $a$ is prevented from reaching any classically sound conclusions about the status of either argument (since he also perceives $x$ to attack $y$). The agent $b$, on the other hand, has the view that $x$ and $y$ are in opposition to each other; If one of them is accepted the other must be rejected and vice versa, but he has no information which suggests choosing one over the other. In particular, we have $\views \models_\sem \cdia_b y \land \cdia_b \neg y$. Hence from his point of view, the semantic status of $x$ and $y$ remains unclear. Through deliberation, however, it is possible to arrive at a definite outcome which also resolves the inconsistency that $a$ believes to be present at $x$. One such scenario is depicted in Figure \ref{fig:sem}, where deliberation starts with the empty framework over $\{x,y\}$ and then proceeds by agent $a$ first putting forth his point of view, resulting in $q_1$, and then continuing with agent $b$ adding to this his own understanding, which results in the deliberative state $q_2 = V_a \cup V_b$. Here there is no problem, and the status of $x$ and $y$ has been definitely resolved, since $y$ must be accepted and then $x$ will be defeated, under all semantics from Figure \ref{fig:sem}, including classical logic, as encoded by the stable semantics.
+
+\begin{figure}\label{fig:del1}
+$\begin{array}{llllll}
+V_a: \xymatrix{& x \ar[r] \ar@(lu,ld) & y}, & V_b: \xymatrix{x \ar@/_/[r] & y \ar@/_/[l] } \\ \\
+q_0: \xymatrix{ x & y }, & q_1: \xymatrix{& x \ar@(lu,ld)  \ar[r] & y }, & q_2: \xymatrix{&  x \ar@(lu,ld)  \ar@/_/[r] & y \ar@/_/[l]}
+\end{array}$
+\caption{A deliberative model $(Q,R)$ over $\views = (V_a,V_b)$ with $R = \{(q_0,q_1),(q_1,q_2)\}$}
+\end{figure}
+
+This is an example of a scenario where everything runs smoothly and there is no controversy. In particular, both agents uncritically accept adding each others' points of view to the aggregated deliberative state, resulting in the union of their views emerging as the final outcome of deliberation. Things might not be so simple, however, and it is the more complicated scenarios that can benefit the most from logical modeling. It could be, for instance, that agent $a$ has reservations about agent $b$'s interpretation of $y$ as an argument that also attacks $x$. If we are unsure about agent $a$'s stance in this regard, or, more generally, unsure about whether deliberation based on the views of agents $a$ and $b$ will eventually return a state where the $(y,x)$-attack is included, we can model this by introducing branching in the deliberative model. In particular, we could introduce a reflexive loop at $q_1$, to indicate the possibility that $b$'s perspective might come to be rejected. Then we have a branching deliberative model, and while it is still \emph{possible} to resolve the problems with original argumentative state, deliberation can then also fail to do so. 
+
+To talk about deliberative models, allowing us to distinguish and identify situations such as these, we can use existing modal languages of varying expressive power. In this paper, we will stick to simple languages to illustrate the conceptual points, and we consider first the following simple language $\lang_1$, which simply adds to $\lblack$ a modality for talking about one-step possibilities in deliberative models.
+
+$$
+\phi := \cdia \alpha \ \mid \ \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi \ \mid \adia \phi
+$$
+where $\alpha \in \lang$. The definition of satisfaction for $\lang_1$ on deliberative models is then defined analogously to classical modal logic.
+
+\begin{definition}\label{truth1}
+Given an argumentation semantics $\sem$, an argumentative state $\views$ and a corresponding deliberative model $(Q,R)$, the truth of $\phi \in \lang_1$ on $(Q,R)$ at $q \in Q$ is defined inductively as follows
+\begin{itemize}
+\item $\views, (Q,R),q\models_\sem \cdia \alpha$ if $\exists \clab \in \sem(q): \overline \clab(\alpha) = 1$
+\item $\views,(Q,R),q\models_\sem \cdia_a \alpha$ if $\exists \clab \in \sem(V_a): \overline \clab(\alpha) = 1$
+\item ...
+\item $\views,(Q,R),q \models_\sem \adia \phi$ if there is $q' \in Q$ s.t. $(q,q') \in R$ and $\views,(Q,R),q' \models_\sem \phi$
+\end{itemize}
+\end{definition}
+ 
+We use the shorthand $\abox \phi := \neg \adia \neg \phi$ as usual. Let us consider the model from Figure \ref{fig:del1} as an example. Then it is easy to verify that $\views, (Q,R), q_0 \models_\sem \abox \abox \cbox \neg x$, expressing how two steps of deliberation will necessarily suffice to resolve $a$'s semantic problems with $x$ in this scenario, leading us to conclude $\neg x$ at the social level. However, if we add a reflexive edge $(q_1,q_1)$ to this model, to encode uncertainty about whether agent $b$'s view will survive deliberation, we obtain only the weaker $\views, (Q,R),q_0 \models_\sem \adia \adia \cdia \neg x$. It is still \emph{possible} that the problems at $x$ are resolved, but this is no longer necessarily so.
+
+This toy example illustrates that with the machinery now in place we can formally describe how deliberation can sometimes turn individual views that classical logic deems problematic into deliberative states that are classically consistent. This is a mechanism that is stressed as being crucial in the argumentative theory of reason, and in Subsection \ref{sec:examples} we provide more examples of how deliberative models can be used as a modeling formalism capable of representing it, allowing us also to express and explore it using logic. However, we can also be more ambitious on behalf of the logical approach, seeking to move beyond mere modeling of concrete instances, towards formalization of theoretic concepts and principles. We provide a preliminary exploration of this line of inquiry in Subsection \ref{sec:theory}, arguing that it shows great promise, but also that it suggests development of more subtle logical tools which can allow us to introduce more structure to our semantics, and that can give us access to the expressive power of more complex modal languages. 
+
+\subsection{Using deliberative models to represent concrete instances of argumentative reasoning and interaction}\label{sec:examples}
+
+In \cite{whyreason}, one of the primary claims concerns cognitive bias, the mechanism by which reasoners disproportionately tend to favor reasons that support previous beliefs rather than challenge them. According to the authors, this bias is not necessarily an example of flawed reasoning since it has an argumentative function that can serve to enhance the positive effects of deliberation. This claim is supported by empirical evidence, and in this section we show how scenarios where cognitive bias plays such a constructive role can be represented by deliberative models and reasoned with using modal logic. Following this, we go on to consider some more examples which we believe illustrate that as an approach to modeling, the formal framework suggested in this paper appears to be both flexible and expressive. 
+
+
+
+
+
+Then we move on to consider some other mechanisms in a similar vein, including a consequence of the same 
+
+
+The requirement that deliberation should be organized in such a way that it \emph{always} function like this might then suggest itself as a good candidate for a normative notion of rationality imposed at the social level. It is a very strong notion, however, and it is potentially problematic also because it is not in fact wholly social -- a requirement to the effect that the outcome of deliberation should always be classically consistent \emph{must} also involve restriction on what individual views we permit agents to endorse. This is easy to see intuitively. The case of a system with a single agent who believes something absurd, for instance, or a system with many agents where all of them agree on a contradiction, are obvious examples. The fact that deliberation alone cannot ensure consistency in such cases seems hard to dispute, and it also implies that classical consistency might not be a very helpful rationality norm, when focus now shifts to the social level. This, in particular, is true if we take seriously the argumentative theory, and attempt to create standards that can be applied to \emph{actual} reasoners, even if the circumstances are such that an outcome in complete adherence to classical principles cannot be achieved.
+
+This is an insight that we can now formalize in terms of logic. In particular, we can formalize it as a \emph{social} rationality principle, a claim about deliberative models. There might be many different ways of doing this, but for now let us consider the following intuitive candidate axiom for classically rational deliberation:
+\begin{equation}\label{crat}
+\models_\sem \cdia \phi \lor \cdia \neg \phi
+\end{equation}
+It says that for all argumentative states, at all states in any corresponding deliberative model, it should be the case that every formula can either be accepted or rejected. This, we recall, is the conditions under which the underlying argumentation framework describes a classically consistent interpretation of the semantic atoms in the model. It is easy to see that this axiom is \emph{not} true on the class of all deliberative models. Hence it captures a non-trivial principle, a genuine restriction on deliberation. However, we also notice that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely deliberative approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances. 
+
+This recognition does not in itself suggest that schema \ref{crat} should be discarded. Rather, we think it is interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. In fact, in Theorem \ref{thm1} below, we characterize the argumentative states for which scheme \ref{crat} is possible to satisfy, noting also that it includes argumentative states in which \emph{all} the agents are individually irrational.
+
+However, we believe that while classical logic can inspire standards of rationality that are more subtle, and easier to achieve, at the social than at the individual level, we should also look to other, less restrictive, principles.  Moreover, the discussion above suggests that we are now in a position to define the following two different kinds of social rationality principles, which can help us to provide more structure to future inquiries.
+
+\begin{itemize}
+\item Liberal principles: Rationality constraints that do not force us to restrict the set of argumentative states that we consider possible. 
+\item Idealistic principles: Rationality constraints that require us to restrict the set of possible argumentative states.
+\end{itemize}
+
+
+
+Given a choice of logical language, we can also search for formalizations of these two kinds of principles, and we can explore them using logical tools. A liberal principle definable by $\lang_1$, for instance, is some collection $\Xi \subseteq \lang_1$ of formulas (possibly infinite), such that for all $\phi \in \Xi$, for all deliberative states $\views$, there is a model $(Q,R)$ for $\views$ such that for every state $q \in Q$ we have
+$$
+\views,(Q,R),q\models \phi
+$$
+
+
+  -- we have a theory which only allows us to consider certain well-behaved argumentative states
+
+ that if we stipulate $\cdia p  \cdia \neg p$ as an axiom that should hold in every deliberative state, then 
+
+
+ seems difficult to define the appropriate kind of deliberation, however, 
+
+particularly strong normative claim, a that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
+
+The following is a formalization of the principle of classical soundness:
+
+$$
+\views \models \neg \cdia \neg \phi \to \cdia \phi
+$$
+If, in every deliberative state, the impossibility of $\neg \phi$ implies the existence of $\phi$, then the model maintains adherence to classical principles as a semantic invariant, both in terms of interpretation and evaluation.
+
+The problem is that not all argumentative states give rise to any non-trivial deliberative models that satisfy this constraint. Hence the requirement is not possible to express merely as a requirement on the process of deliberation. It also requires imposing normative requirements on individual reasoners. For instance, in cases when all reasoners agree already, and they are all unsound in their reasoning, irrationality will prevail regardless of deliberation. Hence the strict classical assumption is not warranted, if we take seriously the stipulation that argument production, rather than soundness, is the function of reasoning (also in a normative sense).
+
+However, we can consider other standards which are influenced by the classical standard, and perhaps seeks to reach it in as many cases as possible. For instance, we can stipulate that everyone should have their voices hears, so as to minimize the chance of one view being enforced against all others. Thus we arrive at the principle that deliberation should be organized in an egalitarian manner. How can we formalize such an idea?
+
+One possible protocol is arrived at if we say that the majority opinion should always be adhered to, regarding what interpretation we should regard as successful following deliberation. This, however, appears to be rather too strict as well, albeit in a different way. In fact, if we break ties arbitrarily, it defines a unique deliberative state which is the eventual outcome of every debate: the one defined by taking the relationship between every $x,y$ to be determined by whether or not a majority of the agents believe that one attacks the other. In this case there is hardly any need for further logical analysis -- the outcome is given, once and for all. However, it is also a highly unsatisfactory account of deliberation, the purpose of which is precisely to allow positions and semantic interpretations to develop dynamically as agents interact in various ways, attempting to influence each other and the common ground. 
+
+In fact, we believe it is not the role of logic to pinpoint the exact outcome of deliberation, but to explore rather the space of possibilities, describing restrictions by stipulating invariant formulas -- logical principles that should be true across all possibilities -- not by explicitly defining the set of possible outcomes by way of mathematical models.
+
+There are several ways to do this, each reflecting a different level of ambition about what logical methods have to offer. First, we can use logic merely as a modeling language, allowing us to encode concrete scenarios in a precise way, to talk about them in formal language, and to employ model checkers to decide if given claims are true in a given scenario. In this regard, there is little doubt that logic has something to offer, and we show some examples of this in Subsection \ref{sec:modeling}. Second, we can use logic to study normative constraints that are mathematically defined and which restricts, or adds structure to, the models we allow ourselves to consider. This promises formalization of general theoretical constructs, not limited to modeling of concrete scenarios, that we can then study using formal tools. However, the extent to which this is a fruitful line of inquiry depends on the extent to which we can provide mathematically reasonable definitions of key concepts. In Subsection \ref{sec:truls} we argue that this line of research is also promising, and we do so by making a concrete suggestion as to how a normative notion of rational deliberation can be encoded by a special class of deliberative models that satisfies certain constraints. Thirdly, and most ambitiously, we can attempt to \emph{axiomatically define} notions of good argumentative deliberation, defining key concepts directly in the object language of some suitable logic, and studying them using reasoning systems developed for that logic. This raises both the question of what meaningful general notions we can capture by restrictions on models and also the question of how expressive logics we need to express these restrictions in the object language. It raises many interesting and tricky questions, for instance regarding the adequacy, decidability and computational complexity of the resulting systems. In Subsection \ref{sec:sjur} we argue that even this use of logic shows promise with regards to the argumentative theory, and we discuss possible axioms of deliberation that we believe deserve further scrutiny.
+
+\subsection{Using deliberative models to represent instances of argumentative interaction}
+
+\subsection{Using restricted classes of deliberative models to study notions of rationality and ``good" argumentative interaction}
+
+\subsection{The search for axiomatic characterization of rational argumentative interaction}
+
+ 
+There are two possible approached for the further study of rationality by way of deliberative logic, moving beyond the mere descriptive modeling of concrete deliberative scenarios, keeping track of the relevant information, to the normative questions of the \emph{design} of such processes.
+
+\begin{itemize}
+\item We can model and study normative constraints on deliberation semantically by considering restricted classes of deliberative models which are deemed to correspond to ``good" deliberation. We introduce one such restricted class in Subsection \ref{sec:truls} below, intended to model liberal, open deliberation, where it is explicitly forbidden to enforce given restrictions on the course of debate. 
+\item We can define normative constraints corresponding to classes of models in the object language, using both known and new systems of temporal logic. We present an example of this in Subsection \ref{sec:sjur} below.
+\end{itemize}
+
+
+
+using logical languages that express properties of deliberative models? This is a question we must mostly leave for future technical work, but we make some preliminary observations. For instance, when it comes to the 
+
+This, then, suggests that the notion is too strong. 
+
+
+given a set of deliberative states $Q$ and a relation between them, encoding how deliberation unfolds, we can use modal logic to reason about the deliberative structure that results. This leads to the following definition of a deliberative Kripke model.
+
+
+
+First we need to decide what we 
+ It seems that the way in which deliberation takes place, and the mechanism by which a joint view is produced
+
+ reach \emph{agreement} on how arguments are related. That is, we are interested in the set of all AFs that can plausibly be seen as resulting from a \emph{consensus} regarding the status of the arguments in $\Pi$. What restrictions is it reasonable to place on a consensus? It seems that while many restrictions might arise from pragmatic considerations, and be implemented by specific protocols for ``good'' deliberation in specific contexts, there are few restrictions that can be regarded as completely general. For instance, while there is often good reason to think that the position held by the majority will be part of a consensus, it is hardly possible to stipulate an axiomatic restriction on the notion of consensus amounting to the principle of majority rule. Indeed, sometimes deliberation takes place and leads to a single dissenting voice convincing all the others, and often, these deliberative processes are far more interesting than those that transpire along more conventional lines. However, it seems reasonable to assume that whenever \emph{all} agents agree on how an argument $p$ is related to an argument $q$, then this relationship is part of any consensus. This, indeed, is the only restriction we will place on the notion of a consensus; that when the AF $\af$ is a consensus for $\basis$, it must satisfy the following \emph{faithfulness} requirement.
+
+\begin{itemize}
+\item \emph{For all $p,q \in \Pi$, if there is no disagreement about $p$'s relationship to $q$ (attack/not attack), then this relationship is part of $\af$}
+\end{itemize}
+
+This leads to the following definition of the set $\cons \views$, which we will call the set of \emph{complete assents} for $\views$, collecting all AFs that are faithful to $\views$.
+
+\begin{equation}\label{def:consensus}
+\cons \views = \left\{\af \subseteq \Pi \times \Pi ~\left|~ \bigcap_{a \in \agents}V_a \subseteq \af \subseteq \bigcup_{a \in \agents}V_a\right.\right\}
+\end{equation}
+
+An element of $\cons \views$ represents a possible consensus among agents in $\agents$, but it is an \emph{idealization} of the notion of assent, since it disregards the fact that in practice, assent tends to be \emph{partial}, since it results from a dynamic process, emerging through \emph{deliberation}. Indeed, as long as the number of arguments is not bounded we can \emph{never} hope to arrive at complete assent via deliberation. We can, however, hope to initiate a process by which we clarify the status of more and more arguments, in the hope that this will approximate some complete assent. If we are lucky, it might even turn out to be \emph{robust}, in the sense that there is \emph{no} deliberative future where the results of current partial assent end up being undermined. Complete assent, however, arises only in the limit.
+
+In practice, we can only every analyze this limit by looking at smaller parts of the whole, some partial consensus that has been obtained through deliberation. Hence we define a \emph{deliberative state} as a tuple $q = (q_S,q_E)$ such that $q_S \subseteq \Pi$ and 
+\begin{equation}\label{eq:ds}
+\bigcap_{a \in \agents}\restr {V_a} {q_S} \subseteq q_E \subseteq \bigcup_{a\in \agents} \restr{V_a}{q_S}
+\end{equation}
+So a deliberative state $q$ is an AF $q_E$ such that all attacks of $q_E$ are between arguments of $q_S$. Moreover, $q$ is faithfully generated from the views of the agents; $q_E$ only contains semantic information that is present in at least one agents' view. Now we are ready to define deliberative Kripke models.
+
+\begin{definition}\label{main}
+Given a basis $\views$, a deliberative Kripke model with respect to $\views$ is a tuple $(Q,R)$ where $Q$ is a set of deliberative states for $\views$ and $R \subseteq Q \times Q$ is a relation on $Q$.
+\end{definition}
+We will reason about deliberative Kripke models using the following language.
+$$ \phi \quad ::= \cdia \alpha \ \mid \ \cdia_a \alpha ~|~ \neg \phi ~|~ \phi \wedge \phi ~|~ \ddia p \phi ~|~ \adia \phi$$ 
+where $p \in \Pi$, $\alpha \in \lang$ and $a \in \agents$.
+
+\section{Discussion and future work}\label{sec:fut}
+
+\section{Conclusion}\label{sec:conc}
+
+\end{document}
