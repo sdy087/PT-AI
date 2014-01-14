@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[greybox]{svmult}
 
 \usepackage{proof}
 \usepackage{amsthm}
@@ -14,15 +14,15 @@
 \usetikzlibrary{arrows}
 \usepackage{algorithm2e}
 %\usepackage{fontenc}
-
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem{conjecture}[thm]{Conjecture}
-\newtheorem{definition}[thm]{Definition}
-\newtheorem{proposition}[thm]{Proposition}
-\newtheorem{example}[thm]{Example}
-\newtheorem{exer}[thm]{}
+%
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{cor}[thm]{Corollary}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{conjecture}[thm]{Conjecture}
+%\newtheorem{definition}[thm]{Definition}
+%\newtheorem{proposition}[thm]{Proposition}
+%\newtheorem{example}[thm]{Example}
+%\newtheorem{exer}[thm]{}
 
 \graphicspath{{./white-japan/img/}}
 
@@ -237,15 +237,15 @@ This toy example illustrates that with the machinery now in place we can formall
 
 This is an insight that we can now formalize in terms of logic. In particular, we can formalize it as a \emph{social} rationality principle, a claim about deliberative models. There might be many different ways of doing this, but for now let us consider the following intuitive candidate axiom for classically rational deliberation:
 \begin{equation}\label{crat}
-\models \cdia \phi \lor \cdia \neg \phi
+\models_\sem \cdia \phi \lor \cdia \neg \phi
 \end{equation}
-It states that for all argumentative states, at all states in any deliberative model, it should be the case that every formula is either accepted or rejected. This, we recall, is the conditions under which the underlying argumentation framework describes a classically consistent interpretation of the semantic atoms in the model. It is easy to see, however, that this axiom is \emph{not} true on the class of all deliberative models. This need not be a problem, however, since we might as well take the axiom schema as a normative theory of deliberation that defines a class of well-behaved scenarios. We notice, however, that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. 
+It says that for all argumentative states, at all states in any corresponding deliberative model, it should be the case that every formula can either be accepted or rejected. This, we recall, is the conditions under which the underlying argumentation framework describes a classically consistent interpretation of the semantic atoms in the model. It is easy to see that this axiom is \emph{not} true on the class of all deliberative models. Hence it captures a non-trivial principle, a genuine restriction on deliberation. However, we also notice that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely social, non-reductionist, approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances. 
 
-Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely social, non-reductionist, approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances. That is not to say that schema \ref{crat} should be discarded. Rather, we think it will be interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. But we do believe that it suggests the need to also other notions, which can also provide normative guidance in cases when classical consistency is not possible to obtain. Moreover, we are now in a position to define two different kinds of social rationality principles, which will help us structure our future inquiries.
+This recognition does not in itself suggest that schema \ref{crat} should be discarded. Rather, we think it will be interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. But we do believe that it suggests the need to also other notions, which can also provide normative guidance in cases when classical consistency is not possible to obtain. Moreover, we are now in a position to define two different kinds of social rationality principles, which will help us structure our future inquiries.
 
 \begin{itemize}
-\item Liberal principles: Social rationality constraints that do not force us to restrict the set of argumentative states that we considered possible. 
-\item Idealistic principles: Social rationality constraints that require us to restrict the set of possible argumentative states.
+\item Liberal principles: Rationality constraints that do not force us to restrict the set of argumentative states that we considered possible. 
+\item Idealistic principles: Rationality constraints that require us to restrict the set of possible argumentative states.
 \end{itemize}
 
 Given a choice of logical language, we can also formalize these two kinds of principles, and we can explore them using logical tools. A liberal principle definable by $\lang_1$, for instance, is some collection $\Xi$ of formulas (possibly infinite), such that for all $\phi \in \Xi$, for all deliberative states $\views$, there is a model $(Q,R)$ for $\views$ such that for every state $q \in Q$ we have
