@@ -233,7 +233,35 @@ Given an argumentation semantics $\sem$, an argumentative state $\views$ and a c
  
 We use the shorthand $\abox \phi := \neg \adia \neg \phi$ as usual. Let us consider the model from Figure \ref{fig:del1} as an example. Then it is easy to verify that $\views, (Q,R), q_0 \models_\sem \abox \abox \cdia \neg x$, expressing how two steps of deliberation will necessarily suffice to resolve $a$'s semantic problems with $x$ in this scenario. However, if we add a reflexive edge $(q_1,q_1)$ to this model, to encode uncertainty about whether agent $b$'s view will survive deliberation, we obtain only the weaker $\views, (Q,R),q_0 \models_\sem \adia \adia \cdia \neg x$.
 
-The idea implicit in \cite{whyreason} -- that deliberation not only can, but \emph{should}, result in classically sound conclusions -- is a particularly strong normative claim that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
+This toy example illustrates that with the machinery now in place we can formally model a sense in which deliberation can sometimes turn individual views that classical logic deems problematic into deliberative states that are classically consistent. The requirement that deliberation should be organized in such a way that it \emph{always} function like this, can then at first sight appear as a good candidate for a normative notion of rationality imposed at the social level. It is a very strong notion, however, and it is problematic because it is not wholly social -- a requirement to the effect that the outcome of deliberation should always be classically consistent \emph{must} also involve restriction on what individual views we permit agents to endorse. This is easy to see intuitively. The case of a system with a single agent who believes something absurd, for instance, or a system with many agents where all agree on a contradiction, are obvious examples. The fact that deliberation alone cannot ensure consistency in such cases seems hard to dispute, and it also implies that classical consistency might not be suited as a rationality norm, not even at the social level. This, in particular, is true if we take seriously the argumentative theory, and attempt to create standards that can be applied to \emph{actual} reasoners, even if the circumstances are such that an outcome in complete adherence to classical principles cannot be achieved.
+
+This is an insight that we can now formalize in terms of logic. In particular, we can formalize it as a \emph{social} rationality principle, a claim about deliberative models. There might be many different ways of doing this, but for now let us consider the following intuitive candidate axiom for classically rational deliberation:
+\begin{equation}\label{crat}
+\models \cdia \phi \lor \cdia \neg \phi
+\end{equation}
+It states that for all argumentative states, at all states in any deliberative model, it should be the case that every formula is either accepted or rejected. This, we recall, is the conditions under which the underlying argumentation framework describes a classically consistent interpretation of the semantic atoms in the model. It is easy to see, however, that this axiom is \emph{not} true on the class of all deliberative models. This need not be a problem, however, since we might as well take the axiom schema as a normative theory of deliberation that defines a class of well-behaved scenarios. We notice, however, that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. 
+
+Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely social, non-reductionist, approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances. That is not to say that schema \ref{crat} should be discarded. Rather, we think it will be interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. But we do believe that it suggests the need to also other notions, which can also provide normative guidance in cases when classical consistency is not possible to obtain. Moreover, we are now in a position to define two different kinds of social rationality principles, which will help us structure our future inquiries.
+
+\begin{itemize}
+\item Liberal principles: Social rationality constraints that do not force us to restrict the set of argumentative states that we considered possible. 
+\item Idealistic principles: Social rationality constraints that require us to restrict the set of possible argumentative states.
+\end{itemize}
+
+Given a choice of logical language, we can also formalize these two kinds of principles, and we can explore them using logical tools. A liberal principle definable by $\lang_1$, for instance, is some collection $\Xi$ of formulas (possibly infinite), such that for all $\phi \in \Xi$, for all deliberative states $\views$, there is a model $(Q,R)$ for $\views$ such that for every state $q \in Q$ we have
+$$
+\views,(Q,R),q\models \phi
+$$
+
+
+  -- we have a theory which only allows us to consider certain well-behaved argumentative states
+
+ that if we stipulate $\cdia p  \cdia \neg p$ as an axiom that should hold in every deliberative state, then 
+
+
+ seems difficult to define the appropriate kind of deliberation, however, 
+
+particularly strong normative claim, a that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
 
 The following is a formalization of the principle of classical soundness:
 
