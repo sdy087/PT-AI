@@ -231,7 +231,7 @@ Given an argumentation semantics $\sem$, an argumentative state $\views$ and a c
 \end{itemize}
 \end{definition}
  
-For instance, on the model from Figure \ref{fig:del1} we easily see that $\views, (Q,R), q_0 \models_\sem \adia \adia \cdia \neg x$, expressing how two steps of deliberation suffices to resolve $a$'s semantic problems with $x$.
+We use the shorthand $\abox \phi := \neg \adia \neg \phi$ as usual. Let us consider the model from Figure \ref{fig:del1} as an example. Then it is easy to verify that $\views, (Q,R), q_0 \models_\sem \abox \abox \cdia \neg x$, expressing how two steps of deliberation will necessarily suffice to resolve $a$'s semantic problems with $x$ in this scenario. However, if we add a reflexive edge $(q_1,q_1)$ to this model, to encode uncertainty about whether agent $b$'s view will survive deliberation, we obtain only the weaker $\views, (Q,R),q_0 \models_\sem \adia \adia \cdia \neg x$.
 
 The idea implicit in \cite{whyreason} -- that deliberation not only can, but \emph{should}, result in classically sound conclusions -- is a particularly strong normative claim that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
 
