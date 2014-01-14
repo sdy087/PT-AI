@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  14 JAN 2014 23:12
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  14 JAN 2014 23:51
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -724,11 +724,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 LaTeX Warning: Unused global option(s):
     [greybox].
 
-(C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux
-
-LaTeX Warning: Label `eq:ds' multiply defined.
-
-)
+(C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
@@ -754,7 +750,8 @@ LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for LRM/frum/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -816,7 +813,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+
+LaTeX Warning: Reference `sec:fut' on page 3 undefined on input line 93.
+
+[3]
 
 LaTeX Warning: Citation `whyreason' on page 4 undefined on input line 103.
 
@@ -853,7 +854,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.29004> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.10005> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
  [6] <xymatrix 2x1 92> <xymatrix 2x1 106> [7] <xymatrix 2x2 110> <xymatrix
-2x2 155> <xymatrix 2x2 237> <xymatrix 2x2 202> <xymatrix 2x2 202> [8] [9]
+2x2 155> <xymatrix 2x2 237> [8] <xymatrix 2x2 202> <xymatrix 2x2 202> [9]
 
 LaTeX Warning: Citation `whyreason' on page 10 undefined on input line 222.
 
@@ -877,62 +878,43 @@ LaTeX Warning: Reference `sec:theory' on page 13 undefined on input line 281.
 
 LaTeX Warning: Citation `whyreason' on page 13 undefined on input line 285.
 
-[13]
 
-LaTeX Warning: Reference `thm1' on page 14 undefined on input line 302.
+LaTeX Warning: Reference `sec:rain' on page 13 undefined on input line 288.
 
-[14] [15]
+[13] <xymatrix 2x2 168> [14]
 
-LaTeX Warning: Reference `sec:modeling' on page 16 undefined on input line 343.
+LaTeX Warning: Reference `thm1' on page 15 undefined on input line 319.
 
-
-
-LaTeX Warning: Reference `sec:truls' on page 16 undefined on input line 343.
-
-
-LaTeX Warning: Reference `sec:sjur' on page 16 undefined on input line 343.
-
-[16]
-
-LaTeX Warning: Reference `sec:truls' on page 17 undefined on input line 355.
-
-
-LaTeX Warning: Reference `sec:sjur' on page 17 undefined on input line 356.
-
-[17] [18] [19] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+[15] [16] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 16959 strings out of 494045
- 288876 string characters out of 3148380
- 383523 words of memory out of 3000000
- 19892 multiletter control sequences out of 15000+200000
- 57391 words of font info for 131 fonts, out of 3000000 for 9000
+ 16951 strings out of 494045
+ 288781 string characters out of 3148380
+ 381488 words of memory out of 3000000
+ 19888 multiletter control sequences out of 15000+200000
+ 54183 words of font info for 125 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,20n,55p,2182b,939s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\allrunes\d
-pi600\fruamn.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/rsfs
-/rsfs10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (19 pages, 203674 bytes).
+ 56i,20n,55p,1841b,939s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/hoekwater/rsfs/rsfs10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
+mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on pt-ai_final.pdf (16 pages, 193114 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

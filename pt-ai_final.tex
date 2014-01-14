@@ -166,7 +166,9 @@ $$
 \end{array}
 \end{equation}
 
-\begin{example}[Rain in Bergen]\label{ex:run}
+The crucial challenge that remains, and which will be addressed in the next section, is to find a mechanism for formally introducing an appropriate kind of multi-agent interaction and dynamics, suitable for representing the argumentative theory. This is the question we address in the following section.
+
+\subsection{Extended example: Rain in Bergen}\label{ex:run}
 
 We consider a simple example which motivates the need for introducing subjective views, suggesting also some shortcomings of a traditional approach to argumentation in the context of multi-agent deliberation. We assume given two agents $a,b$ who argue about whether it will rain in Bergen today, where $r$ represent the claim that it will rain, while $\overline r$ represent the claim that it will not. Let us first assume that none of the agents actually argue in favor of their positions. However, assuming that the disagreeing parties recognize that they disagree, the positions themselves play an argumentative role, and the AF shown on the left below represents the initial state of disagreement. So far, in particular, the model appears to be an uncontroversial objective representation of the state of affairs. There is not yet any discernible need for introducing subjective views. 
 $$
@@ -209,9 +211,7 @@ $$
 It seems clear that these views are consistent with the actual exchange of arguments described earlier, and that they might easily come to result in deliberative events that appear in this form. We notice, moreover, that according to the views depicted here, both $b$ and $a$ acknowledge that their respective arguments for and against rain are correct, yet they also both think that their own argument is stronger, in that it attacks also the other agent's argument, but not vice versa. This might result, for instance, because the weather report gives $a$ reason to doubt that $b$ is telling the truth about the puddle, while seeing the puddle gives $b$ reason to doubt the relevance of the weather report. Importantly, it might not be rational of $a$ and $b$ to disagree about how their arguments are related, but that they would do so is nevertheless consistent with the fact that reasoners often tend to display confirmation bias, putting more weight on evidence in support of their own beliefs.
 
 Importantly, if we now look at the AFs encoding their views rather than the AF encoding the actual exchange of arguments, there is no longer any intuitive reason to think that the outcome of deliberation should permit us to conclude that it rains in Bergen. This, in particular, is a conclusion that relies on an interpretation that recognizes the attack $(p,w)$ to encode correct semantic information about $p$ and $w$. But his view shows that agent $a$ disagrees with agent $b$ in this regard, and so we reach the more appropriate conclusion that it is unwarranted to assume that $(p,q)$ will come to influence the outcome of deliberation. In order to even begin talking about this outcome, in particular, we need first to specify an aggregated view on the semantic meaning of the arguments involved. Depending on how this interpretation is constructed, the outcome will be different. A dynamic logic based on this starting point, focusing on the development of an aggregated interpretation of meaning, is what we are aiming at. We already see how subjective views are needed to facilitate its development.
-\end{example}
 
-The crucial challenge that remains, and which will be addressed in the next section, is to find a mechanism for formally introducing an appropriate kind of multi-agent interaction and dynamics, suitable for representing the argumentative theory. This is the question we address in the following section.
 
 \section{Argumentative deliberation: Towards formalization of rational interaction using dynamic argumentation logic}\label{sec:ddl}
 
@@ -278,18 +278,35 @@ Given an argumentation semantics $\sem$, an argumentative state $\views$ and a c
  
 We use the shorthand $\abox \phi := \neg \adia \neg \phi$ as usual. Let us consider the model from Figure \ref{fig:del1} as an example. Then it is easy to verify that $\views, (Q,R), q_0 \models_\sem \abox \abox \cbox \neg x$, expressing how two steps of deliberation will necessarily suffice to resolve $a$'s semantic problems with $x$ in this scenario, leading us to conclude $\neg x$ at the social level. However, if we add a reflexive edge $(q_1,q_1)$ to this model, to encode uncertainty about whether agent $b$'s view will survive deliberation, we obtain only the weaker $\views, (Q,R),q_0 \models_\sem \adia \adia \cdia \neg x$. It is still \emph{possible} that the problems at $x$ are resolved, but this is no longer necessarily so.
 
-This toy example illustrates that with the machinery now in place we can formally describe how deliberation can sometimes turn individual views that classical logic deems problematic into deliberative states that are classically consistent. This is a mechanism that is stressed as being crucial in the argumentative theory of reason, and in Subsection \ref{sec:examples} we provide more examples of how deliberative models can be used as a modeling formalism capable of representing it, allowing us also to express and explore it using logic. However, we can also be more ambitious on behalf of the logical approach, seeking to move beyond mere modeling of concrete instances, towards formalization of theoretic concepts and principles. We provide a preliminary exploration of this line of inquiry in Subsection \ref{sec:theory}, arguing that it shows great promise, but also that it suggests development of more subtle logical tools which can allow us to introduce more structure to our semantics, and that can give us access to the expressive power of more complex modal languages. 
+This toy example illustrates that with the machinery now in place we can formally describe how deliberation can sometimes turn individual views that classical logic and traditional notions of rationality deems problematic into deliberative states that are classically consistent. This is a mechanism that is stressed as being crucial in the argumentative theory of reason, and in Subsection \ref{sec:examples} we provide some more examples of how deliberative models provides a specification formalism capable of representing it, allowing us also to express and explore this mechanism using logic. However, we can also be more ambitious on behalf of the logical approach, seeking to move beyond mere modeling of concrete instances, towards formalization of theoretic concepts and principles. We provide a preliminary exploration of this line of inquiry in Subsection \ref{sec:theory}, arguing that it shows great promise, but also that it suggests development of more subtle logical tools which can allow us to introduce more structure to our semantics, and that can give us access to the expressive power of more complex modal languages. 
 
-\subsection{Using deliberative models to represent concrete instances of argumentative reasoning and interaction}\label{sec:examples}
+\subsection{Using deliberative model to represent concrete instances of argumentative interaction}\label{sec:examples}
 
-In \cite{whyreason}, one of the primary claims concerns cognitive bias, the mechanism by which reasoners disproportionately tend to favor reasons that support previous beliefs rather than challenge them. According to the authors, this bias is not necessarily an example of flawed reasoning since it has an argumentative function that can serve to enhance the positive effects of deliberation. This claim is supported by empirical evidence, and in this section we show how scenarios where cognitive bias plays such a constructive role can be represented by deliberative models and reasoned with using modal logic. Following this, we go on to consider some more examples which we believe illustrate that as an approach to modeling, the formal framework suggested in this paper appears to be both flexible and expressive. 
+In \cite{whyreason}, one of the primary claims concerns confirmation bias, the mechanism by which reasoners disproportionately tend to favor reasons that support previous beliefs rather than challenge them. According to the authors, this bias is not necessarily an example of flawed reasoning since it has an argumentative function that can serve to enhance the positive effects of deliberation. This claim is supported by empirical evidence, and in this section we show how scenarios where cognitive bias plays such a constructive role can be represented by deliberative models and reasoned with using modal logic. Following this, we go on to consider some more examples which we believe illustrate that as an approach to modeling, the formal framework suggested in this paper appears to be both flexible and expressive. 
+
+\begin{example}[Rain in Bergen revisited]
+We return to the Bergen rain example, considered in depth in Subsection \ref{sec:rain} as an illustration of how traditional, non-subjective, approaches to argumentation can not do justice to the form of argumentative deliberation considered in the argumentative theory of reason. 
+
+indeed, this is also witnessed by our example; it is this "irrational" stance that serves to distinguish the views of ${\bf a}$ and ${\bf b}$, thereby making non-trivial consensus possible without violating truthfulness. 
+
+So what do we get? Well, if disagreement runs deep and blocks consensus, then, eventually, the result will be the deliberative state that is simply the union of their two views. Then it is not hard to see that everything consistent is a possible outcome -- both $\{w,\bar r\}$ and $\{r,p\}$ are admissible in the resulting AF. In this case, then, debating only served to establish the social fact that the question of whether it will rain in Bergen is still a thorny one in the social group $\{a, b\}$. However, if the agents are willing to consider a consensus, then they can settle on either $r$ or $\bar r$, and, moreover, they can also choose to conclude, in agreement, that the available evidence is \emph{insufficient} to draw any conclusion. This in particular, is the outcome resulting from the following deliberative state, which emerges form debate if the agents are prudent and reach the consensus that the intersection of their views should be adopted.
+$$
+\xymatrix{ w \ar[d] & p \ar[d] \\
+r \ar@/_/[r] & \bar r \ar@/_/[l] }
+$$
+Here, both $w$ and $p$ are regarded as successful, meaning that \emph{both} $r$ and $\bar r$ becomes defeated and impossible to accept.\footnote{The first step of our project will focus on logically examining spaces of possible rational outcomes, such as that identified here. We remark, however, that a natural next step is to try to investigate which one of these would actually result from cooperation, given some assumptions about the faculties of the agents involved, and depending on how arbitration takes place inside coalitions.} This particular consensus outcome is particularly interesting since it seems plausible that in an actual debate, this is what one would get. More importantly still, it might be the outcome we \emph{should} get. After all, it represent both a clear conclusion, and also a "fair" one in light of the evidence, where neither agent looses on grounds that he believes to be unreasonable. More interesting still, it is, as we mentioned, a consequence of the model that this outcome is only achievable because the agents display confirmation bias with respect to their own arguments; logically, there is little doubt that the two arguments, pulling in opposite directions, attack each other. Yet from the fact that each agent underestimates his opponent's arguments beyond what is rationally warranted, a situation is created whereby deliberation may result in a non-trivial, reasonable interpretation that produces an unambiguous and fair outcome to end the disagreement regarding whether or not it will rain in Bergen today. There is, as usual in Bergen, no way of knowing for sure.
+\end{example}
+
+\begin{example}[Two wrongs that make a right]\label{ex:wr}
+
+\end{example}
+
+\begin{example}[An agreement that disagrees with itself]\label{ex:ad}
+
+\end{example}
 
 
-
-
-
-Then we move on to consider some other mechanisms in a similar vein, including a consequence of the same 
-
+\subsection{The search for formal characterization of rational argumentative interaction}\label{sub:for}
 
 The requirement that deliberation should be organized in such a way that it \emph{always} function like this might then suggest itself as a good candidate for a normative notion of rationality imposed at the social level. It is a very strong notion, however, and it is potentially problematic also because it is not in fact wholly social -- a requirement to the effect that the outcome of deliberation should always be classically consistent \emph{must} also involve restriction on what individual views we permit agents to endorse. This is easy to see intuitively. The case of a system with a single agent who believes something absurd, for instance, or a system with many agents where all of them agree on a contradiction, are obvious examples. The fact that deliberation alone cannot ensure consistency in such cases seems hard to dispute, and it also implies that classical consistency might not be a very helpful rationality norm, when focus now shifts to the social level. This, in particular, is true if we take seriously the argumentative theory, and attempt to create standards that can be applied to \emph{actual} reasoners, even if the circumstances are such that an outcome in complete adherence to classical principles cannot be achieved.
 
@@ -308,13 +325,14 @@ However, we believe that while classical logic can inspire standards of rational
 \item Idealistic principles: Rationality constraints that require us to restrict the set of possible argumentative states.
 \end{itemize}
 
-
-
 Given a choice of logical language, we can also search for formalizations of these two kinds of principles, and we can explore them using logical tools. A liberal principle definable by $\lang_1$, for instance, is some collection $\Xi \subseteq \lang_1$ of formulas (possibly infinite), such that for all $\phi \in \Xi$, for all deliberative states $\views$, there is a model $(Q,R)$ for $\views$ such that for every state $q \in Q$ we have
 $$
 \views,(Q,R),q\models \phi
 $$
 
+\section{Conclusion}\label{sec:conc}
+
+\end{document}
 
   -- we have a theory which only allows us to consider certain well-behaved argumentative states
 
