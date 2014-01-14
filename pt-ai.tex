@@ -190,6 +190,49 @@ If some information regarding the semantic relationship between two arguments is
 
 In particular, we do not allow deliberation to result in interpretations that deviate from interpretations that are held unanimously by the agents. If everyone agrees on the meaning of an argument, the argument has this meaning, no matter how deliberation proceeds. As we will see, however, this does not entail that a possible  unanimity regarding the acceptance status of an argument is necessarily reflected in the view aggregated by deliberation. For instance, even if all agents agree that $p$ should be accepted, it is quite possible that $p$ will not be accepted after deliberation. If the agents differ in their account of \emph{why} $p$ should be accepted, in particular, deliberation might lead to the rejection of $p$, initial unanimity regarding $p$ notwithstanding, see Example ... for a concrete scenario. This in itself is interesting, and it suggests that subtle questions and phenomena arise when we attempt to be more precise about our normative claims regarding deliberative rationality.
 
+Towards formal precision, we now define the core notion of a \emph{deliberative Kripke model}
+
+\begin{definition}\label{def:dk}
+Given a deliberative state $\views$, a deliberative Kripke model for $\views$ is a tuple $(Q,R)$ such that
+\begin{itemize}
+\item $Q$ is a set of deliberative states for $\views$
+\item $R$ is a relation $R \subseteq Q \times Q$
+\end{itemize}
+\end{definition}
+
+The idea is that the relation $R$ encodes a concrete deliberation based on the views in $\basis$. If $(q_1,q_2) \in Q$ the intuition is that there is some event that can take place in the deliberative state $q_1$ so that the aggregated views of the arguments is updated, taking us to the deliberative state $q_2$. In the first instance, we abstract away from events that can induce such a link, but this could be some agent presenting his point of view, or it could be some joint effort to reach a decision about some argument. The latter type of event will be encoded in Subsection \ref{sec:truls} where we take it as the basis for defining the class of open deliberations, which we propose as a possible candidate for a rationality constraint at the social level. For now, we are content with leaving the exact content of event unspecified. 
+
+As an example of a deliberative model, consider the framework in Figure \ref{fig:del1}. Here, the argumentative state is problematic from the point of view of classical logic. In particular, we have $\views \models_\sem \neg \cdia_a x \land \neg \cdia_a \neg x$ under all $\sem$ from Figure \ref{fig:sem}, encoding that for agent $a$, the argument $x$ attacks itself and is not defeated. Hence it cannot be regarded as either true or false without leading to contradiction, and agent $a$ is prevented from reaching any classically sound conclusions about the status of either argument (since he also perceives $x$ to attack $y$). The agent $b$, on the other hand, has the view that $x$ and $y$ are in opposition to each other; If one of them is accepted the other must be rejected and vice versa, but he has no information which suggests choosing one over the other. In particular, we have $\views \models_\sem \cdia_b y \land \cdia_b \neg y$. Hence from his point of view, the semantic status of $x$ and $y$ remains unclear. Through deliberation, however, it is possible to arrive at a definite outcome which also resolves the inconsistency that $a$ believes to be present at $x$. One such scenario is depicted in Figure \ref{fig:sem}, where deliberation starts with the empty framework over $\{x,y\}$ and then proceeds by agent $a$ first putting forth his point of view, resulting in $q_1$, and then continuing with agent $b$ adding to this his own understanding, which results in the deliberative state $q_2 = V_a \cup V_b$. Here there is no problem, and the status of $x$ and $y$ has been definitely resolved, since $y$ must be accepted and then $x$ will be defeated, under all semantics from Figure \ref{fig:sem}, including classical logic, as encoded by the stable semantics.
+
+\begin{figure}\label{fig:del1}
+$\begin{array}{llllll}
+V_a: \xymatrix{& x \ar[r] \ar@(lu,ld) & y}, & V_b: \xymatrix{x \ar@/_/[r] & y \ar@/_/[l] } \\ \\
+q_0: \xymatrix{ x & y }, & q_1: \xymatrix{& x \ar@(lu,ld)  \ar[r] & y }, & q_2: \xymatrix{&  x \ar@(lu,ld)  \ar@/_/[r] & y \ar@/_/[l]}
+\end{array}$
+\caption{A deliberative model $(Q,R)$ over $\views = (V_a,V_b)$ with $R = \{(q_0,q_1),(q_1,q_2)\}$}
+\end{figure}
+
+This is an example of a scenario where everything runs smoothly and there is no controversy. In particular, both agents uncritically accept adding each others' points of view to the aggregated deliberative state, resulting in the union of their views emerging as the final outcome of deliberation. Things might not be so simple, however, and it is the more complicated scenarios that can benefit the most from logical modeling. It could be for instance, that agent $a$ has reservations about agent $b$'s interpretation of $y$ as an argument that also attacks $x$. If we are unsure about agent $a$'s stance in this regard, or, more generally, unsure about whether deliberation between $a$ and $b$ will eventually return a state where the $(y,x)$ edge is included, we can model this by introducing branching in the deliberative model. In particular, we could introduce a reflexive loop at $q_1$, to indicate the possibility that $b$'s perspective might come to be rejected. Then we have a branching deliberative model, and while it is still \emph{possible} to resolve the problems with the argumentative state, deliberation can also fail. 
+
+To talk about deliberative models, allowing us to distinguish and identify situations such as these, we can use existing modal languages of varying expressive power. First we consider the following simple language $\lang_1$, which simply adds to $\lblack$ a modality for talking about one-step possibilities in deliberative models.
+
+$$
+\phi := \cdia \alpha \ \mid \ \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi \ \mid \adia \phi
+$$
+where $\alpha \in \lang$. The definition of satisfaction for $\lang_1$ on deliberative models is then defined analogously to classical modal logic.
+
+\begin{definition}\label{truth1}
+Given an argumentation semantics $\sem$, an argumentative state $\views$ and a corresponding deliberative model $(Q,R)$, the truth of $\phi \in \lang_1$ on $(Q,R)$ at $q \in Q$ is defined inductively as follows
+\begin{itemize}
+\item $\views, (Q,R),q\models_\sem \cdia \alpha$ if $\exists \clab \in \sem(q): \overline \clab(\alpha) = 1$
+\item $\views,(Q,R),q\models_\sem \cdia_a \alpha$ if $\exists \clab \in \sem(V_a): \overline \clab(\alpha) = 1$
+\item ...
+\item $\views,(Q,R),q \models_\sem \adia \phi$ if there is $q' \in Q$ s.t. $(q,q') \in R$ and $\views,(Q,R),q' \models_\sem \phi$
+\end{itemize}
+\end{definition}
+ 
+For instance, on the model from Figure \ref{fig:del1} we easily see that $\views, (Q,R), q_0 \models_\sem \adia \adia \cdia \neg x$, expressing how two steps of deliberation suffices to resolve $a$'s semantic problems with $x$.
+
 The idea implicit in \cite{whyreason} -- that deliberation not only can, but \emph{should}, result in classically sound conclusions -- is a particularly strong normative claim that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
 
 The following is a formalization of the principle of classical soundness:
@@ -213,7 +256,7 @@ There are several ways to do this, each reflecting a different level of ambition
 
 \subsection{Using restricted classes of deliberative models to study notions of rationality and ``good" argumentative interaction}
 
-\subsection{Searching for axioms of rational argumentative interaction}
+\subsection{The search for axiomatic characterization of rational argumentative interaction}
 
  
 There are two possible approached for the further study of rationality by way of deliberative logic, moving beyond the mere descriptive modeling of concrete deliberative scenarios, keeping track of the relevant information, to the normative questions of the \emph{design} of such processes.

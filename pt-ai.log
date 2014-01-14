@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  14 JAN 2014 16:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  14 JAN 2014 17:49
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai.tex
@@ -726,40 +726,55 @@ Overfull \hbox (6.6613pt too wide) in paragraph at lines 149--151
 LaTeX Warning: Citation `whyreason' on page 7 undefined on input line 177.
 
 [7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 198.
 
-LaTeX Warning: Citation `whyreason' on page 8 undefined on input line 193.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 198.
+ [8]
 
-[8]
+LaTeX Warning: Reference `sec:truls' on page 9 undefined on input line 203.
 
-LaTeX Warning: Reference `sec:modeling' on page 9 undefined on input line 210.
-
-
-LaTeX Warning: Reference `sec:truls' on page 9 undefined on input line 210.
-
-
-LaTeX Warning: Reference `sec:sjur' on page 9 undefined on input line 210.
+<xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
+<xymatrix 3x1 152>
+Underfull \hbox (badness 1158) in paragraph at lines 212--212
+[]\OT1/cmr/m/n/10 Figure 2: A de-lib-er-a-tive model $(\OML/cmm/m/it/10 Q; R\OT
+1/cmr/m/n/10 )$ over $\OMS/cmsy/m/n/10 B \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 V[
+]; V[]\OT1/cmr/m/n/10 )$ with $\OML/cmm/m/it/10 R \OT1/cmr/m/n/10 =$
+ []
 
 [9]
-Overfull \hbox (1.1848pt too wide) in paragraph at lines 214--214
+
+LaTeX Warning: Citation `whyreason' on page 10 undefined on input line 236.
+
+[10]
+
+LaTeX Warning: Reference `sec:modeling' on page 11 undefined on input line 253.
+
+
+
+LaTeX Warning: Reference `sec:truls' on page 11 undefined on input line 253.
+
+
+LaTeX Warning: Reference `sec:sjur' on page 11 undefined on input line 253.
+
+[11]
+Overfull \hbox (1.1848pt too wide) in paragraph at lines 257--257
 []\OT1/cmr/bx/n/12 Using re-stricted classes of de-lib-er-a-tive mod-els to stu
 dy
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 222.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 265.
+
+LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 265.
 
 
-LaTeX Warning: Reference `sec:truls' on page 10 undefined on input line 222.
+LaTeX Warning: Reference `sec:sjur' on page 12 undefined on input line 266.
 
-
-LaTeX Warning: Reference `sec:sjur' on page 10 undefined on input line 223.
-
-[10] [11] [12] (C:\Users\Student\Desktop\PT-AI\pt-ai.aux)
+[12] [13] [14] (C:\Users\Student\Desktop\PT-AI\pt-ai.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -768,13 +783,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16300 strings out of 494045
- 280608 string characters out of 3148380
- 367031 words of memory out of 3000000
- 19281 multiletter control sequences out of 15000+200000
+ 16331 strings out of 494045
+ 280777 string characters out of 3148380
+ 370060 words of memory out of 3000000
+ 19312 multiletter control sequences out of 15000+200000
  16185 words of font info for 61 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,12n,55p,2176b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2176b,898s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\allrunes\d
 pi600\fruamn.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -794,10 +809,11 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
-sam7.pfb>
-Output written on pt-ai.pdf (12 pages, 264648 bytes).
+sam7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on pt-ai.pdf (14 pages, 278844 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 144 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
