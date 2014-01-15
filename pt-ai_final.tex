@@ -172,7 +172,7 @@ $\begin{array}{ll}
 \label{fig:sem}
 \end{figure}
 
-We will use $\sem$ to refer to some generic argumentation semantics, i.e., such that for all AFs $E$, $\sem(E)$ is a set of three-valued assignments $\clab: \Pi \to \three$. Then we can define truth for $\lang$ on AFs by using {\L}ukasiewicz three-valued logic, which is built from defining extensions of assignments $\clab: \Pi \to \three$ inductively as follows.
+Towards a definition of an argumentative agent, we now define the inductive extension of three-valued assignments to arbitrary formulas from $\lang$, as in {\L}ukasiewicz three-valued logic as follows.
 \begin{equation}\label{eq:lsem}
 \begin{array}{l}
 \overline \clab(p) = \clab(p) \text{ for } p \in \Phi \\
@@ -181,18 +181,15 @@ We will use $\sem$ to refer to some generic argumentation semantics, i.e., such 
 \end{array}
 \end{equation}
 
-Given a semantics $\sem$, we now obtain a corresponding argumentative satisfaction relation for $\lang$, defined as follows, for all AFs $E$, all $\clab \in \sem(E)$ and all $\phi \in \lang$
-$$
-\clab \models_\sem \phi \text{ if }\bar \clab(\phi) = 1 
-$$
+This definition behaves like classical logic on the semantic values $\{0,1\}$. For an intuition of how the third value is dealt with, notice that the definition ensures that if $\clab(p) = \frac{1}{2}$, we have $\overline \clab(p \leftrightarrow \neg p) = 1$. In particular, the claim that $p$ is equivalent with its own negation is true just in case $p$ has value $\frac{1}{2}$. This means, in particular, that the logic allows us to express that some argument, or collection of arguments , have this value. This is what makes it so natural to use {\L}ukasiewicz logic to evaluate complex formulas, as opposed to some other three-valued logic, such as Kleene's logic. 
 
-This logic in itself is not very interesting, since it does not allow us to talk about $\sem(E)$ as such, only the individual assignments contained therein, which are evaluated just as in {\L}ukasiewicz logic. For instance, we can say that  if we wish to express that there is some assignment in $\sem(E)$ such that $p$ is true -- that is, to express that $p$ is \emph{possible} to conclude given the interpretation $E$, reasoning according to $\sem$, we need a \emph{modal} language. We will define it shortly, as a multi-agent modal logic for talking about agents' views of the world.   
+We are now prepared to offer our definition of an argumentative agent. To this end, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration. That is, we take argumentative agents to be equipped with a subjective interpretation of meaning, specified by an AF. We also define an \emph{argumentative state} as a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the ideas we developed in the next section.
 
-Towards the definition of an argumentative agent, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration, specified in keeping with the idea that his reasoning is based on an \emph{argumentative} understanding of meaning. Then an \emph{argumentative state} is a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the dynamic framework developed in the next section.
-
-Then, given an agent $a \in \agents$ with a view $V_A$, we can add the modality $\cdia_a$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. In particular, we get the following multi-agent language $\lblack$
+Now, given an agent $a \in \agents$ with a view $V_a$, we can add the modality $\cdia_a$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. In particular, we get the following multi-agent language $\lblack$
 $$
-\phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
+\phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. 
+
+Given an argumentative state $\views = (V_a)_{a\in \agents}$, we define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
 \begin{equation}\label{eq:asem}
 \begin{array}{l}
 \views \models_\sem \cdia_a \alpha \text{ if there is } \clab \in \sem(V_a) \text{ s.t. } \overline \clab(\alpha) = 1 \\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 16:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 16:45
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -841,38 +841,39 @@ LaTeX Warning: Citation `meESSLLI' on page 6 undefined on input line 157.
 LaTeX Warning: Citation `Arieli' on page 6 undefined on input line 157.
 
 [6] [7] <xymatrix 2x1 92> <xymatrix 2x1 106> [8] <xymatrix 2x2 110> <xymatrix
-2x2 155> <xymatrix 2x2 237> [9] <xymatrix 2x2 202> <xymatrix 2x2 202> [10]
+2x2 155> <xymatrix 2x2 237> <xymatrix 2x2 202> <xymatrix 2x2 202> [9] [10]
 
-LaTeX Warning: Citation `whyreason' on page 11 undefined on input line 257.
+LaTeX Warning: Citation `whyreason' on page 11 undefined on input line 254.
 
 [11]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 278.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 275.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 278.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 275.
 
 
-LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 283.
+LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 280.
 
 <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
-<xymatrix 3x1 152> [12] [13]
+<xymatrix 3x1 152> [12]
 
-LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 316.
+LaTeX Warning: Reference `sec:theory' on page 13 undefined on input line 313.
+
+[13]
+
+LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 317.
 
 
-LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 320.
-
-
-LaTeX Warning: Reference `sec:rain' on page 14 undefined on input line 323.
+LaTeX Warning: Reference `sec:rain' on page 14 undefined on input line 320.
 
 [14] <xymatrix 2x2 168> <xymatrix 2x3 236> <xymatrix 2x3 176> <xymatrix 2x3
 228> [15] <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [16]
 [17]
 
-LaTeX Warning: Reference `wr' on page 18 undefined on input line 401.
+LaTeX Warning: Reference `wr' on page 18 undefined on input line 398.
 
 [18] [19] [20] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
@@ -901,7 +902,7 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (20 pages, 213430 bytes).
+Output written on pt-ai_final.pdf (20 pages, 212997 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
