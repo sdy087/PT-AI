@@ -156,14 +156,14 @@ $$
 $$
 This representation corresponds to an intuitive reading where arguments in $A$ are regarded as true/successful, arguments attacked by one of these are regarded as false(failed, while all other arguments are taken to have an undecided semantic status. The three-valued representation of extensions also facilitate elegant definitions of various argumentation semantics, based on thinking of semantics as prescribing collections of three-valued assignments to AFs. In this way, it also becomes natural to reason about AFs using three-valued logic, an idea that has been explored in some recent work \cite{usSynthese,meESSLLI,Arieli}. This will be exploited in the coming sections, as we will rely on three-valued {\L}ukasiewicz logic when we evaluate complex formulas from $\lang$ on given AFs.
 
-In Figure \ref{fig:sem} we provide definitions of the most commonly known semantics based on argumentation frameworks. The logic introduced in the next section is parameterized by an argumentation semantics and the choice of such a semantics will not crucial be for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria of acceptability of arguments. Intuitively, it requires that an acceptable set must be free from internal conflict and that it must also be able to defend itself against all attacks. The other semantics in Figure \ref{fig:sem} are all based on the same idea, but adds other requirements that are less obviously reasonable. In the following we will assume only that whatever our argumentation semantics returns as an acceptable set, it is always also acceptable under the admissible semantics.
+In Figure \ref{fig:sem} we provide definitions of the most commonly known semantics based on argumentation frameworks. The logic introduced in the next section is parameterized by an argumentation semantics and the choice of such a semantics will not crucial be for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria of acceptability of arguments. Intuitively, it requires that an acceptable set must be free from internal conflict and that it must also be able to defend itself against all attacks. The other semantics in Figure \ref{fig:sem} are all based on the same idea, but adds other requirements that are less obviously reasonable. In the following we will let $\sem$ refer to some generic semantics defined in Figure \ref{fig:sem}.
 
 \begin{figure}
 $\begin{array}{ll}
 \text{\footnotesize{Admissible: }} & a(E) = \{\clab \in \proto(E) \mid  E^-(\clab^1) \subseteq \clab^0\} \\
 \text{\footnotesize{Complete:}} & c(E) =  \{\clab \in \proto(E) \mid \clab^1 = \{x \in \Pi \mid E^-(x) \subseteq \clab^0\}\} \\
 %\forall x \in \Pi: \\ & \clab(x) = 1 \iff \forall y \in E^-(x): \clab(y) = 0\} \\
-\text{\footnotesize{Grounded:}} & g(E) = \{\bigcap c(E)\} \\
+%\text{\footnotesize{Grounded:}} & g(E) = \{\bigcap c(E)\} \\
 \text{\small{Preferred:}} \ \ & p(E) = \{\clab_1 \in a(E) \mid \forall \clab_2 \in a(E): \clab^1_1 \not \subset \clab^1_2\} \\
 \text{\small{Semi-stable:}} \ \ & ss(E) = \{\clab_1 \in a(E) \mid \forall \clab_2 \in a(E): \clab^{\frac{1}{2}}_1 \not \supset \clab^{\frac{1}{2}}_2\} \\
 \text{\small{Stable:}} \ \ & s(E) = \{\clab \in a(E) \mid \clab^{\frac{1}{2}} = \emptyset\} 
@@ -181,9 +181,12 @@ We will use $\sem$ to refer to some generic argumentation semantics, i.e., such 
 \end{array}
 \end{equation}
 
-Given a semantics $\sem$, we now obtain a corresponding argumentative satisfaction relation for $\lang$, defined as follows, for all AFs $E$ and $\phi \in \lang$
+Given a semantics $\sem$, we now obtain a corresponding argumentative satisfaction relation for $\lang$, defined as follows, for all AFs $E$, all $\clab \in \sem(E)$ and all $\phi \in \lang$
 $$
-E \models_\sem \phi \text{ if } 
+\clab \models_\sem \phi \text{ if }\bar \clab(\phi) = 1 
+$$
+
+This logic in itself is not very interesting, since it does not allow us to talk about $\sem(E)$ as such, only the individual assignments contained therein, which are evaluated just as in {\L}ukasiewicz logic. For instance, we can say that  if we wish to express that there is some assignment in $\sem(E)$ such that $p$ is true -- that is, to express that $p$ is \emph{possible} to conclude given the interpretation $E$, reasoning according to $\sem$, we need a \emph{modal} language. We will define it shortly, as a multi-agent modal logic for talking about agents' views of the world.   
 
 Towards the definition of an argumentative agent, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration, specified in keeping with the idea that his reasoning is based on an \emph{argumentative} understanding of meaning. Then an \emph{argumentative state} is a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the dynamic framework developed in the next section.
 
