@@ -260,13 +260,13 @@ Certainly, this is a neat and uncontroversial depiction of the actual utterance 
 The problem, we believe, is that in this representation we failed to include information about the agents' view on each other's utterances. In a perfect world, this might not matter -- all debate might eventually be settled conclusively by brute empirical fact, such as observing actual rain as opposed to consulting weather reports and puddles. However, in such a world, deliberation would certainly not be very interesting, and it is not how it tends to play out in the real one. Rather, a debate involves crucially a search for consensus, and consensus depends crucially on how agents perceive the statements made by others, as they reflect on the totality of the debate. This is why we need to be explicit about subjective views, and always ask for a representation of how each individual agent interprets the semantic meaning of all those claims that are relevant to the scenario at hand.
 
 In particular, what is missing in the naive model of the Bergen rain debate is some account of how agent $a$ views puddles, and what agent $b$ thinks of weather reports. Let us assume that their views on this are in fact the following.
-$$
+\begin{equation}\label{rainview}
 \begin{array}{cc}
 V_{a} \hspace{3em} & V_{b} \\
 \xymatrix{ w \ar[d] \ar[r] & p \ar[d] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } \hspace{3em} &
 \xymatrix{w \ar[d] & p \ar[d] \ar[l] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] }
 \end{array}
-$$
+\end{equation}
 It seems clear that these views are consistent with the actual exchange of arguments described earlier, and that they might easily come to result in deliberative events that appear in this form. We notice, moreover, that according to the views depicted here, both $b$ and $a$ acknowledge that their respective arguments for and against rain are correct, yet they also both think that their own argument is stronger, in that it attacks also the other agent's argument, but not vice versa. This might result, for instance, because the weather report gives $a$ reason to doubt that $b$ is telling the truth about the puddle, while seeing the puddle gives $b$ reason to doubt the relevance of the weather report. Importantly, it might not be rational of $a$ and $b$ to disagree about how their arguments are related, but that they would do so is nevertheless consistent with the fact that reasoners often tend to display confirmation bias, putting more weight on evidence in support of their own beliefs.
 
 Importantly, if we now look at the AFs encoding their views rather than the AF encoding the actual exchange of arguments, there is no longer any intuitive reason to think that the outcome of deliberation should permit us to conclude that it rains in Bergen. This, in particular, is a conclusion that relies on an interpretation that recognizes the attack $(p,w)$ to encode correct semantic information about $p$ and $w$. But his view shows that agent $a$ disagrees with agent $b$ in this regard, and so we reach the more appropriate conclusion that it is unwarranted to assume that $(p,q)$ will come to influence the outcome of deliberation. In order to even begin talking about this outcome, in particular, we need first to specify an aggregated view on the semantic meaning of the arguments involved. Depending on how this interpretation is constructed, the outcome will be different. A dynamic logic based on this starting point, focusing on the development of an aggregated interpretation of meaning, is what we are aiming at. We already see how subjective views are needed to facilitate its development.
@@ -343,9 +343,23 @@ This toy example illustrates that with the machinery now in place we can formall
 In \cite{whyreason}, one of the primary claims concerns confirmation bias, the mechanism by which reasoners disproportionately tend to favor reasons that support previous beliefs rather than challenge them. According to the authors, this bias is not necessarily an example of flawed reasoning since it has an argumentative function that can serve to enhance the positive effects of deliberation. This claim is supported by empirical evidence, and in this section we show how scenarios where cognitive bias plays such a constructive role can be represented by deliberative models and reasoned with using modal logic. Following this, we go on to consider some more examples which we believe illustrate that as an approach to modeling, the formal framework suggested in this paper appears to be both flexible and expressive. 
 
 \begin{example}[Rain in Bergen revisited]
-We return to the Bergen rain example, considered in depth in Section \ref{sec:rain} as an illustration of how traditional, non-subjective, approaches to argumentation can not do justice to the form of argumentative deliberation considered in the argumentative theory of reason. 
-
-indeed, this is also witnessed by our example; it is this "irrational" stance that serves to distinguish the views of ${\bf a}$ and ${\bf b}$, thereby making non-trivial consensus possible without violating truthfulness. 
+We return to the Bergen rain example, considered in depth in Section \ref{sec:rain}. There we argued that instead of directly modeling the actual exchange of arguments, the deliberative events that took place, we should start from a representation of the agents' view of the arguments. These were given in Equation \ref{rainview}, and we argued that these views were consistent with the deliberative event under consideration. Now we can try again to model the deliberation that took place, not by making a naive description of the actual utterances, but more abstractly by seeing it as a traversal on a deliberative model. To do this, we will consider the possible effect that each utterance could have on the deliberative state, given a starting point where $r$ and $\overline r$ are in recognized mutual opposition to each other. We recall that the first event was that agent $a$ pointed out the weather report, and that the second event was that agent $b$ pointed out the puddle. This leads us then naturally to consider the following deliberative model $(Q,R)$, encoding the possible consequences of these two utterances. We depict the deliberative states  $Q$ first, and then given the relation $R$ below.
+\begin{figure}\label{rain}
+$\begin{array}{lll}
+Q: && R: \\ 
+\begin{array}{ccccccccc}
+q_0 && q_1 && q_2 \\ 
+\xymatrix{ w & p \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } &&  \xymatrix{ w \ar[d] & p \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } && \xymatrix{ w \ar[d] & p \ar[d] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } \\ \\
+q_3 && q_4 && q_5 \\
+\xymatrix{ w \ar[d] \ar[r] & p \ar[d] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } && \xymatrix{ w \ar[d] & p \ar[d] \ar[l] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } && \xymatrix{ w \ar@/_/[r] \ar[d]  & p \ar[d] \ar@/_/[l] \\ r \ar@/_/[r] & \bar r \ar@/_/[l] } \\ \\
+\end{array} && 
+\begin{array}{l} \\
+\xymatrix{ & q_2 & q_4 \\
+q_0 \ar[r] & q_1 \ar[ur] \ar[u] \ar[d] \ar[dr] \\ & q_3 & q_5 }
+\end{array}
+\end{array}$
+\caption{The deliberative model $(Q,R)$ based on the argumentative state $\views$ defined in Figure \ref{rainview}}
+\end{figure}
 
 So what do we get? Well, if disagreement runs deep and blocks consensus, then, eventually, the result will be the deliberative state that is simply the union of their two views. Then it is not hard to see that everything consistent is a possible outcome -- both $\{w,\bar r\}$ and $\{r,p\}$ are admissible in the resulting AF. In this case, then, debating only served to establish the social fact that the question of whether it will rain in Bergen is still a thorny one in the social group $\{a, b\}$. However, if the agents are willing to consider a consensus, then they can settle on either $r$ or $\bar r$, and, moreover, they can also choose to conclude, in agreement, that the available evidence is \emph{insufficient} to draw any conclusion. This in particular, is the outcome resulting from the following deliberative state, which emerges form debate if the agents are prudent and reach the consensus that the intersection of their views should be adopted.
 $$

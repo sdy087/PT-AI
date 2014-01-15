@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 17:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 18:54
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -863,39 +863,43 @@ LaTeX Warning: Citation `whyreason' on page 11 undefined on input line 281.
 LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 283.
 
 
+LaTeX Warning: Reference `sub:ex' on page 12 undefined on input line 295.
+
+
 LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 307.
 
 [12] <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
 <xymatrix 3x1 152> [13]
 
-LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 340.
+LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 339.
 
 
-LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 344.
+LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 343.
 
 [14]
 
-LaTeX Warning: Reference `sec:rain' on page 15 undefined on input line 347.
+LaTeX Warning: Reference `sec:rain' on page 15 undefined on input line 346.
 
-<xymatrix 2x2 168> [15] <xymatrix 2x3 236> <xymatrix 2x3 176> <xymatrix 2x3
-228> <xymatrix 2x2 202> <xymatrix 2x2 202> [16] <xymatrix 2x2 154> [17]
-[18]
+<xymatrix 2x2 100> <xymatrix 2x2 134> <xymatrix 2x2 168> <xymatrix 2x2 202>
+<xymatrix 2x2 202> <xymatrix 2x2 250> <xymatrix 3x3 204> [15] <xymatrix 2x2
+168> <xymatrix 2x3 236> <xymatrix 2x3 176> [16] <xymatrix 2x3 228> <xymatrix
+2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [17] [18] [19]
 
-LaTeX Warning: Reference `wr' on page 19 undefined on input line 425.
+LaTeX Warning: Reference `wr' on page 20 undefined on input line 438.
 
-[19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+[20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16955 strings out of 494045
- 288802 string characters out of 3148380
- 382517 words of memory out of 3000000
- 19895 multiletter control sequences out of 15000+200000
+ 16959 strings out of 494045
+ 288831 string characters out of 3148380
+ 386535 words of memory out of 3000000
+ 19899 multiletter control sequences out of 15000+200000
  53405 words of font info for 122 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,20n,55p,1841b,940s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,27n,55p,1841b,1003s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -910,7 +914,7 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (21 pages, 215753 bytes).
+Output written on pt-ai_final.pdf (21 pages, 218102 bytes).
 PDF statistics:
  134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
