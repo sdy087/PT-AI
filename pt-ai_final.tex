@@ -313,12 +313,22 @@ This is easy to see intuitively. The case of a system with a single agent who be
 \begin{equation}\label{crat}
 \cdia \phi \lor \cdia \neg \phi
 \end{equation}
-If we require it to be true on all models, in all points, we require stipulate the principle that for all argumentative states, at all states in any corresponding deliberative model, every formula can either be accepted or rejected. This, we recall, are conditions under which any underlying finite argumentation framework must describe a classically consistent interpretation of the semantic atoms in the model. It is easy to see that the scheme is \emph{not} valid on the class of all deliberative models. Hence it captures a non-trivial principle, a genuine restriction on deliberation. However, we also notice that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely deliberative approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances.
+If we require it to be true on all models, in all points, we require stipulate the principle that for all argumentative states, at all states in any corresponding deliberative model, every formula can either be accepted or rejected. This, we recall, are conditions under which any underlying finite argumentation framework must describe a classically consistent interpretation of the semantic atoms in the model. It is easy to see that the scheme is \emph{not} valid on the class of all deliberative models. Hence it captures a non-trivial principle, a genuine restriction on deliberation. However, we also notice that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds.    
+Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely deliberative approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances.
 
-This recognition does not in itself imply that schema \ref{crat} should be discarded. Rather, we think it is interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. In fact, for scheme \ref{crat}, we can provide the following simple characterization of those argumentative states that are permitted.
+This recognition does not in itself imply that schema \ref{crat} should be discarded. Rather, we think it is interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. Moreover, the discussion above suggests that we are now in a position to define the following two different kinds of social rationality principles, which can help us to provide more structure to future inquiries.
+
+\begin{itemize}
+\item Liberal principles: Rationality constraints that do not force us to restrict the set of argumentative states that we consider possible. 
+\item Idealistic principles: Rationality constraints that require us to restrict the set of possible argumentative states.
+\end{itemize} 
+
+An example of a liberal principle could for instance be $\neg \abox \neg p \land p$, expressing seriality of the relations used to form deliberative models, in just the same way as in classical modal logic. In the context of deliberation it would be the principle of open-endedness of debate, that there is always a deliberative next step (although at some point it might just be an endless repetition of previously visited states). A more subtle example, involving deliberative interactions, is the principle $\cdia \phi \to \adia \cdia \phi$ which expresses that if something is true in a deliberative state it should also be true in all following states, encoding commitment to previous outcomes. This is not a restriction on the kinds of relations that are allowed to exist between deliberative states, but rather a restriction on how deliberation is allowed to unfold from the argumentative state. Intuitively speaking, it restricts the kinds of deliberative events we allow. It is easy to see that it is liberal, however, since a single state without successors will always satisfy it. Note that if we add a loop to this state, it witnesses to the liberality of the principle which requires seriality plus commitment to previous outcomes; a debate that never ends and always strictly increases the set of truths it produces.
+
+For an example of an idealistic principle, it is enough to point out that scheme \ref{crat} is idealistic since it excludes certain argumentative states. In fact, we can provide a simple characterization of those argumentative states that are permitted. Let us say that an argumentative state $\views$ satisfies an axiom scheme if there is some deliberative model based on this argumentative state for which the schema is true in all states. Then we have the following result.
 
 \begin{theorem}\label{thm:1}
-For all semantics $\sem$ from Figure \ref{fig:sem}, a finite argumentative state $\views$ gives rise to at least one deliberative model where \ref{crat} is valid in all states if, and only if, there is some $E \subseteq \Pi \times \Pi$ such that
+For all semantics $\sem$ from Figure \ref{fig:sem}, a finite argumentative state $\views$ satisfies schema \ref{crat} if, and only if, there is some $E \subseteq \Pi \times \Pi$ such that
 \begin{enumerate}
 \item $\bigcap_{a \in \agents}V_a \subseteq E \subseteq \bigcup_{a \in \agents}V_a$
 \item $s(E) \not = \emptyset$
@@ -326,24 +336,21 @@ For all semantics $\sem$ from Figure \ref{fig:sem}, a finite argumentative state
 \end{theorem}
 
 \begin{proof}
-Take the conjunction of all involved arguments and note that if one is undecided so is the conjunction. Hence if there is no stable set, all admissible-based semantics will fail to make this conjunction either true or false.
+Take the conjunction of the formulas $p \lor \neg p$ for all involved arguments $p$ and note that if one is undecided so is the conjunction (since no conjunct is false). Hence if there is no stable set, all admissible-based semantics will fail to make this conjunction either true or false.
 \end{proof}
 
+This result shows that classical logic can inspire standards of rationality that are more subtle and easier to achieve at the social than at the individual level. For instance, notice how the case of two wrongs that make a right, considered in Example \ref{wr}, becomes an instance of the result, showing that according to this particular standard, intuitively corresponding to a classical principle, such a collection of views must themselves be deemed rational. But we must exclude some deliberations that they may give rise to, and how to do so effectively can be a tricky question. It is easy enough to forbid deliberations in hindsight, after discovering they went wrong. Something else, and more useful, is to describe sufficient rules that ensure that they stay on track towards an acceptable outcome. In case of a principle such as \ref{crat} this is not too hard, since one may simply forbid all deliberative states that are inconsistent. So, for instance, if a deliberative event would normally lead to an interpretation of meaning that makes no classical sense, then that event is either forbidden from taking place, or is rendered mute. However, the question can become more complicated as soon as we consider more subtle rationality constraints.
 
-n Theorem \ref{thm1} below, we characterize the argumentative states for which scheme \ref{crat} is
- possible to satisfy, noting also that it includes argumentative states in which \emph{all} the agents are individually irrational.
+Indeed, the language of $\lang_1$ is in many ways too impoverished to give us appropriate principles for deliberation. Consider for instance a scenario where deliberation proceeds in a step-wise fashion, such that one argument is considered at a time starting from the deliberative state which contains no attacks. Then it is unreasonable to require that classical consistency holds in every state. It makes more sense, instead, to stipulate that it should \emph{eventually} hold, as soon as deliberation has progressed far enough. In general, the ability to express that something holds eventually is an important addition to the expressive power of out logical language, which at once allows us to consider a whole range of interesting questions.
 
-However, we believe that while classical logic can inspire standards of rationality that are more subtle, and easier to achieve, at the social than at the individual level, we should also look to other, less restrictive, principles.  Moreover, the discussion above suggests that we are now in a position to define the following two different kinds of social rationality principles, which can help us to provide more structure to future inquiries.
+In the following we merely sketch some of these questions, serving as an illustration of the great potential for interesting work to be carried out with respect to deliberative models as soon as stronger, branching-time logics, are used to reason about them. We introduce, in particular, the modality $\adia* \phi$, intuitivley to be read as saying ``after finitely many steps, $\phi$ becomes true". Formally, we let $\adia^n \phi$ denote $\overbrace{\adia \adia \ldots \adia}^{n} \phi$ and define satisfaction for $\adia* \phi$ inductively as follows
+\begin{equation}\label{sem:star}
+\views,(Q,R),q \models_\sem \adia*\phi \text{ if there is } n \in \mathbf N: \views,(q,R),q\models_\sem \adia^n \phi
+\end{equation}
 
-\begin{itemize}
-\item Liberal principles: Rationality constraints that do not force us to restrict the set of argumentative states that we consider possible. 
-\item Idealistic principles: Rationality constraints that require us to restrict the set of possible argumentative states.
-\end{itemize}
+We also define $\abox* \phi := \neg \adia* \neg \phi$. This then expresses ``always $\phi$". With these constructs in hand we can express many subtly different properties of deliberation, some of which can provide good candidates for a principle of rationality.
 
-Given a choice of logical language, we can also search for formalizations of these two kinds of principles, and we can explore them using logical tools. A liberal principle definable by $\lang_1$, for instance, is some collection $\Xi \subseteq \lang_1$ of formulas (possibly infinite), such that for all $\phi \in \Xi$, for all deliberative states $\views$, there is a model $(Q,R)$ for $\views$ such that for every state $q \in Q$ we have
-$$
-\views,(Q,R),q\models \phi
-$$
+Insert Truls' stuff here.
 
 \section{Conclusion}\label{sec:conc}
 
@@ -356,7 +363,7 @@ $$
 
  seems difficult to define the appropriate kind of deliberation, however, 
 
-particularly strong normative claim, a that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overriding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
+particularly strong normative claim, a that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overiding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
 
 The following is a formalization of the principle of classical soundness:
 
