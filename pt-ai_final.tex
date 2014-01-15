@@ -321,7 +321,14 @@ $$
 V_a: & \xymatrix{ u \ar[r] & v \ar@/_/[dl] \ar[d] \\ w \ar@/_/[ur] \ar[u] & p } &\hspace{1.5cm} V_b: & \xymatrix{u \ar@/_/[d] \ar[r] & v \ar[d] \ar[dl] \\ w \ar@/_/[u] & p }
 \end{array}
 $$
+
+For $\views = (V_a,V_ b)$ we have $\views \models_\sem \cbox_a (\neg v \land p) \land \cbox_b (\neg v \land p)$. That is, the agents both have an interpretation of the world such that $v$ comes out false and $p$ comes out true under all labellings permitted by any of the semantics from Figure \ref{fig:sem}. Moreover, both views can be evaluated classically, as the reader may easily verify. But the agents disagree about something else, namely the status of $u$ and $w$. In particular, we have $\views \models_\sem \cbox_a (w \land \neg u) \land \cbox_b (\neg w \land u)$. This disagreement could spell disaster for deliberation taking place on the basis of $\views$. It is easy to see, in particular, that the following state $q$ could result through deliberation.
+$$
+\xymatrix{  u \ar[r] & v \ar[d] \\ w \ar[u] & p }
+$$
+In this case there are \emph{no} classical evaluations available. That is, for any deliberative model containing $q$, we have $\views, (Q,R), q \models \neg \cdia x \land \neg \cdia \neg x$ for all $x \in \{o,v,w,p\}$. Hence deliberation, in this case, took unproblematic views and produced a problematic outcome. How to avoid this mechanism in general is a difficult problem that deserves further study, but we can already conclude that our model allows us to capture how deliberation can sometimes end up undermining agreements about the status of arguments, and can also lead to the introduction of \emph{new} inconsistencies. Indeed, this too is a mechanism that is intuitively clear. For instance, if one man happens to be right, for all the right reasons, while everyone else either disagrees with his conclusion or his reasons, then deliberation typically lead to suboptimal outcomes. This is important to remember, all the while the other, more positive potential in deliberation, is essentially just an expression of the same mechanism. The whole is more than the sum of its parts, and in order to explore and evaluate it we need new tools and principles that sees it as such.
 \end{example}
+
 
 \subsection{The search for formal characterizations of rational argumentative interaction}\label{sub:for}
 
