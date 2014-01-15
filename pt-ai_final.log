@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 15:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 15:18
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -820,78 +820,73 @@ LaTeX Warning: Citation `whyreason' on page 2 undefined on input line 94.
 
 LaTeX Warning: Reference `sec:for' on page 2 undefined on input line 94.
 
-[2] [3]
+[2] [3] [4]
 
-LaTeX Warning: Citation `whyreason' on page 4 undefined on input line 116.
-
-[4]
-
-LaTeX Warning: Reference `sec:del' on page 5 undefined on input line 127.
+LaTeX Warning: Reference `sec:del' on page 5 undefined on input line 133.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 129.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 135.
 
-LaTeX Warning: Reference `fig:af1' on page 5 undefined on input line 131.
+LaTeX Warning: Reference `fig:af1' on page 5 undefined on input line 137.
+
+
+LaTeX Warning: Citation `....' on page 5 undefined on input line 139.
+
+
+LaTeX Warning: Citation `camlab' on page 5 undefined on input line 145.
+
+
+LaTeX Warning: Citation `usSynthese' on page 5 undefined on input line 145.
+
+
+LaTeX Warning: Citation `meESSLLI' on page 5 undefined on input line 145.
+
+
+LaTeX Warning: Citation `Arieli' on page 5 undefined on input line 145.
 
 [5]
-
-LaTeX Warning: Citation `....' on page 6 undefined on input line 133.
-
-
-LaTeX Warning: Citation `camlab' on page 6 undefined on input line 139.
-
-
-LaTeX Warning: Citation `usSynthese' on page 6 undefined on input line 139.
-
-
-LaTeX Warning: Citation `meESSLLI' on page 6 undefined on input line 139.
-
-
-LaTeX Warning: Citation `Arieli' on page 6 undefined on input line 139.
-
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 144.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 150.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.29004> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.10005> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
-[6] [7] <xymatrix 2x1 92> <xymatrix 2x1 106> <xymatrix 2x2 110> <xymatrix 2x2
-155> <xymatrix 2x2 237> [8] <xymatrix 2x2 202> <xymatrix 2x2 202> [9]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
+ [6] <xymatrix 2x1 92> <xymatrix 2x1 106> [7] <xymatrix 2x2 110> <xymatrix
+2x2 155> <xymatrix 2x2 237> [8] <xymatrix 2x2 202> <xymatrix 2x2 202> [9]
 
-LaTeX Warning: Citation `whyreason' on page 10 undefined on input line 235.
+LaTeX Warning: Citation `whyreason' on page 10 undefined on input line 241.
 
 [10]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 256.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 262.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 256.
- [11]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 262.
 
-LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 261.
 
-<xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
+LaTeX Warning: Reference `sec:truls' on page 11 undefined on input line 267.
+
+[11] <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
 <xymatrix 3x1 152> [12]
 
-LaTeX Warning: Reference `sec:theory' on page 13 undefined on input line 294.
-
-[13]
-
-LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 298.
+LaTeX Warning: Reference `sec:theory' on page 13 undefined on input line 300.
 
 
-LaTeX Warning: Reference `sec:rain' on page 14 undefined on input line 301.
+LaTeX Warning: Citation `whyreason' on page 13 undefined on input line 304.
 
-<xymatrix 2x2 168> [14] <xymatrix 2x3 236> <xymatrix 2x3 176> <xymatrix 2x3
-228> [15] <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [16]
+
+LaTeX Warning: Reference `sec:rain' on page 13 undefined on input line 307.
+
+[13] <xymatrix 2x2 168> <xymatrix 2x3 236> <xymatrix 2x3 176> [14] <xymatrix
+2x3 228> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [15] [16]
 [17]
 
-LaTeX Warning: Reference `wr' on page 18 undefined on input line 379.
+LaTeX Warning: Reference `wr' on page 18 undefined on input line 385.
 
-[18] [19] [20] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+[18] [19] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -899,7 +894,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  16957 strings out of 494045
  288820 string characters out of 3148380
- 382506 words of memory out of 3000000
+ 381506 words of memory out of 3000000
  19894 multiletter control sequences out of 15000+200000
  54183 words of font info for 125 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -918,9 +913,9 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (20 pages, 210689 bytes).
+Output written on pt-ai_final.pdf (19 pages, 208974 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
