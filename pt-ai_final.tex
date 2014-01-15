@@ -32,6 +32,7 @@
 
 \input{./white-japan/acros.tex}
 
+\newcommand{\noo}[1]{}
 \renewcommand{\bar}[1]{\overline{#1}}
 \newcommand{\outa}[2]{#1^+(#2)}
 \newcommand{\ina}[2]{#1^-(#2)}
@@ -189,7 +190,7 @@ Now, given an agent $a \in \agents$ with a view $V_a$, we can add the modality $
 $$
 \phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. 
 
-Given an argumentative state $\views = (V_a)_{a\in \agents}$, we define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
+When we wish to reason about a single AF, we will omit reference to the single agent who instantiates it, and write simply $\cdia \alpha$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we can now define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
 \begin{equation}\label{eq:asem}
 \begin{array}{l}
 \views \models_\sem \cdia_a \alpha \text{ if there is } \clab \in \sem(V_a) \text{ s.t. } \overline \clab(\alpha) = 1 \\
@@ -198,11 +199,37 @@ Given an argumentative state $\views = (V_a)_{a\in \agents}$, we define truth fo
 \end{array}
 \end{equation}
 
-The crucial challenge that remains, and which will be addressed in the next section, is to find a mechanism for formally introducing an appropriate kind of multi-agent interaction and dynamics, suitable for representing the argumentative theory. This is the question we address in the following section.
+For instance, assume we have a single agent $a$ and that his view is given by the AF in Figure \ref{fig:1}. Then it is easily verified that the following claims holds for all semantics $\sem$.
+\begin{itemize}
+\item 
+\end{itemize}
+
+Having access to a formal logical language for talking about individual views of agents, we can now explore formally what we mean by classically sound reasoning. We already noted that the evaluation of complex formulas agrees with classical logic on the boolean values. So if the argumentation semantics that the agent uses to reason only returns two-valued assignments, disallowing assignments that assign $\frac{1}{2}$ to some arguments, it might be tempting to say that he reasons classically. 
+
+However, the core requirements underlying the semantics from Figure \ref{fig:sem} also seem to capture some crucial aspects of what we mean by classical soundness. First, and most importantly, they all require us to disallow assignments that assign $1$ to two arguments that are in conflict. This is intuitively speaking a classical soundness principle, an expression of the law of non-contradiction. However, if we accept this requirement as part of our notion of what it means to reason classically, we immediately encounter situations where the underlying interpretation of the semantic reality makes this impossible. For instance, there is no way to reason classically about an argument that attacks itself. Under all semantics disallowing the assignment of $1$ to two arguments in conflict, the argument attacking itself -- $\xymatrix{ x \ar@(ru,rd) }$ -- must by necessity obtain the value $\frac{1}{2}$.
+
+In terms of logic, we have $\cbox (x \leftrightarrow \neg x)$ expressing that $x$ is necessarily equivalent to its own negation. In this case, classical reasoning breaks down already due to a problematic argumentative interpretation of reality, not due to any shortcoming of the principles used to reason about it. In fact, there are strong formal reasons, developed e.g., in \cite{Sjur-SYNTH}, for thinking that classical reasoning about AFs is captured by the stable semantics, which accepts all admissible assignments such that the set of arguments assigned $1$ attacks all other arguments, see Figure \ref{fig:sem}. It is possible, then, to define the class of all those AFs for which classical reasoning is possible, as the class that admit a non-empty set of stable labellings. 
+
+%For AFs such that $\Pi(E)$ is finite, the possibility for classical reasoning can be expressed in the object language, under all semantics from Figure \ref{fig:1}, as detailed in the following fact.
+%
+%\begin{proposition}\label{fact:pcl}
+%Given an AF $E$ such that $\Pi(E)$ is finite, we have $s(E) \not = \emptyset$ if, and only if, the following scheme holds, for all $\phi \in \lang$
+%$$
+%E \models_\sem \cdia \phi \lor \cdia \neg \phi $$
+%\end{proposition}
+%
+%
+%
+%
+% an agent that has the desire to do so might find that is is \emph{impossible}, if he also seeks to satisfy the very intuitive requirement that he should not assign $1$ to two arguments that he regards to be in conflict. In this case, the 
+%
+%values on {\L}ukasiewicz logic, the
+
+The crucial challenge that we are now faced with, and which will be addressed in the next section, is to find a mechanism for formally introducing an appropriate kind of multi-agent interaction and dynamics that will allow us to study deliberative processes which are based on the agents' interpretations of the world, but generates an aggregated view that is potentially different from all of them. One of the questions we can then address in this framework is the question of what principles we need, at the social level, to make sure that classical reasoning can be regained through deliberation. Before we move on to develop some formal tools for this, we give an extended example.
 
 \subsection{Extended example: Rain in Bergen}\label{ex:run}
 
-We consider a simple example which motivates the need for introducing subjective views, suggesting also some shortcomings of a traditional approach to argumentation in the context of multi-agent deliberation. We assume given two agents $a,b$ who argue about whether it will rain in Bergen today, where $r$ represent the claim that it will rain, while $\overline r$ represent the claim that it will not. Let us first assume that none of the agents actually argue in favor of their positions. However, assuming that the disagreeing parties recognize that they disagree, the positions themselves play an argumentative role, and the AF shown on the left below represents the initial state of disagreement. So far, in particular, the model appears to be an uncontroversial objective representation of the state of affairs. There is not yet any discernible need for introducing subjective views. 
+In this section, we consider in depth a simple example which motivates the need for introducing subjective views, suggesting also some shortcomings of a traditional approach to argumentation in the context of multi-agent deliberation. We assume given two agents $a,b$ who argue about whether it will rain in Bergen today, where $r$ represent the claim that it will rain, while $\overline r$ represent the claim that it will not. Let us first assume that none of the agents actually argue in favor of their positions. However, assuming that the disagreeing parties recognize that they disagree, the positions themselves play an argumentative role, and the AF shown on the left below represents the initial state of disagreement. So far, in particular, the model appears to be an uncontroversial objective representation of the state of affairs. There is not yet any discernible need for introducing subjective views. 
 $$
 \begin{array}{ccc}
 \xymatrix{ r \ar@/_/[r] & \overline r \ar@/_/[l] } & \hspace{3em} &
@@ -249,17 +276,17 @@ Importantly, if we now look at the AFs encoding their views rather than the AF e
 
 Given a basis which encodes agents' views of the arguments, we are interested in the possible ways in which agents can deliberate, and how deliberation can serve to create new, socially defined, interpretations of the arguments, interpretations that are aggregated in a non-trivial way from the views of the individual agents.  We are interested, in particular, in characterizing and studying the \emph{effect} of deliberation on semantic meaning. This, in our opinion, is the crucial question that needs to be addressed in the search for new foundations for rational interaction.
 
-The argumentative theory, for instance, makes the assertion that unsound reasoning on the individual level, motivated by agents' desire to win arguments, can lead to sound results when embedded in a suitable deliberative context. The challenge, then, is to attempt to characterize such suitable contexts, and to define conditions of deliberation that helps promote certain normative standards of soundness that can not, and should not, be imposed at the individual level. 
+The argumentative theory makes the assertion that unsound reasoning on the individual level, motivated by agents' desire to win arguments, can lead to sound results when embedded in a suitable deliberative context. The challenge for us, then, is to attempt to characterize such suitable contexts, and to define conditions of deliberation that helps promote certain normative standards of soundness that can not, and should not, be imposed at the individual level. 
 
-This is a challenge that points beyond the work already done in \cite{whyreason}, and we believe a possible criticism against the argumentative theory, as it stands today, is that it fails to make clear how the deliberative process can take unsound reasoning and produce a sound outcome.  What mechanisms are in play here, and what standards of soundness can we apply to them? Clearly, they cannot be reduced to mechanisms and standards that we should apply to reasoners individually, but need to be formulated in terms of the deliberative circumstances themselves.
+This is a challenge that points beyond the work already done in \cite{whyreason}, and we believe a possible criticism against the argumentative theory, as it stands today, is that it fails to make clear how the deliberative process can take unsound reasoning and produce a sound outcome.  What mechanisms are in play here, and what standards of soundness can we apply to them? Presumably, they cannot be reduced to mechanisms and standards that we should apply to reasoners individually, but need to be formulated in terms of the deliberative circumstances themselves.
 
-This is clear from the reasoning used to support the argumentative theory, for instance when it is pointed out that groups of people tend to perform ``better" in reasoning tasks when each individual is challenged by people that have views which diverge from his own. That this is so has been established in much empirical work, but how are we to make sense of it as a normative claim, and how can we express it in a theoretical and formally precise setting? This is the question we embark on now, developing a dynamic logic framework for defining and studying various notions of deliberative soundness and rationality.
+This is clear from the reasoning used in \cite{whyreason}, for instance when it is pointed out that groups of people tend to perform ``better" in reasoning tasks when each individual is challenged by people that have views which diverge from his own. That this is so has been established in much empirical work, but how are we to make sense of it as a normative claim, and how can we express it in a theoretical and formally precise setting? This is the question we embark on now, developing a dynamic logic framework for defining and studying various notions of deliberative soundness and rationality.
 
 We propose to think of deliberation as a process which consists in moving between possible interpretations of the meaning of arguments, where the idea is that each move is caused by some deliberative event, the exact nature and structure of which we leave unspecified the initial suggestion presented here. The intention is that each possible interpretation represents a possible aggregation of the views of the involved agents. In particular, given an argumentative state $\views$, we say that $q \subseteq \Pi \times \Pi$ is a \emph{deliberative state} for $\views$ if
 \begin{equation}\label{eq:ds}
 \bigcap_{a \in \agents}V_a \subseteq q \subseteq \bigcup_{a \in \agents}V_a
 \end{equation}
-We collect all deliberative states for $\views$ in the set $\dstate \views$ and we use $\Pi(q) = \{x \in \Pi \mid \neu q x \not = \Pi\}$ to denote the set of arguments that appear in some attack from $q$. That is, $\Pi(q)$ contains the arguments that are not neutral with respect to all other arguments, according to the AF $q$. The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
+We collect all deliberative states for $\views$ in the set $\dstate \views$ \noo{and we use $\Pi(q) = \{x \in \Pi \mid \neu q x \not = \Pi\}$ to denote the set of arguments that appear in some attack from $q$. That is, $\Pi(q)$ contains the arguments that are not neutral with respect to all other arguments, according to the AF $q$.} The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
 
 \begin{quote}\label{principle}
 If some information regarding the semantic relationship between two arguments is included in a deliberative state, the correctness of this information is endorsed by at least one agent. 

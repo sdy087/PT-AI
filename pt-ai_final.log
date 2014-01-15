@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 16:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 17:58
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -725,31 +725,31 @@ LaTeX Warning: Unused global option(s):
     [greybox].
 
 (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for LRC/fruc/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for LRA/frua/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for LRN/frun/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for LRT/frut/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for LRL/frul/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for LRM/frum/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for LRC/fruc/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for LRA/frua/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for LRN/frun/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for LRT/frut/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for LRL/frul/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for LRM/frum/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 71.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -768,123 +768,131 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \makeMPintoPDFobject=\count161
 \everyMPtoPDFconversion=\toks43
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 70
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 71
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 70
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 71
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 70
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 71
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 70
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 71
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
-Package xypdf Info: Line width: 0.3999pt on input line 70.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
+Package xypdf Info: Line width: 0.3999pt on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 
 
-Package mathptmx Warning: There are no bold math fonts on input line 73.
+Package mathptmx Warning: There are no bold math fonts on input line 74.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
 [1
 
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 
-LaTeX Warning: Citation `whyreason' on page 2 undefined on input line 94.
+LaTeX Warning: Citation `whyreason' on page 2 undefined on input line 95.
 
 [2] [3] [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 133.
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 139.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 134.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 140.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.29004> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.10005> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
  <xymatrix 4x1 376> [5]
 
-LaTeX Warning: Citation `....' on page 6 undefined on input line 153.
+LaTeX Warning: Citation `....' on page 6 undefined on input line 154.
 
 
-LaTeX Warning: Citation `usSynthese' on page 6 undefined on input line 157.
+LaTeX Warning: Citation `usSynthese' on page 6 undefined on input line 158.
 
 
-LaTeX Warning: Citation `meESSLLI' on page 6 undefined on input line 157.
+LaTeX Warning: Citation `meESSLLI' on page 6 undefined on input line 158.
 
 
-LaTeX Warning: Citation `Arieli' on page 6 undefined on input line 157.
+LaTeX Warning: Citation `Arieli' on page 6 undefined on input line 158.
 
-[6] [7] <xymatrix 2x1 92> <xymatrix 2x1 106> [8] <xymatrix 2x2 110> <xymatrix
-2x2 155> <xymatrix 2x2 237> <xymatrix 2x2 202> <xymatrix 2x2 202> [9] [10]
-
-LaTeX Warning: Citation `whyreason' on page 11 undefined on input line 254.
-
-[11]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 275.
+[6] [7]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 205.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 275.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 205.
+ <xymatrix
+1x1 62>
+
+LaTeX Warning: Citation `Sjur-SYNTH' on page 8 undefined on input line 211.
+
+[8] <xymatrix 2x1 92> <xymatrix 2x1 106> <xymatrix 2x2 110> <xymatrix 2x2 155>
+<xymatrix 2x2 237> [9] <xymatrix 2x2 202> <xymatrix 2x2 202> [10]
+
+LaTeX Warning: Citation `whyreason' on page 11 undefined on input line 281.
+
+[11]
+
+LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 283.
 
 
-LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 280.
+LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 307.
 
-<xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
-<xymatrix 3x1 152> [12]
+[12] <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
+<xymatrix 3x1 152> [13]
 
-LaTeX Warning: Reference `sec:theory' on page 13 undefined on input line 313.
-
-[13]
-
-LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 317.
+LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 340.
 
 
-LaTeX Warning: Reference `sec:rain' on page 14 undefined on input line 320.
+LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 344.
 
-[14] <xymatrix 2x2 168> <xymatrix 2x3 236> <xymatrix 2x3 176> <xymatrix 2x3
-228> [15] <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [16]
-[17]
+[14]
 
-LaTeX Warning: Reference `wr' on page 18 undefined on input line 398.
+LaTeX Warning: Reference `sec:rain' on page 15 undefined on input line 347.
 
-[18] [19] [20] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+<xymatrix 2x2 168> [15] <xymatrix 2x3 236> <xymatrix 2x3 176> <xymatrix 2x3
+228> <xymatrix 2x2 202> <xymatrix 2x2 202> [16] <xymatrix 2x2 154> [17]
+[18]
+
+LaTeX Warning: Reference `wr' on page 19 undefined on input line 425.
+
+[19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16953 strings out of 494045
- 288787 string characters out of 3148380
- 382514 words of memory out of 3000000
- 19893 multiletter control sequences out of 15000+200000
+ 16955 strings out of 494045
+ 288802 string characters out of 3148380
+ 382517 words of memory out of 3000000
+ 19895 multiletter control sequences out of 15000+200000
  53405 words of font info for 122 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  56i,20n,55p,1841b,940s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -902,9 +910,9 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (20 pages, 212997 bytes).
+Output written on pt-ai_final.pdf (21 pages, 215753 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
