@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  14 JAN 2014 23:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 01:35
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -881,20 +881,20 @@ LaTeX Warning: Citation `whyreason' on page 13 undefined on input line 285.
 
 LaTeX Warning: Reference `sec:rain' on page 13 undefined on input line 288.
 
-[13] <xymatrix 2x2 168> [14]
+[13] <xymatrix 2x2 168> [14] [15]
 
-LaTeX Warning: Reference `thm1' on page 15 undefined on input line 319.
+LaTeX Warning: Reference `thm1' on page 16 undefined on input line 333.
 
-[15] [16] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+[16] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16951 strings out of 494045
- 288781 string characters out of 3148380
- 381488 words of memory out of 3000000
- 19888 multiletter control sequences out of 15000+200000
+ 16952 strings out of 494045
+ 288788 string characters out of 3148380
+ 381495 words of memory out of 3000000
+ 19889 multiletter control sequences out of 15000+200000
  54183 words of font info for 125 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  56i,20n,55p,1841b,939s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -912,7 +912,7 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (16 pages, 193108 bytes).
+Output written on pt-ai_final.pdf (16 pages, 194395 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

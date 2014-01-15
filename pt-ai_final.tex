@@ -92,7 +92,7 @@ We then motivate what we believe to be the main challenge for future work: how t
 
 In Section \ref{sec:fut} we discuss the limitations of our own approach, and suggest directions for future work, and in Section \ref{sec:conc} we conclude. % We note that the formalism presented in this paper does not include representation of strategic aspects of deliberation -- it does not allow us to represent scenarios where agents form coalitions to coordinate their arguments in order to derive mutual benefit in terms of winning more arguments as a group.  To model this requires giving an account of higher-order deliberation, where coalitions first deliberate to decide how to choose a joint contribution to the higher-level deliberation scenario based on the differing views of their members. We think developing better techniques for expressing this enhancement is an important 
 
-\section{Argumentative agents: Towards a semantics for individual reasoning based on argumentation}\label{sec:arg}
+\section{Argumentative agents: A semantics for individual reasoning based on argumentation}\label{sec:arg}
 
 The argumentative theory of reason is formulated on the basis of a vast amount of experimental evidence, and its core idea is that the notion of argumentation can serve a foundational role in cognitive science. The theory holds that human reasoning evolved to facilitate efficient argumentation, and that the function of reason is not in arriving at logically correct forms of inference but to contribute to social interaction in such a way as to maximize the positive effect of  deliberation. This, for instance, can serve to shed light on why humans so often reason in a way that most theories would judge to be fallacious. According to the argumentative theory, they sometimes do so because fallacies can be useful in the context of argumentation.
 
@@ -213,7 +213,7 @@ It seems clear that these views are consistent with the actual exchange of argum
 Importantly, if we now look at the AFs encoding their views rather than the AF encoding the actual exchange of arguments, there is no longer any intuitive reason to think that the outcome of deliberation should permit us to conclude that it rains in Bergen. This, in particular, is a conclusion that relies on an interpretation that recognizes the attack $(p,w)$ to encode correct semantic information about $p$ and $w$. But his view shows that agent $a$ disagrees with agent $b$ in this regard, and so we reach the more appropriate conclusion that it is unwarranted to assume that $(p,q)$ will come to influence the outcome of deliberation. In order to even begin talking about this outcome, in particular, we need first to specify an aggregated view on the semantic meaning of the arguments involved. Depending on how this interpretation is constructed, the outcome will be different. A dynamic logic based on this starting point, focusing on the development of an aggregated interpretation of meaning, is what we are aiming at. We already see how subjective views are needed to facilitate its development.
 
 
-\section{Argumentative deliberation: Towards formalization using dynamic argumentation logic}\label{sec:ddl}
+\section{Argumentative deliberation: A formalization using modal logic}\label{sec:ddl}
 
 Given a basis which encodes agents' views of the arguments, we are interested in the possible ways in which agents can deliberate, and how deliberation can serve to create new, socially defined, interpretations of the arguments, interpretations that are aggregated in a non-trivial way from the views of the individual agents.  We are interested, in particular, in characterizing and studying the \emph{effect} of deliberation on semantic meaning. This, in our opinion, is the crucial question that needs to be addressed in the search for new foundations for rational interaction.
 
@@ -280,7 +280,7 @@ We use the shorthand $\abox \phi := \neg \adia \neg \phi$ as usual. Let us consi
 
 This toy example illustrates that with the machinery now in place we can formally describe how deliberation can sometimes turn individual views that classical logic and traditional notions of rationality deems problematic into deliberative states that are classically consistent. This is a mechanism that is stressed as being crucial in the argumentative theory of reason, and in Subsection \ref{sec:examples} we provide some more examples of how deliberative models provides a specification formalism capable of representing it, allowing us also to express and explore this mechanism using logic. However, we can also be more ambitious on behalf of the logical approach, seeking to move beyond mere modeling of concrete instances, towards formalization of theoretic concepts and principles. We provide a preliminary exploration of this line of inquiry in Subsection \ref{sec:theory}, arguing that it shows great promise, but also that it suggests development of more subtle logical tools which can allow us to introduce more structure to our semantics, and that can give us access to the expressive power of more complex modal languages. 
 
-\subsection{Using deliberative model to represent concrete instances of argumentative interaction}\label{sec:examples}
+\subsection{Using deliberative logic to model argumentative deliberation}\label{sec:examples}
 
 In \cite{whyreason}, one of the primary claims concerns confirmation bias, the mechanism by which reasoners disproportionately tend to favor reasons that support previous beliefs rather than challenge them. According to the authors, this bias is not necessarily an example of flawed reasoning since it has an argumentative function that can serve to enhance the positive effects of deliberation. This claim is supported by empirical evidence, and in this section we show how scenarios where cognitive bias plays such a constructive role can be represented by deliberative models and reasoned with using modal logic. Following this, we go on to consider some more examples which we believe illustrate that as an approach to modeling, the formal framework suggested in this paper appears to be both flexible and expressive. 
 
@@ -298,25 +298,40 @@ Here, both $w$ and $p$ are regarded as successful, meaning that \emph{both} $r$ 
 \end{example}
 
 \begin{example}[Two wrongs that make a right]\label{ex:wr}
-
+To do: Write up a simple example of two views that are both inconsistent (no admissible set), such that a consistent outcome results from deliberation.
 \end{example}
 
 \begin{example}[An agreement that disagrees with itself]\label{ex:ad}
-
+To do: Write up a simple example of two views such that both have $p$ as the outcome (under all admissible semantics), but such that a deliberation with outcome $\neg p$ results.
 \end{example}
 
+\subsection{The search for formal characterizations of rational argumentative interaction}\label{sub:for}
 
-\subsection{The search for formal characterization of rational argumentative interaction}\label{sub:for}
+We have seen how deliberative logic allows us to model scenarios where the outcome is classically sound even if all individual views are inconsistent. The requirement that deliberation should be organized in such a way that it \emph{always} functions in this way might then suggest itself as a good candidate for a normative notion of rationality imposed at the social level. It is a very strong notion, however, and it is potentially problematic also because it is not in fact wholly social -- a requirement to the effect that the outcome of deliberation should always be classically consistent must by necessity also involve restriction on what individual views we permit agents to endorse. 
 
-The requirement that deliberation should be organized in such a way that it \emph{always} function like this might then suggest itself as a good candidate for a normative notion of rationality imposed at the social level. It is a very strong notion, however, and it is potentially problematic also because it is not in fact wholly social -- a requirement to the effect that the outcome of deliberation should always be classically consistent \emph{must} also involve restriction on what individual views we permit agents to endorse. This is easy to see intuitively. The case of a system with a single agent who believes something absurd, for instance, or a system with many agents where all of them agree on a contradiction, are obvious examples. The fact that deliberation alone cannot ensure consistency in such cases seems hard to dispute, and it also implies that classical consistency might not be a very helpful rationality norm, when focus now shifts to the social level. This, in particular, is true if we take seriously the argumentative theory, and attempt to create standards that can be applied to \emph{actual} reasoners, even if the circumstances are such that an outcome in complete adherence to classical principles cannot be achieved.
-
-This is an insight that we can now formalize in terms of logic. In particular, we can formalize it as a \emph{social} rationality principle, a claim about deliberative models. There might be many different ways of doing this, but for now let us consider the following intuitive candidate axiom for classically rational deliberation:
+This is easy to see intuitively. The case of a system with a single agent who believes something absurd, for instance, or a system with many agents where all of them agree on a contradiction, are obvious examples. The fact that deliberation alone cannot ensure a consistent outcome in such cases seems hard to dispute, and this is an insight that we can now formalize in terms of logic. In particular, we can formalize requirements derived from the principle of classical consistency as distinctly \emph{social} rationality principles, restrictions on deliberative models rather than individual views. There are many different candidates for such restriction, illustrating also the subtlety of defining intuitive notions when the scope of those notions change. For now let us simply consider the following intuitive axiom schema for classically rational deliberation
 \begin{equation}\label{crat}
-\models_\sem \cdia \phi \lor \cdia \neg \phi
+\cdia \phi \lor \cdia \neg \phi
 \end{equation}
-It says that for all argumentative states, at all states in any corresponding deliberative model, it should be the case that every formula can either be accepted or rejected. This, we recall, is the conditions under which the underlying argumentation framework describes a classically consistent interpretation of the semantic atoms in the model. It is easy to see that this axiom is \emph{not} true on the class of all deliberative models. Hence it captures a non-trivial principle, a genuine restriction on deliberation. However, we also notice that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely deliberative approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances. 
+If we require it to be true on all models, in all points, we require stipulate the principle that for all argumentative states, at all states in any corresponding deliberative model, every formula can either be accepted or rejected. This, we recall, are conditions under which any underlying finite argumentation framework must describe a classically consistent interpretation of the semantic atoms in the model. It is easy to see that the scheme is \emph{not} valid on the class of all deliberative models. Hence it captures a non-trivial principle, a genuine restriction on deliberation. However, we also notice that for some argumentative states $\views$, there are \emph{no} corresponding deliberative models such that schema \ref{crat} holds. Hence if we impose it as an axiom of deliberation, we also restrict the class of permissible argumentative states, meaning that it is not a purely deliberative approach to rationality. This, in particular, is the formal expression of the intuition that constraints on deliberation alone is not enough to ensure classical consistency in all circumstances.
 
-This recognition does not in itself suggest that schema \ref{crat} should be discarded. Rather, we think it is interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. In fact, in Theorem \ref{thm1} below, we characterize the argumentative states for which scheme \ref{crat} is possible to satisfy, noting also that it includes argumentative states in which \emph{all} the agents are individually irrational.
+This recognition does not in itself imply that schema \ref{crat} should be discarded. Rather, we think it is interesting to investigate further in it what ways this and similar schemata can still permit \emph{more} variety in the reasoning patterns of individuals than what is allowed under normative theories that presuppose classical reasoning at the individual level. In fact, for scheme \ref{crat}, we can provide the following simple characterization of those argumentative states that are permitted.
+
+\begin{theorem}\label{thm:1}
+For all semantics $\sem$ from Figure \ref{fig:sem}, a finite argumentative state $\views$ gives rise to at least one deliberative model where \ref{crat} is valid in all states if, and only if, there is some $E \subseteq \Pi \times \Pi$ such that
+\begin{enumerate}
+\item $\bigcap_{a \in \agents}V_a \subseteq E \subseteq \bigcup_{a \in \agents}V_a$
+\item $s(E) \not = \emptyset$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Take the conjunction of all involved arguments and note that if one is undecided so is the conjunction. Hence if there is no stable set, all admissible-based semantics will fail to make this conjunction either true or false.
+\end{proof}
+
+
+n Theorem \ref{thm1} below, we characterize the argumentative states for which scheme \ref{crat} is
+ possible to satisfy, noting also that it includes argumentative states in which \emph{all} the agents are individually irrational.
 
 However, we believe that while classical logic can inspire standards of rationality that are more subtle, and easier to achieve, at the social than at the individual level, we should also look to other, less restrictive, principles.  Moreover, the discussion above suggests that we are now in a position to define the following two different kinds of social rationality principles, which can help us to provide more structure to future inquiries.
 
