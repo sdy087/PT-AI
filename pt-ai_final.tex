@@ -343,14 +343,25 @@ This result shows that classical logic can inspire standards of rationality that
 
 Indeed, the language of $\lang_1$ is in many ways too impoverished to give us appropriate principles for deliberation. Consider for instance a scenario where deliberation proceeds in a step-wise fashion, such that one argument is considered at a time starting from the deliberative state which contains no attacks. Then it is unreasonable to require that classical consistency holds in every state. It makes more sense, instead, to stipulate that it should \emph{eventually} hold, as soon as deliberation has progressed far enough. In general, the ability to express that something holds eventually is an important addition to the expressive power of out logical language, which at once allows us to consider a whole range of interesting questions.
 
-In the following we merely sketch some of these questions, serving as an illustration of the great potential for interesting work to be carried out with respect to deliberative models as soon as stronger, branching-time logics, are used to reason about them. We introduce, in particular, the modality $\adia* \phi$, intuitivley to be read as saying ``after finitely many steps, $\phi$ becomes true". Formally, we let $\adia^n \phi$ denote $\overbrace{\adia \adia \ldots \adia}^{n} \phi$ and define satisfaction for $\adia* \phi$ inductively as follows
+In the following we merely sketch some of these questions, serving as an illustration of the great potential for interesting work to be carried out with respect to deliberative models as soon as stronger, branching-time logics, are used to reason about them. We introduce, in particular, the modality $\adia^* \phi$, intuitivley to be read as saying ``after finitely many steps, $\phi$ becomes true". Formally, we let $\adia^n \phi$ denote $\overbrace{\adia \adia \ldots \adia}^{n} \phi$ and define satisfaction for $\adia^* \phi$ inductively as follows
 \begin{equation}\label{sem:star}
-\views,(Q,R),q \models_\sem \adia*\phi \text{ if there is } n \in \mathbf N: \views,(q,R),q\models_\sem \adia^n \phi
+\views,(Q,R),q \models_\sem \adia^*\phi \text{ if there is } n \in \mathbf N: \views,(q,R),q\models_\sem \adia^n \phi
 \end{equation}
 
-We also define $\abox* \phi := \neg \adia* \neg \phi$. This then expresses ``always $\phi$". With these constructs in hand we can express many subtly different properties of deliberation, some of which can provide good candidates for a principle of rationality.
+We also define $\abox* \phi := \neg \adia* \neg \phi$. This then expresses ``always $\phi$". With these constructs in hand we can express many subtly different properties of deliberation, some of which might be seen as candidates for rationality principles.
 
-Insert Truls' stuff here.
+Let us assume that $\phi$ expresses some principle which we take to define ``good" states in a normative theory. For instance, $\phi$ could be an instance of Schema \ref{crat}. However, even if we believe that $\phi$ captures some essential normative requirement on the outcome of deliberation, it is not at all clear that we should require \emph{all} states in a deliberative model to be good states. Indeed, it can often seem more natural to think of deliberation as a process that complies with a norm of rationality just in case it is capable of taking us from bad to good states. In this case, we are cheating it we try to implement our normative theory by simply forbidding the bad states. Instead, we might want to restate our principle $\phi$ in one of the following ways, as a requirement on what it should be possible to achieve through deliberation, from the current state, rather than a requirement on what the current state itself should be like.
+
+\begin{itemize}
+\item $\abox \phi$: all deliberative events take us to a state where $\phi$ is true.
+\item $\adia \phi$: there is at least one event taking us to a state where $\phi$ is true.
+\item $\adia^\ast \phi$: there is a chain of events such that $\phi$ eventually becomes true.
+\item $\adia^\ast \abox \phi$: there is a chain of events taking us to a state where every event will make $\phi$ true.
+\item $\adia^\ast \abox^\ast \phi$: there is a chain of events taking us to a state where no further chain of events can make $\phi$ false.
+\item $\abox^\ast \adia^\ast \phi$: for every chain of events out of the current state, there is a way to continue this chain so that $\phi$ eventually becomes true.
+\item $\abox^\ast \adia^\ast \abox^\ast \phi$: for every chain of event out of the current state, there is a continuation so that $\phi$ eventually becomes true, and remains true forever.
+\end{itemize}
+
 
 \section{Conclusion}\label{sec:conc}
 
