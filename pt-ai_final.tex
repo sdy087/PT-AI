@@ -286,21 +286,21 @@ We propose to think of deliberation as a process which consists in moving betwee
 \begin{equation}\label{eq:ds}
 \bigcap_{a \in \agents}V_a \subseteq q \subseteq \bigcup_{a \in \agents}V_a
 \end{equation}
-We collect all deliberative states for $\views$ in the set $\dstate \views$ \noo{and we use $\Pi(q) = \{x \in \Pi \mid \neu q x \not = \Pi\}$ to denote the set of arguments that appear in some attack from $q$. That is, $\Pi(q)$ contains the arguments that are not neutral with respect to all other arguments, according to the AF $q$.} The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
+We collect all deliberative states for $\views$ in the set $\dstate \views$. \noo{and we use $\Pi(q) = \{x \in \Pi \mid \neu q x \not = \Pi\}$ to denote the set of arguments that appear in some attack from $q$. That is, $\Pi(q)$ contains the arguments that are not neutral with respect to all other arguments, according to the AF $q$.} The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
 
 \begin{quote}\label{principle}
 If some information regarding the semantic relationship between two arguments is included in a deliberative state, the correctness of this information is endorsed by at least one agent. 
 \end{quote}
 
-In particular, we do not allow deliberation to result in interpretations that deviate from interpretations that are held unanimously by the agents. If everyone agrees on the meaning of an argument, the argument has this meaning, no matter how deliberation proceeds. As we will see, this does not mean that a possible unanimity regarding the acceptance status of an argument is necessarily reflected in the view aggregated by deliberation. For instance, even if all agents agree that $p$ should be accepted, it is quite possible that $p$ will not be accepted after deliberation. If the agents differ in their account of \emph{why} $p$ should be accepted, in particular, deliberation might lead to the rejection of $p$. This in itself is interesting, and it suggests that subtle questions and phenomena arise when we attempt to be more precise about our normative claims regarding deliberative rationality.
+In particular, we do not allow deliberation to result in interpretations that deviate from interpretations that are held unanimously by the agents. If everyone agrees on the meaning of an argument, the argument has this meaning, no matter how deliberation proceeds. This does not mean that a possible unanimity regarding the semantic status of an argument is necessarily reflected in the view aggregated by deliberation. For instance, even if all agents agree that $p$ is true, it is quite possible that $p$ will not be accepted after deliberation. If the agents differ in their account of \emph{why} $p$ should be accepted, in particular, deliberation might lead to the rejection of $p$. We will see a formalized example of this in Section \ref{sub:ex}, Example \ref{ex:ad}. It is a mechanism that serves to illustrate the subtle questions and phenomena that arise when we attempt to be more precise about our normative claims regarding deliberative rationality.
 
-Towards formal precision, we now define the core notion of a \emph{deliberative Kripke model}
+Towards further formalization, we define the notion of a \emph{deliberative model}
 
 \begin{definition}\label{def:dk}
-Given a deliberative state $\views$, a deliberative Kripke model for $\views$ is a tuple $(Q,R)$ such that
+Given a deliberative state $\views$, a deliberative model for $\views$ is a tuple $(Q,R)$ such that
 \begin{itemize}
-\item $Q \subseteq \dstate \views$ is a set of deliberative states for $\views$
-\item $R$ is a relation $R \subseteq Q \times Q$
+\item $Q \subseteq \dstate \views$ is a set of deliberative states for $\views$.
+\item $R$ is a relation $R \subseteq Q \times Q$.
 \end{itemize}
 \end{definition}
 
@@ -326,11 +326,10 @@ $$
 where $\alpha \in \lang$. The definition of satisfaction for $\lang_1$ on deliberative models is then defined analogously to classical modal logic.
 
 \begin{definition}\label{truth1}
-Given an argumentation semantics $\sem$, an argumentative state $\views$ and a corresponding deliberative model $(Q,R)$, the truth of $\phi \in \lang_1$ on $(Q,R)$ at $q \in Q$ is defined inductively as follows
+Given an argumentation semantics $\sem$, an argumentative state $\views$ and a corresponding deliberative model $(Q,R)$, the truth of $\phi \in \lang_1$ on $(Q,R)$ at $q \in Q$ is defined inductively as follows (we omit the boolean cases).
 \begin{itemize}
 \item $\views, (Q,R),q\models_\sem \cdia \alpha$ if $\exists \clab \in \sem(q): \overline \clab(\alpha) = 1$
 \item $\views,(Q,R),q\models_\sem \cdia_a \alpha$ if $\exists \clab \in \sem(V_a): \overline \clab(\alpha) = 1$
-\item ...
 \item $\views,(Q,R),q \models_\sem \adia \phi$ if there is $q' \in Q$ s.t. $(q,q') \in R$ and $\views,(Q,R),q' \models_\sem \phi$
 \end{itemize}
 \end{definition}
@@ -344,7 +343,7 @@ This toy example illustrates that with the machinery now in place we can formall
 In \cite{whyreason}, one of the primary claims concerns confirmation bias, the mechanism by which reasoners disproportionately tend to favor reasons that support previous beliefs rather than challenge them. According to the authors, this bias is not necessarily an example of flawed reasoning since it has an argumentative function that can serve to enhance the positive effects of deliberation. This claim is supported by empirical evidence, and in this section we show how scenarios where cognitive bias plays such a constructive role can be represented by deliberative models and reasoned with using modal logic. Following this, we go on to consider some more examples which we believe illustrate that as an approach to modeling, the formal framework suggested in this paper appears to be both flexible and expressive. 
 
 \begin{example}[Rain in Bergen revisited]
-We return to the Bergen rain example, considered in depth in Subsection \ref{sec:rain} as an illustration of how traditional, non-subjective, approaches to argumentation can not do justice to the form of argumentative deliberation considered in the argumentative theory of reason. 
+We return to the Bergen rain example, considered in depth in Section \ref{sec:rain} as an illustration of how traditional, non-subjective, approaches to argumentation can not do justice to the form of argumentative deliberation considered in the argumentative theory of reason. 
 
 indeed, this is also witnessed by our example; it is this "irrational" stance that serves to distinguish the views of ${\bf a}$ and ${\bf b}$, thereby making non-trivial consensus possible without violating truthfulness. 
 
@@ -426,7 +425,7 @@ This result shows that classical logic can inspire standards of rationality that
 
 Indeed, the language of $\lang_1$ is in many ways too impoverished to give us appropriate principles for deliberation. Consider for instance a scenario where deliberation proceeds in a step-wise fashion, such that one argument is considered at a time starting from the deliberative state which contains no attacks. Then it is unreasonable to require that classical consistency holds in every state. It makes more sense, instead, to stipulate that it should \emph{eventually} hold, as soon as deliberation has progressed far enough. In general, the ability to express that something holds eventually is an important addition to the expressive power of out logical language, which at once allows us to consider a whole range of interesting questions.
 
-In the following we merely sketch some of these questions, serving as an illustration of the great potential for interesting work to be carried out with respect to deliberative models as soon as stronger, branching-time logics, are used to reason about them. We introduce, in particular, the modality $\adia^* \phi$, intuitivley to be read as saying ``after finitely many steps, $\phi$ becomes true". Formally, we let $\adia^n \phi$ denote $\overbrace{\adia \adia \ldots \adia}^{n} \phi$ and define satisfaction for $\adia^* \phi$ inductively as follows
+In the following we merely sketch some of these questions, serving as an illustration of the great potential for interesting work to be carried out with respect to deliberative models as soon as stronger, branching-time logics, are used to reason about them. We introduce, in particular, the modality $\adia^* \phi$, intuitively to be read as saying ``after finitely many steps, $\phi$ becomes true". Formally, we let $\adia^n \phi$ denote $\overbrace{\adia \adia \ldots \adia}^{n} \phi$ and define satisfaction for $\adia^* \phi$ inductively as follows
 \begin{equation}\label{sem:star}
 \views,(Q,R),q \models_\sem \adia^*\phi \text{ if there is } n \in \mathbf N: \views,(q,R),q\models_\sem \adia^n \phi
 \end{equation}
