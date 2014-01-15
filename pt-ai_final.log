@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 14:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 14:06
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -818,7 +818,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 LaTeX Warning: Citation `whyreason' on page 2 undefined on input line 94.
 
 
-LaTeX Warning: Reference `sec:rat' on page 2 undefined on input line 94.
+LaTeX Warning: Reference `sec:for' on page 2 undefined on input line 94.
 
 [2]
 
@@ -888,7 +888,7 @@ LaTeX Warning: Reference `sec:rain' on page 13 undefined on input line 296.
 228> [14] <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [15]
 [16]
 
-LaTeX Warning: Reference `wr' on page 17 undefined on input line 375.
+LaTeX Warning: Reference `wr' on page 17 undefined on input line 374.
 
 [17] [18] [19] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
@@ -917,7 +917,7 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (19 pages, 208786 bytes).
+Output written on pt-ai_final.pdf (19 pages, 208809 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
