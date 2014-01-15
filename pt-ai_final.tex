@@ -91,7 +91,7 @@ We focus on its implications for logical modeling, and we sketch the development
 
 The structure of the paper is as follows. In Section \ref{sec:arg} we present the argumentative theory and the argumentative view of agents that it gives rise to. We argue that the notion of argumentation that is at work challenges existing traditions in argumentation theory, particularly formal theories, and we go on to present an alternative formalization which sees argumentative structures as the basis upon which agents' subjective interpretations of the world are formed. In short, we introduce the \emph{argumentative agent}, and we argue that he should be studied further.
 
-Then, in Section \ref{sec:ddl} we present a logical formalism for studying argumentative deliberation, interaction between argumentative agents that serve to generate new interpretations of the world. Since our purpose in this paper is to focus on main ideas rather than technical details, we present a very simple formal framework, containing only some very basic constructions which can be developed further using existing tools from formal logic. However, we show how even a simple formal expression of the general idea suffices to show how logical modeling allows us to shed light on some of the mechanisms addressed in \cite{whyreason} and predicted by the argumentative theory. In Section \ref{sec:for} we go even further and sketch the development of an axiomatic approach to rationality at the deliberative level, showing how normative assertions about how deliberation should function can be expressed and studied using logic. In Section \ref{sec:conc} we discuss some possible directions for future work and offer a conclusion.
+Then, in Section \ref{sec:ddl} we present a logical formalism for studying argumentative deliberation, interaction between argumentative agents that serve to generate new interpretations of the world. Since our purpose in this paper is to focus on main ideas rather than technical details, we present a very simple formal framework, containing only some very basic constructions which can be developed further using existing tools from formal logic. However, we show how even a simple formal expression of the general idea suffices to show how logical modeling allows us to shed light on some of the mechanisms addressed in \cite{whyreason} and predicted by the argumentative theory. In Section \ref{sub:for} we go even further and sketch the development of an axiomatic approach to rationality at the deliberative level, showing how normative assertions about how deliberation should function can be expressed and studied using logic. In Section \ref{sec:conc} we discuss some possible directions for future work and offer a conclusion.
 %
 % the necessary background on the argumentative theory of reason. We note that the notion of argumentation used to formulate this theory is conceptually distinct from the notion of argumentation relied on in the theory of argumentation frameworks, as studied in artificial intelligence. We discuss the differences and common elements between the two notions,  and we conclude we can only use argumentation frameworks to arrive at logics for representing the argumentative theory if we conceptualize argumentation frameworks as subjective representations of semantic content, on the basis of which deliberation can take place. We go on to argue that a fundamental question raised by the argumentative theory, which can then be analyzed by formal tools, is the question of how argumentative deliberation works, and how it can sometimes result in desirable outcomes, even if the individual participants are not classically sound in their own reasoning. We propose, in particular, that the argumentative theory implicitly relies on, and suggests further study of, \emph{social} rationality constraint -- imposed at the deliberative level, and formulated with respect to the outcome of deliberation. Moreover, we argue that these constraints are \emph{not} reducible to corresponding notions of rationality that applies to individual reasoners, who are instead characterized by a distinct form of \emph{argumentative rationality}, in that they seek primarily to maximize their influence, to win as many arguments as possible.
 %
@@ -125,12 +125,12 @@ How can we formalize the argumentative agent, when argumentation is understood i
 
 The theory of argumentation frameworks has been influential in the context of artificial intelligence (Rahwan 2009). It is capable of capturing many different semantic notions, including semantics for multi-valued and non-monotonic logics, logic programs and games (Dung 1995; Dyrkolbotn and Walicki 2013). More recently, the work in (Brewka, Dunne, and Woltran 2011) shows how argumentation frameworks can be used to provide a faithful (and computationally efficient) representation also of semantics that are formulated with respect to the much more fine-grained formalism of abstract dialectical frameworks (Brewka and Woltran 2010). For our project, it is also important to note that much recent work focuses on providing logical foundations the theory (Grossi 2010a; Grossi 2010b; M. W. A. Caminada and Gabbay 2009; Arieli and Caminada 2013; Dyrkolbotn and Walicki 2013; Dyrkolbotn 2013).
 
-In our opinion, this makes argumentation frameworks highly suited as a technical starting point towards logics for argumentative deliberation. However, we propose to make use of them in a novel way, not to model actual argumentation scenarios, but to model the internal workings of the agents themselves. In particular, we will use them to model the agents' interpretations of semantic meaning. In terms of each individual agent, using terminology from cognitive science, this places the argumentation framework at the informational level of cognitive processing, where previous work have already shown that logical tools can have a particularly crucial role to play, also serving to shed new light on established truths arrived at through empirical work, see e.g., (Stenning and van Lambalgen 2005). It also makes good sense with respect to the argumentative theory; as agents reason to win arguments, it seems natural to assume that they also tend to represent semantic information in argumentative terms. Moreover, the theory of argumentation frameworks provide a flexible framework for modeling many different ways in which individual agents may choose to reason, using one among the many semantics that have been developed on the basis of argumentation frameworks. Hence there is no commitment to a given set of reasoning rules or principles, the argumentative agent is defined by the fact that he maintains an argumentative interpretation of the world, not by the fact that he reasons about it in a given way.
+In our opinion, this makes argumentation frameworks highly suited as a technical starting point towards logics for argumentative deliberation. However, we propose to make use of them in a novel way, not to model actual argumentation scenarios, but to model the internal workings of the agents themselves. In particular, we will use them to model the agents' interpretations of semantic meaning. In terms of each individual agent, using terminology from cognitive science, this places the argumentation framework at the informational level of cognitive processing, where previous work have already shown that logical tools can have a particularly crucial role to play, also serving to shed new light on established truths arrived at through empirical work, see e.g., (Stenning and van Lambalgen 2005). It also makes good sense with respect to the argumentative theory; as agents reason to win arguments, it seems natural to assume that they also tend to represent semantic information in argumentative terms. Moreover, the theory of argumentation frameworks provide a flexible framework for modeling many different ways in which individual agents may choose to reason, using one among the many semantics that have been developed for reasoning about such frameworks. Hence we make no commitment to a given set of reasoning rules or principles -- the argumentative agent is defined by the fact that he maintains an argumentative interpretation of the world, not by the fact that he reasons about it in a given way.
 
 While much work on multi-agent argumentation has already been carried out in a formal and semi-formal context, we note that this work is mostly based on a traditional view of argumentation theory. For instance, we think this is implicit in recent formal work such as that of  (M. Caminada, Pigozzi, and Podlaszewski 2011; M. Caminada and Pigozzi 2011) and even more so in the survey of the field given in (Rahwan 2009). In our opinion, however, this view is inappropriate when attempting to formalize the argumentative theory.
 The problem is that the representation of the argumentation scenario is fixed and not open to dispute and dynamic change, except with respect to the question of how it should be evaluated. But to model the argumentative theory, we need to depart from this starting point, since it is crucial that the basic representation of the surrounding semantic reality is itself a subjective construction, distinctly produced in each individual agent. This is why we use argumentation frameworks as models of the agents' internal view of the relevant arguments and how they are related. Such models only provide a starting point, however, and the real challenge becomes how to describe deliberative processes that can take place on the basis of the agents' diverging interpretations of the world.
 
-We return to this question in Section \ref{sec:del}, after we have formalized our definition of the argumentative agent, using argumentation frameworks.
+We return to this question in Section \ref{sec:ddl}, after we have formalized our definition of the argumentative agent, using argumentation frameworks.
 
 \subsection{Argumentation frameworks, agents and semantic views}\label{subsec:arg}
 
@@ -409,89 +409,3 @@ Let us assume that $\phi$ expresses some principle which we take to define ``goo
 
 \end{document}
 
-  -- we have a theory which only allows us to consider certain well-behaved argumentative states
-
- that if we stipulate $\cdia p  \cdia \neg p$ as an axiom that should hold in every deliberative state, then 
-
-
- seems difficult to define the appropriate kind of deliberation, however, 
-
-particularly strong normative claim, a that is seems unrealistic to enforce in all circumstances. Rather, we see it as an overiding aim, and we see the role of more refined normative notions to be that of maximizing the likelihood that this will happen. In particular, we will see that if we takes it as an absolute requirement on all forms of deliberation, then in some argumentative states, it is \emph{impossible} to deliberate successfully; a classically sound semantics cannot always be regained from deliberation, at least not as long as Principle (\ref{principle}) is observed.
-
-The following is a formalization of the principle of classical soundness:
-
-$$
-\views \models \neg \cdia \neg \phi \to \cdia \phi
-$$
-If, in every deliberative state, the impossibility of $\neg \phi$ implies the existence of $\phi$, then the model maintains adherence to classical principles as a semantic invariant, both in terms of interpretation and evaluation.
-
-The problem is that not all argumentative states give rise to any non-trivial deliberative models that satisfy this constraint. Hence the requirement is not possible to express merely as a requirement on the process of deliberation. It also requires imposing normative requirements on individual reasoners. For instance, in cases when all reasoners agree already, and they are all unsound in their reasoning, irrationality will prevail regardless of deliberation. Hence the strict classical assumption is not warranted, if we take seriously the stipulation that argument production, rather than soundness, is the function of reasoning (also in a normative sense).
-
-However, we can consider other standards which are influenced by the classical standard, and perhaps seeks to reach it in as many cases as possible. For instance, we can stipulate that everyone should have their voices hears, so as to minimize the chance of one view being enforced against all others. Thus we arrive at the principle that deliberation should be organized in an egalitarian manner. How can we formalize such an idea?
-
-One possible protocol is arrived at if we say that the majority opinion should always be adhered to, regarding what interpretation we should regard as successful following deliberation. This, however, appears to be rather too strict as well, albeit in a different way. In fact, if we break ties arbitrarily, it defines a unique deliberative state which is the eventual outcome of every debate: the one defined by taking the relationship between every $x,y$ to be determined by whether or not a majority of the agents believe that one attacks the other. In this case there is hardly any need for further logical analysis -- the outcome is given, once and for all. However, it is also a highly unsatisfactory account of deliberation, the purpose of which is precisely to allow positions and semantic interpretations to develop dynamically as agents interact in various ways, attempting to influence each other and the common ground. 
-
-In fact, we believe it is not the role of logic to pinpoint the exact outcome of deliberation, but to explore rather the space of possibilities, describing restrictions by stipulating invariant formulas -- logical principles that should be true across all possibilities -- not by explicitly defining the set of possible outcomes by way of mathematical models.
-
-There are several ways to do this, each reflecting a different level of ambition about what logical methods have to offer. First, we can use logic merely as a modeling language, allowing us to encode concrete scenarios in a precise way, to talk about them in formal language, and to employ model checkers to decide if given claims are true in a given scenario. In this regard, there is little doubt that logic has something to offer, and we show some examples of this in Subsection \ref{sec:modeling}. Second, we can use logic to study normative constraints that are mathematically defined and which restricts, or adds structure to, the models we allow ourselves to consider. This promises formalization of general theoretical constructs, not limited to modeling of concrete scenarios, that we can then study using formal tools. However, the extent to which this is a fruitful line of inquiry depends on the extent to which we can provide mathematically reasonable definitions of key concepts. In Subsection \ref{sec:truls} we argue that this line of research is also promising, and we do so by making a concrete suggestion as to how a normative notion of rational deliberation can be encoded by a special class of deliberative models that satisfies certain constraints. Thirdly, and most ambitiously, we can attempt to \emph{axiomatically define} notions of good argumentative deliberation, defining key concepts directly in the object language of some suitable logic, and studying them using reasoning systems developed for that logic. This raises both the question of what meaningful general notions we can capture by restrictions on models and also the question of how expressive logics we need to express these restrictions in the object language. It raises many interesting and tricky questions, for instance regarding the adequacy, decidability and computational complexity of the resulting systems. In Subsection \ref{sec:sjur} we argue that even this use of logic shows promise with regards to the argumentative theory, and we discuss possible axioms of deliberation that we believe deserve further scrutiny.
-
-\subsection{Using deliberative models to represent instances of argumentative interaction}
-
-\subsection{Using restricted classes of deliberative models to study notions of rationality and ``good" argumentative interaction}
-
-\subsection{The search for axiomatic characterization of rational argumentative interaction}
-
- 
-There are two possible approached for the further study of rationality by way of deliberative logic, moving beyond the mere descriptive modeling of concrete deliberative scenarios, keeping track of the relevant information, to the normative questions of the \emph{design} of such processes.
-
-\begin{itemize}
-\item We can model and study normative constraints on deliberation semantically by considering restricted classes of deliberative models which are deemed to correspond to ``good" deliberation. We introduce one such restricted class in Subsection \ref{sec:truls} below, intended to model liberal, open deliberation, where it is explicitly forbidden to enforce given restrictions on the course of debate. 
-\item We can define normative constraints corresponding to classes of models in the object language, using both known and new systems of temporal logic. We present an example of this in Subsection \ref{sec:sjur} below.
-\end{itemize}
-
-
-
-using logical languages that express properties of deliberative models? This is a question we must mostly leave for future technical work, but we make some preliminary observations. For instance, when it comes to the 
-
-This, then, suggests that the notion is too strong. 
-
-
-given a set of deliberative states $Q$ and a relation between them, encoding how deliberation unfolds, we can use modal logic to reason about the deliberative structure that results. This leads to the following definition of a deliberative Kripke model.
-
-
-
-First we need to decide what we 
- It seems that the way in which deliberation takes place, and the mechanism by which a joint view is produced
-
- reach \emph{agreement} on how arguments are related. That is, we are interested in the set of all AFs that can plausibly be seen as resulting from a \emph{consensus} regarding the status of the arguments in $\Pi$. What restrictions is it reasonable to place on a consensus? It seems that while many restrictions might arise from pragmatic considerations, and be implemented by specific protocols for ``good'' deliberation in specific contexts, there are few restrictions that can be regarded as completely general. For instance, while there is often good reason to think that the position held by the majority will be part of a consensus, it is hardly possible to stipulate an axiomatic restriction on the notion of consensus amounting to the principle of majority rule. Indeed, sometimes deliberation takes place and leads to a single dissenting voice convincing all the others, and often, these deliberative processes are far more interesting than those that transpire along more conventional lines. However, it seems reasonable to assume that whenever \emph{all} agents agree on how an argument $p$ is related to an argument $q$, then this relationship is part of any consensus. This, indeed, is the only restriction we will place on the notion of a consensus; that when the AF $\af$ is a consensus for $\basis$, it must satisfy the following \emph{faithfulness} requirement.
-
-\begin{itemize}
-\item \emph{For all $p,q \in \Pi$, if there is no disagreement about $p$'s relationship to $q$ (attack/not attack), then this relationship is part of $\af$}
-\end{itemize}
-
-This leads to the following definition of the set $\cons \views$, which we will call the set of \emph{complete assents} for $\views$, collecting all AFs that are faithful to $\views$.
-
-\begin{equation}\label{def:consensus}
-\cons \views = \left\{\af \subseteq \Pi \times \Pi ~\left|~ \bigcap_{a \in \agents}V_a \subseteq \af \subseteq \bigcup_{a \in \agents}V_a\right.\right\}
-\end{equation}
-
-An element of $\cons \views$ represents a possible consensus among agents in $\agents$, but it is an \emph{idealization} of the notion of assent, since it disregards the fact that in practice, assent tends to be \emph{partial}, since it results from a dynamic process, emerging through \emph{deliberation}. Indeed, as long as the number of arguments is not bounded we can \emph{never} hope to arrive at complete assent via deliberation. We can, however, hope to initiate a process by which we clarify the status of more and more arguments, in the hope that this will approximate some complete assent. If we are lucky, it might even turn out to be \emph{robust}, in the sense that there is \emph{no} deliberative future where the results of current partial assent end up being undermined. Complete assent, however, arises only in the limit.
-
-In practice, we can only every analyze this limit by looking at smaller parts of the whole, some partial consensus that has been obtained through deliberation. Hence we define a \emph{deliberative state} as a tuple $q = (q_S,q_E)$ such that $q_S \subseteq \Pi$ and 
-\begin{equation}\label{eq:ds}
-\bigcap_{a \in \agents}\restr {V_a} {q_S} \subseteq q_E \subseteq \bigcup_{a\in \agents} \restr{V_a}{q_S}
-\end{equation}
-So a deliberative state $q$ is an AF $q_E$ such that all attacks of $q_E$ are between arguments of $q_S$. Moreover, $q$ is faithfully generated from the views of the agents; $q_E$ only contains semantic information that is present in at least one agents' view. Now we are ready to define deliberative Kripke models.
-
-\begin{definition}\label{main}
-Given a basis $\views$, a deliberative Kripke model with respect to $\views$ is a tuple $(Q,R)$ where $Q$ is a set of deliberative states for $\views$ and $R \subseteq Q \times Q$ is a relation on $Q$.
-\end{definition}
-We will reason about deliberative Kripke models using the following language.
-$$ \phi \quad ::= \cdia \alpha \ \mid \ \cdia_a \alpha ~|~ \neg \phi ~|~ \phi \wedge \phi ~|~ \ddia p \phi ~|~ \adia \phi$$ 
-where $p \in \Pi$, $\alpha \in \lang$ and $a \in \agents$.
-
-\section{Discussion and future work}\label{sec:fut}
-
-\section{Conclusion}\label{sec:conc}
-
-\end{document}
