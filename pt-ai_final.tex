@@ -298,7 +298,21 @@ Here, both $w$ and $p$ are regarded as successful, meaning that \emph{both} $r$ 
 \end{example}
 
 \begin{example}[Two wrongs that make a right]\label{ex:wr}
-To do: Write up a simple example of two views that are both inconsistent (no admissible set), such that a consistent outcome results from deliberation.
+Consider the following argumentative state:
+$$
+\begin{array}{llll}
+V_a: & \xymatrix{ & u \ar@(ru,rd) \\ v \ar[ur] \ar[dr] \ar@(lu,ld) \\ & w \ar[uu] } & \hspace{1.5cm} V_b: & \xymatrix{ u \ar[dd] \\ & v \ar@(ru,rd) \ar[ul] \\ w \ar[ur] }
+\end{array}
+$$
+Here the two agents both have an inconsistent view on the semantic elements, as the reader may easily verify. Moreover, the agents agree that $v$ attacks itself. But even so, deliberation can result in consistency being regained. In particular, the AF depicted below is a deliberative state for $(V_a,V_b)$ and it is easily seen to be classically consistent, under the evaluation $\{v \mapsto 0, w \mapsto 1, u \mapsto 0\}$
+$$
+\xymatrix{ & u \ar@/_/[dd] \\ v \ar@(lu,ld) \ar[ur] \\ & w \ar[ul] \ar@/_/[uu] }
+$$
+
+
+Consider two agents $a$ and $b$ who despair about the state of the economy. For $a$, there is no way out of the evil loop by which an increase in taxes reduces spending and thus hinders economic growth. Hence, in his view, the position that growth is ensured by increasing taxes (modeled by atom $t$) is problematic because it attacks the position that spending will increase ($s$), while if spending does not increase, the original position is not defended against the counter-argument that growth will be hindered by lack of tax revenue ($r$).  On the other hand, let us assume that agent $b$ worries that lowering taxes is also self-defeating because it to stimulate spending is 
+
+ self-defeating even if it does also attack the deficit ($d$).  
 \end{example}
 
 \begin{example}[An agreement that disagrees with itself]\label{ex:ad}
@@ -361,7 +375,6 @@ Let us assume that $\phi$ expresses some principle which we take to define ``goo
 \item $\abox^\ast \adia^\ast \phi$: for every chain of events out of the current state, there is a way to continue this chain so that $\phi$ eventually becomes true.
 \item $\abox^\ast \adia^\ast \abox^\ast \phi$: for every chain of event out of the current state, there is a continuation so that $\phi$ eventually becomes true, and remains true forever.
 \end{itemize}
-
 
 \section{Conclusion}\label{sec:conc}
 
