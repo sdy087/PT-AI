@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 00:12
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 00:29
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -869,43 +869,20 @@ Missing character: There is no ¡ in font ptmr7t!
  [8]
 <xymatrix 2x1 92> <xymatrix 2x1 106> [9] <xymatrix 2x2 110> <xymatrix 2x2 155>
 <xymatrix 2x2 237> [10] <xymatrix 2x2 202> <xymatrix 2x2 202> [11]
+Overfull \hbox (45.17984pt too wide) in paragraph at lines 273--274
+[]\OT1/ptm/m/n/10 This is a chal-lenge that points be-yond the work al-ready do
+ne in [[]],
+ []
 
-LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 273.
-
-
-LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 275.
-
-
-LaTeX Warning: Reference `sub:ex' on page 12 undefined on input line 287.
-
-[12]
-
-LaTeX Warning: Reference `sec:truls' on page 13 undefined on input line 299.
-
-<xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
-<xymatrix 3x1 152> [13]
-
-LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 331.
-
-[14]
-
-LaTeX Warning: Citation `whyreason' on page 15 undefined on input line 335.
-
-
-LaTeX Warning: Reference `sec:rain' on page 15 undefined on input line 338.
-
-<xymatrix 2x2 100> <xymatrix 2x2 134> <xymatrix 2x2 168> <xymatrix 2x2 202>
-<xymatrix 2x2 202> <xymatrix 2x2 250> <xymatrix 3x3 204> [15] <xymatrix 2x3
-236> <xymatrix 2x3 176> [16] <xymatrix 2x3 228> <xymatrix 2x2 202> <xymatrix
-2x2 202> <xymatrix 2x2 154> [17]
+[12] <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
+<xymatrix 3x1 152> [13] [14] <xymatrix 2x2 100> <xymatrix 2x2 134> <xymatrix
+2x2 168> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 250> <xymatrix
+3x3 204> [15] <xymatrix 2x3 236> <xymatrix 2x3 176> [16] <xymatrix 2x3 228>
+<xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [17]
 
 LaTeX Warning: Reference `sec:for' on page 18 undefined on input line 400.
 
-[18] [19]
-
-LaTeX Warning: Reference `wr' on page 20 undefined on input line 427.
-
-[20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
+[18] [19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 12--16
 []\OT1/ptm/m/n/8.5 Arieli O, Cam-i-nada MWA (2013) A QBF-
  []
@@ -1012,13 +989,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16992 strings out of 494045
- 289176 string characters out of 3148380
- 390222 words of memory out of 3000000
- 19929 multiletter control sequences out of 15000+200000
- 53405 words of font info for 122 fonts, out of 3000000 for 9000
+ 16985 strings out of 494045
+ 289114 string characters out of 3148380
+ 389222 words of memory out of 3000000
+ 19923 multiletter control sequences out of 15000+200000
+ 52298 words of font info for 121 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,27n,55p,1914b,1003s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,27n,55p,1914b,1002s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -1033,7 +1010,7 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (23 pages, 228313 bytes).
+Output written on pt-ai_final.pdf (23 pages, 228352 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
