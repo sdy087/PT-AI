@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  15 JAN 2014 19:09
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 00:12
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -809,94 +809,213 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+
+Overfull \hbox (6.21985pt too wide) in paragraph at lines 82--83
+\OT1/ptm/m/n/10 cial in-tel-li-gence [[], [], [],
+ []
+
 [1
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
+Overfull \hbox (34.97913pt too wide) in paragraph at lines 117--118
+\OT1/ptm/m/n/10 more fine-grained for-mal-ism of ab-stract di-alec-ti-cal frame
+-works [[]].
+ []
 
-LaTeX Warning: Citation `whyreason' on page 2 undefined on input line 95.
 
-[2] [3] [4]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 134.
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 140.
+Overfull \hbox (41.17944pt too wide) in paragraph at lines 117--118
+\OT1/ptm/m/n/10 ing log-i-cal foun-da-tions the the-ory [[], [], [],
+ []
+
+[4]
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 121.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.29004> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.10005> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
- <xymatrix 4x1 376> [5]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
 
-LaTeX Warning: Citation `....' on page 6 undefined on input line 154.
-
-
-LaTeX Warning: Citation `usSynthese' on page 6 undefined on input line 158.
-
-
-LaTeX Warning: Citation `meESSLLI' on page 6 undefined on input line 158.
+Underfull \hbox (badness 5787) in paragraph at lines 121--121
+[] []\OT1/ptm/m/n/8.5 For in-stance, we think this is im-plicit in re-cent for-
+mal work such as that of
+ []
 
 
-LaTeX Warning: Citation `Arieli' on page 6 undefined on input line 158.
+Underfull \hbox (badness 1939) in paragraph at lines 121--121
+\OT1/ptm/m/n/8.5 [[], []] and
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 124.
+<xymatrix 4x1 376> [5]
+Overfull \hbox (51.10931pt too wide) in paragraph at lines 143--145
+\OT1/ptm/m/n/10 taken to-gether, typ-i-cally called \OT1/ptm/m/it/10 ex-ten-sio
+ns\OT1/ptm/m/n/10 , see e.g., [[]].
+ []
 
 [6] [7]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 205.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 195.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 205.
- <xymatrix
-1x1 62>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¡ in font ptmr7t!
+ [8]
+<xymatrix 2x1 92> <xymatrix 2x1 106> [9] <xymatrix 2x2 110> <xymatrix 2x2 155>
+<xymatrix 2x2 237> [10] <xymatrix 2x2 202> <xymatrix 2x2 202> [11]
 
-LaTeX Warning: Citation `Sjur-SYNTH' on page 8 undefined on input line 211.
-
-[8] <xymatrix 2x1 92> <xymatrix 2x1 106> <xymatrix 2x2 110> <xymatrix 2x2 155>
-<xymatrix 2x2 237> [9] <xymatrix 2x2 202> <xymatrix 2x2 202> [10]
-
-LaTeX Warning: Citation `whyreason' on page 11 undefined on input line 281.
-
-[11]
-
-LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 283.
+LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 273.
 
 
-LaTeX Warning: Reference `sub:ex' on page 12 undefined on input line 295.
+LaTeX Warning: Citation `whyreason' on page 12 undefined on input line 275.
 
 
-LaTeX Warning: Reference `sec:truls' on page 12 undefined on input line 307.
+LaTeX Warning: Reference `sub:ex' on page 12 undefined on input line 287.
 
-[12] <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
+[12]
+
+LaTeX Warning: Reference `sec:truls' on page 13 undefined on input line 299.
+
+<xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104>
 <xymatrix 3x1 152> [13]
 
-LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 339.
-
-
-LaTeX Warning: Citation `whyreason' on page 14 undefined on input line 343.
+LaTeX Warning: Reference `sec:theory' on page 14 undefined on input line 331.
 
 [14]
 
-LaTeX Warning: Reference `sec:rain' on page 15 undefined on input line 346.
+LaTeX Warning: Citation `whyreason' on page 15 undefined on input line 335.
+
+
+LaTeX Warning: Reference `sec:rain' on page 15 undefined on input line 338.
 
 <xymatrix 2x2 100> <xymatrix 2x2 134> <xymatrix 2x2 168> <xymatrix 2x2 202>
 <xymatrix 2x2 202> <xymatrix 2x2 250> <xymatrix 3x3 204> [15] <xymatrix 2x3
-236> <xymatrix 2x3 176> <xymatrix 2x3 228> [16] <xymatrix 2x2 202> <xymatrix
-2x2 202> <xymatrix 2x2 154> [17] [18] [19]
+236> <xymatrix 2x3 176> [16] <xymatrix 2x3 228> <xymatrix 2x2 202> <xymatrix
+2x2 202> <xymatrix 2x2 154> [17]
 
-LaTeX Warning: Reference `wr' on page 20 undefined on input line 436.
+LaTeX Warning: Reference `sec:for' on page 18 undefined on input line 400.
 
-[20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+[18] [19]
+
+LaTeX Warning: Reference `wr' on page 20 undefined on input line 427.
+
+[20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+[]\OT1/ptm/m/n/8.5 Arieli O, Cam-i-nada MWA (2013) A QBF-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+\OT1/ptm/m/n/8.5 based for-mal-iza-tion of ab-stract ar-gu-men-ta-tion se-man-t
+ics. Jour-nal of Ap-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+\OT1/ptm/m/n/8.5 plied Logic 11(2):229 -- 252, DOI 10.1016/j.jal.2013.03.009, U
+RL
+ []
+
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+
+Underfull \hbox (badness 3826) in paragraph at lines 50--54
+[]\OT1/ptm/m/n/8.5 Caminada M, Pigozzi G, Pod-
+ []
+
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+[22]
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--134
+[]\OT1/ptm/m/n/8.5 Waal FBMd, Fer-rari PF (2010) To-wards a bottom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--134
+\OT1/ptm/m/n/8.5 up per-spec-tive on an-i-mal and hu-man cog-ni-tion. Trends in
+ Cog-ni-tive Sci-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--134
+\OT1/ptm/m/n/8.5 ences 14(5):201 -- 207, DOI http://dx.doi.org/10.1016/j.tics.2
+010.03.003, URL
+ []
+
+
+Underfull \hbox (badness 4913) in paragraph at lines 136--140
+\OT1/ptm/m/n/8.5 plete ex-ten-sions in ar-gu-men-ta-tion co-in-cide with 3-valu
+ed sta-ble mod-els in logic
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 136--140
+\OT1/ptm/m/n/8.5 pro-gram-ming. Stu-dia Log-ica 93(2-3):383--403, DOI 10.1007/s
+11225-009-9210-5, URL
+ []
+
+) [23] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16959 strings out of 494045
- 288831 string characters out of 3148380
- 387535 words of memory out of 3000000
- 19899 multiletter control sequences out of 15000+200000
+ 16992 strings out of 494045
+ 289176 string characters out of 3148380
+ 390222 words of memory out of 3000000
+ 19929 multiletter control sequences out of 15000+200000
  53405 words of font info for 122 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  56i,27n,55p,1914b,1003s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -914,9 +1033,9 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (21 pages, 218287 bytes).
+Output written on pt-ai_final.pdf (23 pages, 228313 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
