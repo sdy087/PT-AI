@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 09:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 10:08
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -850,17 +850,13 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
  [8] <xymatrix
 2x1 92> <xymatrix 2x1 106> <xymatrix 2x2 110> <xymatrix 2x2 155> <xymatrix 2x2
-237> [9] <xymatrix 2x2 202> <xymatrix 2x2 202> [10]
-Overfull \hbox (2.11026pt too wide) in paragraph at lines 259--260
-[]\OT1/ptm/m/n/10 This is a chal-lenge that points be-yond the work from [[]],
- []
-
-[11] [12] <xymatrix 3x1 104> <xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1
-104> <xymatrix 3x1 152> [13] [14] <xymatrix 2x2 100> <xymatrix 2x2 134>
-<xymatrix 2x2 168> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 250>
-<xymatrix 3x3 204> [15] <xymatrix 2x3 236> <xymatrix 2x3 176> [16] <xymatrix
-2x3 228> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [17] [18]
-[19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
+237> [9] <xymatrix 2x2 202> <xymatrix 2x2 202> [10] [11] <xymatrix 3x1 104>
+<xymatrix 2x1 92> <xymatrix 2x1 10> <xymatrix 3x1 104> <xymatrix 3x1 152>
+[12] [13] <xymatrix 2x2 100> <xymatrix 2x2 134> <xymatrix 2x2 168> <xymatrix
+2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 250> <xymatrix 3x3 204> [14] [15]
+<xymatrix 2x3 236> <xymatrix 2x3 176> <xymatrix 2x3 228> <xymatrix 2x2 202>
+<xymatrix 2x2 202> [16] <xymatrix 2x2 154> [17] [18] [19] [20] [21]
+(C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -870,7 +866,6 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [22]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -896,6 +891,7 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+ [22]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -911,8 +907,8 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [23])
-[24] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+) [23]
+(C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -920,7 +916,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  16983 strings out of 494045
  289092 string characters out of 3148380
- 388138 words of memory out of 3000000
+ 390139 words of memory out of 3000000
  19918 multiletter control sequences out of 15000+200000
  54006 words of font info for 124 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -939,9 +935,9 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (24 pages, 228519 bytes).
+Output written on pt-ai_final.pdf (23 pages, 226575 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
