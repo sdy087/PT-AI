@@ -129,18 +129,18 @@ $$
 \label{fig:1}
 \end{figure}
 
-To reason about individual AFs, we will use a simple propositional language $\lang$ with implication, defined as follows.
-$$
-\phi := p \ \mid \ \neg \phi \ \mid \ \phi \to \psi \
-$$
-where $p \in \Pi$. We can think about formulas from $\lang$ as meta-arguments regarding the status of a given argument under one of the various semantics that may be formulated using Dung's model. We notice that $\lang$ is essentially a modal language when interpreted on argumentation frameworks. For instance, we can read the formula $p$ as the meta-argument that $p$ \emph{should} be accepted, while a different construction will be needed in order to express that $p$ \emph{must} accepted. The exact difference will become clear as soon as we define the semantics for the language, but intuitively speaking we note that $p$ is then read as a meta-claim that it is reasonable to ascribe to any argument, regardless of its internal structure, and how it relates to other arguments. In particular, we think it is always safe to say that whatever else an argument is made up of, it implicitly also makes the assertion that it should be accepted.
+%To reason about individual AFs, we will use a simple propositional language $\lang$ with implication, defined as follows.
+%$$
+%\phi := p \ \mid \ \neg \phi \ \mid \ \phi \to \psi \
+%$$
+%where $p \in \Pi$. We can think about formulas from $\lang$ as meta-arguments regarding the status of a given argument under one of the various semantics that may be formulated using Dung's model. We notice that $\lang$ is essentially a modal language when interpreted on argumentation frameworks. For instance, we can read the formula $p$ as the meta-argument that $p$ \emph{should} be accepted, while a different construction will be needed in order to express that $p$ \emph{must} accepted. The exact difference will become clear as soon as we define the semantics for the language, but intuitively speaking we note that $p$ is then read as a meta-claim that it is reasonable to ascribe to any argument, regardless of its internal structure, and how it relates to other arguments. In particular, we think it is always safe to say that whatever else an argument is made up of, it implicitly also makes the assertion that it should be accepted.
 
-Given an AF $E$, the purpose of an argumentation semantics is to identify, using the structure of $E$, the 
+Given an AF $E$, the purpose of an argumentation semantics is to identify, in terms of $E$, the 
 collection of sets of arguments that can be accepted if they are taken together, typically called \emph{extensions}, see e.g., \cite{wu}. For instance, if $E = \{(p,q),(r,p)\}$, then the semantics might prescribe $\{r,q\}$ as a set that can be accepted, since $r$ defends $q$ against the argument made by $p$ and $r$ is not in turn attacked. It is natural to represent semantics for AFs using three-valued assignments. In particular, given an AF $E$ and an extension $A \subseteq \Pi$, the associated three-valued assignment is $\clab_A:\Pi \to \three$ given by
 $$
 \clab_A(x) = \begin{cases} 1 \text{ if } x \in A \\ 0 \text{ if } x \in \outa E A \\ \frac{1}{2} \text{ otherwise } \end{cases}
 $$
-This representation corresponds to an intuitive reading where arguments in $A$ are regarded as true/successful, arguments attacked by one of these are regarded as false(failed, while all other arguments are taken to have an undecided semantic status. The three-valued representation of extensions also facilitate elegant definitions of various argumentation semantics, based on thinking of semantics as prescribing collections of three-valued assignments to AFs. In this way, it also becomes natural to reason about AFs using three-valued logic, an idea that has been explored in some recent work \cite{dyrkolbotn,arieli,dyrkolbotn1}. This will be exploited in the coming sections, as we will rely on three-valued {\L}ukasiewicz logic when we evaluate complex formulas from $\lang$ on given AFs.
+This representation corresponds to an intuitive reading where arguments in $A$ are regarded as true/successful, arguments attacked by one of these are regarded as false/failed, while all other arguments are taken to have an undecided semantic status. The three-valued representation of extensions also facilitate elegant definitions of various argumentation semantics, based on thinking of semantics as prescribing collections of three-valued assignments to AFs. In this way, it also becomes natural to reason about AFs using three-valued logic, an idea that has been explored in some recent work \cite{dyrkolbotn,arieli,dyrkolbotn1}. This will be exploited in the coming sections, as we will rely on three-valued {\L}ukasiewicz logic when we evaluate complex formulas over given AFs.
 
 In Figure \ref{fig:sem} we provide definitions of the most commonly known semantics based on argumentation frameworks. The logic introduced in the next section is parameterized by an argumentation semantics and the choice of such a semantics will not crucial be for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria of acceptability of arguments. Intuitively, it requires that an acceptable set must be free from internal conflict and that it must also be able to defend itself against all attacks. The other semantics in Figure \ref{fig:sem} are all based on the same idea, but adds other requirements that are less obviously reasonable. In the following we will let $\sem$ refer to some generic semantics defined in Figure \ref{fig:sem}.
 
@@ -158,7 +158,12 @@ $\begin{array}{ll}
 \label{fig:sem}
 \end{figure}
 
-Towards a definition of an argumentative agent, we now define the inductive extension of three-valued assignments to arbitrary formulas from $\lang$, as in {\L}ukasiewicz three-valued logic as follows.
+Towards a logic for reasoning about AFs we will start from the simple propositional language $\lang$, defined by the grammar below.
+
+$$
+\alpha := \ p \ \mid \ \neg \alpha \ \mid \ \alpha \to \alpha 
+$$
+where $p \in \Pi$. We can then define the inductive extension of three-valued assignments to arbitrary formulas from $\lang$ as in {\L}ukasiewicz three-valued logic, as detailed below.
 \begin{equation}\label{eq:lsem}
 \begin{array}{l}
 \overline \clab(p) = \clab(p) \text{ for } p \in \Phi \\
@@ -167,9 +172,9 @@ Towards a definition of an argumentative agent, we now define the inductive exte
 \end{array}
 \end{equation}
 
-This definition behaves like classical logic on the semantic values $\{0,1\}$. For an intuition of how the third value is dealt with, notice that the definition ensures that if $\clab(p) = \frac{1}{2}$, we have $\overline \clab(p \leftrightarrow \neg p) = 1$. In particular, the claim that $p$ is equivalent with its own negation is true just in case $p$ has value $\frac{1}{2}$. This means, in particular, that the logic allows us to express that some argument, or collection of arguments , have this value. This is what makes it so natural to use {\L}ukasiewicz logic to evaluate complex formulas, as opposed to some other three-valued logic, such as Kleene's logic. 
+This evaluation behaves like classical logic on the semantic values $\{0,1\}$. For an intuition of how the third value is dealt with, notice that the definition ensures that if $\clab(p) = \frac{1}{2}$, we have $\overline \clab(p \leftrightarrow \neg p) = 1$. In particular, the claim that $p$ is equivalent with its own negation is true just in case $p$ has value $\frac{1}{2}$. This means, in particular, that the logic allows us to express that some argument, or collection of arguments , have this value. This is what makes it so natural to use {\L}ukasiewicz logic to evaluate complex formulas, as opposed to some other three-valued logic, such as Kleene's logic. 
 
-We are now prepared to offer our definition of an argumentative agent. To this end, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_A \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration. That is, we take argumentative agents to be equipped with a subjective interpretation of meaning, specified by an AF. We also define an \emph{argumentative state} as a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can easily be extended by application of the ideas we developed in the next section.
+We are now prepared to offer our definition of an argumentative agent. To this end, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_a \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration. We also define an \emph{argumentative state} as a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can be extended in future work, by nested application of the ideas we develop in the next sections.
 
 Now, given an agent $a \in \agents$ with a view $V_a$, we can add the modality $\cdia_a$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. In particular, we get the following multi-agent language $\lblack$
 $$
