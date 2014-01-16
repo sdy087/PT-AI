@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 09:15
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 09:36
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -860,17 +860,7 @@ Overfull \hbox (2.11026pt too wide) in paragraph at lines 259--260
 <xymatrix 2x2 168> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 250>
 <xymatrix 3x3 204> [15] <xymatrix 2x3 236> <xymatrix 2x3 176> [16] <xymatrix
 2x3 228> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [17] [18]
-[19] [20] [21]
-
-LaTeX Warning: Reference `sec:for' on page 22 undefined on input line 440.
-
-(C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
+[19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -881,6 +871,12 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
  [22]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -915,17 +911,17 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-) [23]
-(C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+ [23])
+[24] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16984 strings out of 494045
- 289101 string characters out of 3148380
- 389138 words of memory out of 3000000
- 19919 multiletter control sequences out of 15000+200000
+ 16983 strings out of 494045
+ 289092 string characters out of 3148380
+ 388138 words of memory out of 3000000
+ 19918 multiletter control sequences out of 15000+200000
  54006 words of font info for 124 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  56i,27n,55p,1914b,1002s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -943,9 +939,9 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (23 pages, 227323 bytes).
+Output written on pt-ai_final.pdf (24 pages, 228443 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
+ 143 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
