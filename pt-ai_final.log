@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 01:13
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 01:38
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -813,38 +813,45 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.29004> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.10005> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 
-Underfull \hbox (badness 5077) in paragraph at lines 113--113
+LaTeX Warning: Citation `....' on page 3 undefined on input line 107.
+
+
+LaTeX Warning: Citation `.....' on page 3 undefined on input line 107.
+
+[3]
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 117.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.29004> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.10005> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
+
+Underfull \hbox (badness 5077) in paragraph at lines 117--117
 []\OT1/ptm/m/n/8.5 ] and even more so in the sur-vey of the field given in
  []
 
 [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 116.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 119.
  <xymatrix 4x1 376> [5] [6]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 187.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 190.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 190.
  [7]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
  [8] <xymatrix
 2x1 92> <xymatrix 2x1 106> [9] <xymatrix 2x2 110> <xymatrix 2x2 155> <xymatrix
 2x2 237> <xymatrix 2x2 202> <xymatrix 2x2 202> [10]
-Overfull \hbox (2.11026pt too wide) in paragraph at lines 251--252
+Overfull \hbox (2.11026pt too wide) in paragraph at lines 254--255
 []\OT1/ptm/m/n/10 This is a chal-lenge that points be-yond the work from [[]],
  []
 
@@ -852,11 +859,8 @@ Overfull \hbox (2.11026pt too wide) in paragraph at lines 251--252
 104> <xymatrix 3x1 152> [13] [14] <xymatrix 2x2 100> <xymatrix 2x2 134>
 <xymatrix 2x2 168> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 250>
 <xymatrix 3x3 204> [15] <xymatrix 2x3 236> <xymatrix 2x3 176> [16] <xymatrix
-2x3 228> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [17]
-
-LaTeX Warning: Reference `sec:for' on page 18 undefined on input line 376.
-
-[18] [19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
+2x3 228> <xymatrix 2x2 202> <xymatrix 2x2 202> <xymatrix 2x2 154> [17] [18]
+[19] [20] [21] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -907,17 +911,17 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-)
-[23] (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
+) [23]
+(C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16979 strings out of 494045
- 289073 string characters out of 3148380
- 388137 words of memory out of 3000000
- 19917 multiletter control sequences out of 15000+200000
+ 16980 strings out of 494045
+ 289077 string characters out of 3148380
+ 389137 words of memory out of 3000000
+ 19918 multiletter control sequences out of 15000+200000
  52298 words of font info for 121 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  56i,27n,55p,1914b,1002s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -935,7 +939,7 @@ pe1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/xypic/xyatip10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (23 pages, 229880 bytes).
+Output written on pt-ai_final.pdf (23 pages, 229857 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
