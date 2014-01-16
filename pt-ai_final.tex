@@ -38,12 +38,12 @@
 \newcommand{\ina}[2]{#1^-(#2)}
 \newcommand{\neu}[2]{#1^n(#2)}
 \newcommand{\proto}{\mathbf C}
-\newcommand{\clab}{\sf c}
+\newcommand{\clab}{\mathsf c}
 \newcommand{\iterate}[1]{{\cal I}(#1)}
 \newcommand{\cl}{cl}
-\newcommand{\dstate}[1]{\sf D({#1}) }
-\newcommand{\witness}[1]{{\sf w^{#1}}}
-\newcommand{\buffer}[2]{{\sf b}_{#1}(#2)}
+\newcommand{\dstate}[1]{\mathsf D({#1}) }
+\newcommand{\witness}[1]{{\mathsf w^{#1}}}
+\newcommand{\buffer}[2]{{\mathsf b}_{#1}(#2)}
 \newcommand{\sdepth}[2]{d_{#1}(#2)}
 \newcommand{\shrink}[2]{\rho_{#1}(#2)}
 \newcommand{\comp}[2]{C(#1,#2)}
@@ -52,10 +52,10 @@
 \newcommand{\pis}[1]{{\mathbf e}_{#1}}
 \newcommand{\carriers}[1]{Q_{#1}}
 \newcommand{\kmod}[2]{{\cal K}_{(#1,#2)}}
-\newcommand{\rels}[1]{{\sf R_{#1}}}
+\newcommand{\rels}[1]{{\mathsf R_{#1}}}
 \newcommand{\update}[3]{{\mathcal U}_{#1}(#2,#3)}
 \newcommand{\cons}[1]{{\textara{\ea}}(#1)}
-\newcommand{\af}{{\sf F}}
+\newcommand{\af}{{\mathsf F}}
 \newcommand{\afn}{S}
 \newcommand{\afe}{E}
 \newcommand{\seq}[1]{\overrightarrow{#1}}
@@ -434,6 +434,10 @@ Let us assume that $\phi$ expresses some principle which we take to define ``goo
 These are just some simple examples of notions that can be formulated in temporal logic. What makes them interesting is that in the present context they express properties of deliberation. In the context of temporal logic they are quite well understood, but when $\phi$ also involves occurrences of modalities such as $\cdia$, expressing argumentative properties of the states, new questions arise, both technical and philosophical. One of the most interesting concerns the question of expressive power, and in future work we hope to consider various temporal and fixed-point languages and to investigate what they allow us to say about deliberative models. Moreover, we think it will be very fruitful to combine this technical work with addressing the philosophical challenge of developing a better foundational understanding of the nature of argumentative deliberation. To formulate and study normative principles of deliberative rationality is a particularly interesting aspect of this work. While it seems unlikely that we will be able to pin down conclusive principles once and for all, the use of logic can allow us to recognize interesting patterns and convergences.
 
 \section{Conclusion}\label{sec:conc}
+
+We have presented a formal approach to the argumentative theory of reason and argued that it should be studied further, also using logical tools. To us, the argumentative theory is particularly interesting because it promises to deliver an alternative approach to reasoning and rationality,  one which sees these notions as irreducibly social and emergent from deliberation. As such it can contribute to the search for new theoretical foundations in a range of different fields, including artificial intelligence, which studies rational and intelligent interaction.
+
+For future work we hope that the simple formal framework developed in this paper can provide a point of departure for the development of more sophisticated technical tools. In the first instance, these should be developed so that they allow clear and informative mathematical modeling of important aspects of argumentative deliberation. Secondly, we also think that they should be developed so that we may take the axiomatic study of deliberative rationality further, allowing formal treatment of the foundational issues themselves, assisted by the use of temporal and fixed-point modal languages interpreted on argumentative structures. On the technical side, we think the interactions between the computational modalities of interaction and the argumentative modalities of meaning, already sketched in Section \ref{sec:for}, is highly interesting and should be considered further.
 
 \bibliography{pp}
 \bibliographystyle{apalike}
