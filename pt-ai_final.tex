@@ -255,11 +255,15 @@ Given a basis which encodes agents' views of the arguments, we are interested in
 %
 %This appears to the suggestion also in \cite{mercier}, for instance when it is pointed out that groups of people tend to perform ``better" in reasoning tasks when each individual is challenged by people who have views which diverge from his own. That this is so has been established in much empirical work, but how are we to make sense of it as a normative claim, and how can we express it in a theoretical and formally precise setting? This is the question we embark on now, developing a dynamic logic framework for defining and studying various notions of deliberative soundness and rationality.
 
-We propose to think of deliberation as a process which consists in moving between possible interpretations of the meaning of arguments, where the idea is that each move is caused by some deliberative event. Then each possible interpretation we may come to visit represents a possible aggregation of the views of the involved agents. In particular, given an argumentative state $\views$, we say that $q \subseteq \Pi \times \Pi$ is a \emph{deliberative state} for $\views$ if
+We propose to think of deliberation as a process which consists in moving between possible interpretations of the meaning of arguments, where the idea is that each move is caused by some deliberative event. Then each possible interpretation we may come to visit represents a possible aggregation of the views of the involved agents. 
+\begin{definition}\label{def:dstate}
+Given an argumentative state $\views$, we say that $q \subseteq \Pi \times \Pi$ is a \emph{deliberative state} for $\views$ if
 \begin{equation}\label{eq:ds}
 \bigcap_{a \in \agents}V_a \subseteq q \subseteq \bigcup_{a \in \agents}V_a
 \end{equation}
-We collect all deliberative states for $\views$ in the set $\dstate \views$. The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
+We collect all deliberative states for $\views$ in the set $\dstate \views$. 
+\end{definition}
+The constraint imposed by the definition of a deliberative state appears natural and hard to dispute. Indeed, it encodes the following principle about deliberation, which appears safe to assume in most, if not all, contexts:
 
 \begin{quote}\label{principle}
 If some information regarding the semantic relationship between two arguments is included in a deliberative state, the correctness of this information is endorsed by at least one agent. 

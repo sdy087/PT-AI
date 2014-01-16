@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 11:46
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.10.29)  16 JAN 2014 11:48
 entering extended mode
 **C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
 (C:/Users/Student/Desktop/PT-AI/pt-ai_final.tex
@@ -897,10 +897,10 @@ Missing character: There is no “ in font ptmr7t!
 ) [23]
 (C:\Users\Student\Desktop\PT-AI\pt-ai_final.aux) ) 
 Here is how much of TeX's memory you used:
- 16980 strings out of 494045
- 289009 string characters out of 3148380
- 390098 words of memory out of 3000000
- 19917 multiletter control sequences out of 15000+200000
+ 16981 strings out of 494045
+ 289021 string characters out of 3148380
+ 390107 words of memory out of 3000000
+ 19918 multiletter control sequences out of 15000+200000
  54006 words of font info for 124 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  56i,27n,55p,1914b,1002s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -919,7 +919,7 @@ rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/xypic/xyatip10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/xy
 pic/xybtip10.pfb>
-Output written on pt-ai_final.pdf (23 pages, 227512 bytes).
+Output written on pt-ai_final.pdf (23 pages, 227518 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
