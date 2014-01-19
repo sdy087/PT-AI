@@ -377,16 +377,12 @@ An example of a liberal principle could for instance be $\neg \abox (\neg p \lan
 For an example of an idealistic principle, notice that Schema \ref{crat} is idealistic since it excludes certain argumentative states. In fact, we can provide a simple characterization of those argumentative states that are permitted. Let us say that an argumentative state $\views$ satisfies an axiom schema if there is some deliberative model based on this argumentative state for which the schema is true in all states. Moreover, let us say that an argumentative state $\views = (V_a)_{a \in \agents}$ is finite if $\Pi(V_a)$ is finite for all $a \in \agents$. Then we have the following result.
 
 \begin{theorem}\label{thm:1}
-For all semantics $\sem$ from Figure \ref{fig:sem}, a finite argumentative state $\views = (V_a)_{a \in \agents}$ satisfies Schema \ref{crat} if, and only if, there is some deliberative state $q$ for $\views$ which admits $\clab \in \sem(q)$ such that
-$$
-\forall x \in \bigcup_{a \in \agents}\Pi(V_a): \clab(x) \in \{1,0\}
-$$
+For all semantics $\sem$ from Figure \ref{fig:sem}, a finite argumentative state $\views = (V_a)_{a \in \agents}$ satisfies Schema \ref{crat} if, and only if, there is some deliberative state $q$ for $\views$ which admits $\clab \in \sem(q)$ such that $\forall x \in \Pi: \clab(x) \in \{1,0\}$.
 \end{theorem}
 
 \begin{proof}
 $\Leftarrow$) Immediate from Equation \ref{eq:lsem}. \\
-$\Rightarrow$) We let $A = \bigcup_{a \in \agents}\Pi(V_a)$ and form the conjunction $\phi = \band_{x \in A}(x \lor \neg x)$. We notice that for all three-valued assignments $\clab$ we have $\bar \clab(\phi) \in \{1,\frac{1}{2}\}$ and that $\bar \clab(\phi) = \frac{1}{2}$ if, and only if, there is some $x \in A$ such that $\clab(x) = \frac{1}{2}$. Let $q$ be some deliberative state for $\views$ such that $\cdia \neg (\phi \leftrightarrow \neg \phi)$ is true on 
-$q$ under $\sem$. Hence there is some $\clab \in \sem(q)$ such that $\clab(x) \in \{1,0\}$ for all $x \in A$, concluding the proof.
+$\Rightarrow$) We let $A = \bigcup_{a \in \agents}\Pi(V_a)$ and form the conjunction $\phi = \band_{x \in A}(x \lor \neg x)$. Then for all assignments $\clab: \Pi \to \three$ we have $\bar \clab(\phi) \in \{1,\frac{1}{2}\}$. We also have $\bar \clab(\phi) = \frac{1}{2}$ if, and only if, there is $x \in A$ such that $\clab(x) = \frac{1}{2}$. Let $q$ be a deliberative state for $\views$ such that $\cdia \neg (\phi \leftrightarrow \neg \phi)$ is true on $q$ under $\sem$. Hence there is $\clab \in \sem(q)$ such that $\clab(x) \in \{1,0\}$ for all $x \in A$. Notice that $\Pi(q) \subseteq A$ by Definition \ref{def:dstate}, so that it follows from Equation \ref{eq:cam} that $\clab(x) = 1$ for all $x \not \in A$. Hence $\clab(x) \in \{1,0\}$ for all $x \in \Pi$.
 \end{proof}
 
 This theorem illustrates the kinds of results we can obtain when we begin to formalize deliberative principles using logic. It also suggests the subtleties involved, and how classical concepts might take on new and surprising forms. Notice, for instance, how the case of two wrongs that make a right, considered in Example \ref{ex:wr}, follows from the result. So according to Schema \ref{crat}, such a collection of views will be permitted, even if each view is not in itself classically consistent.
