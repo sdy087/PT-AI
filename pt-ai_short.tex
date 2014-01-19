@@ -145,7 +145,7 @@ Towards a logic for reasoning about AFs we will start from the simple propositio
 \begin{equation}\label{grammar}
 \alpha := \ p \ \mid \ \neg \alpha \ \mid \ \alpha \to \alpha 
 \end{equation}
-where $p \in \Pi$. The three-valued assignments give rise to evaluations of arbitrary formulas from $\lang$, defined as in {\L}ukasiewicz logic, see Equation \ref{eq:lsem} below.
+where $p \in \Pi$. We also use $\alpha \lor \beta := (\alpha \to \beta) \to \beta$ and $\alpha \land \beta := \neg(\neg \alpha \lor \neg \beta)$. The three-valued assignments give rise to evaluations of arbitrary formulas from $\lang$, defined as in {\L}ukasiewicz logic below.
 \begin{equation}\label{eq:lsem}
 \begin{array}{l}
 \overline \clab(p) = \clab(p) \text{ for } p \in \Pi \\
@@ -277,7 +277,7 @@ To talk about deliberative models, allowing us to distinguish and identify situa
 $$
 \phi := \cdia \alpha \ \mid \ \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi \ \mid \adia \phi
 $$
-where $\alpha \in \lang$. We now use $\cdia$ as a modality to talk about the semantic status of arguments at a deliberative states, while the agent-indexed modalities still apply to the agents' views in the argumentative state. The definition of satisfaction for $\lang_1$ on deliberative models is then defined analogously to classical modal logic.
+where $\alpha \in \lang$. We use $\cdia$ to talk about deliberative states, while the agent-indexed modalities still apply to the agents' views in the argumentative state. The definition of satisfaction for $\lang_1$ on deliberative models is then defined analogously to classical modal logic.
 
 \begin{definition}\label{truth1}
 Given an argumentation semantics $\sem$, an argumentative state $\views$ and a corresponding deliberative model $(Q,R)$, the truth of $\phi \in \lang_1$ on $(Q,R)$ at $q \in Q$ is defined inductively as follows (we omit the boolean cases).
@@ -350,7 +350,7 @@ For $\views = (V_a,V_ b)$ we have $\views \models_\sem \cbox_a (\neg v \land p) 
 $$
 \xymatrix{  u \ar[r] & v \ar[d] \ar[dl] \\ w \ar[u] & p }
 $$
-In this case there are \emph{no} classical evaluations available. That is, for any deliberative model containing $q$, we have $\views, (Q,R), q \models \neg \cdia x \land \neg \cdia \neg x$ for all $x \in \{o,v,w,p\}$. Hence deliberation, in this case, took unproblematic views and produced a problematic outcome. How to avoid this mechanism in general is a difficult problem that deserves further study, but we can already conclude that our model allows us to capture how deliberation can sometimes end up undermining agreements about the status of arguments, and can also lead to the introduction of \emph{new} inconsistencies. Indeed, this too is a mechanism that is intuitively clear. For instance, if one man happens to be right, for all the right reasons, while everyone else either disagrees with his conclusion or his reasons, then deliberation typically lead to suboptimal outcomes. This is important to remember, all the while the other, more positive potential in deliberation, is essentially just an expression of the same mechanism. The whole is more than the sum of its parts, and in order to explore and evaluate it we need new tools and principles that sees it as such.
+In this case there are \emph{no} classical evaluations available. That is, for any deliberative model containing $q$, we have $\views, (Q,R), q \models \neg \cdia x \land \neg \cdia \neg x$ for all $x \in \{o,v,w,p\}$. Hence deliberation, in this case, took unproblematic views and produced a problematic outcome. How to avoid this mechanism in general is a difficult problem that deserves further study, but we can already conclude that our model allows us to capture how deliberation can sometimes end up undermining agreements about the status of arguments, and can also lead to the introduction of \emph{new} inconsistencies. Indeed, this too is a mechanism that is intuitively clear. For instance, if one man happens to be right, for all the right reasons, while everyone else disagrees with him, either regarding his conclusions or his reasons, then social deliberation tends to  lead to suboptimal outcomes. This is important to remember, particularly since the other, more positive potential in deliberation, is essentially just an expression of the same mechanism. The whole is more than the sum of its parts, and in order to explore and evaluate it we need new tools and principles that sees it as such.
 \end{example}
 
 \subsection{The search for formal characterizations of rational argumentative interaction}\label{sub:for}
