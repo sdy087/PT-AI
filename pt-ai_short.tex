@@ -124,7 +124,7 @@ All semantics for argumentation of which we are aware are based on the notion of
 \end{equation}
 We use $\proto(E)$ to denote the set of conflict-free assignments for $E$, and we define $\clab^1 = \{x \in \Pi \mid \clab(x) = 1\}, \clab^0 = \{x \in \Pi \mid \clab(x) = 0\}$ and $\clab^{\frac{1}{2}} = \{x \in \Pi \mid \clab(x) = \frac{1}{2}\}$. In Figure \ref{fig:sem} we provide definitions of the most commonly known semantics based on argumentation frameworks, all based on restricting $\proto(E)$. 
 
-The logics we introduce are parameterized by the choice of an argumentation semantics and which such semantics we use will not crucial be for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria for intuitive acceptability of arguments. In addition to requiring that $\clab^1$ must be free from internal conflict, it also demands that it must be able to defend itself against all attacks. The semantics from Figure \ref{fig:sem} are all based on this idea, but the others involve various additional requirements, all meant to reduce the number of undecided arguments. In the following we use $\sem$ refer to some generic semantics from this list.
+The logics we introduce are parameterized by the choice of an argumentation semantics, and which we use is not crucial for our analysis in this paper. We note, however, that the \emph{admissible} semantics encode what seems to be minimal criteria for intuitive acceptability of arguments. In addition to requiring that $\clab^1$ must be free from internal conflict, it also demands that it must be able to defend itself against all attacks. The semantics from Figure \ref{fig:sem} are all based on this idea, but the others involve various additional requirements, all meant to reduce the number of undecided arguments. In the following we use $\sem$ refer to some generic semantics from this list.
 
 \begin{figure}
 $\begin{array}{ll}
@@ -145,24 +145,24 @@ Towards a logic for reasoning about AFs we will start from the simple propositio
 \begin{equation}\label{grammar}
 \alpha := \ p \ \mid \ \neg \alpha \ \mid \ \alpha \to \alpha 
 \end{equation}
-where $p \in \Pi$. The three-valued assignments give rise to evaluations of arbitrary formulas from $\lang$, defined as in {\L}ukasiewicz logic, in Equation \ref{eq:lsem} below.
+where $p \in \Pi$. The three-valued assignments give rise to evaluations of arbitrary formulas from $\lang$, defined as in {\L}ukasiewicz logic, see Equation \ref{eq:lsem} below.
 \begin{equation}\label{eq:lsem}
 \begin{array}{l}
-\overline \clab(p) = \clab(p) \text{ for } p \in \Phi \\
+\overline \clab(p) = \clab(p) \text{ for } p \in \Pi \\
 \overline \clab(\neg \alpha) = 1 - \overline \clab(\alpha) \\
 \overline \clab(\alpha \to \beta) = min\{1,1-(\overline \clab(\alpha) - \overline \clab(\beta))\}
 \end{array}
 \end{equation}
 
-This evaluation behaves like classical logic on the semantic values $\{0,1\}$. For an intuition of how the third value is dealt with, notice that the definition ensures that if $\clab(p) = \frac{1}{2}$, we have $\overline \clab(p \leftrightarrow \neg p) = 1$. In particular, the claim that $p$ is equivalent with its own negation is true just in case $p$ has value $\frac{1}{2}$. This means, in particular, that the logic allows us to express that some argument, or collection of arguments , have this value. This is what makes it so natural to use {\L}ukasiewicz logic to evaluate complex formulas, as opposed to some other three-valued logic, such as Kleene's logic. 
+This evaluation behaves like classical logic on the semantic values $\{0,1\}$. For an intuition of how the third value is dealt with, notice that the definition ensures that $\clab(p) = \frac{1}{2}$ if, and only if, we have $\overline \clab(p \leftrightarrow \neg p) = 1$. So we can express that a given atom is undecided, and this is what makes it so natural to use {\L}ukasiewicz logic, as opposed to some other three-valued formalism. 
 
-We are now prepared to offer our definition of an argumentative agent. To this end, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_a \subseteq \Pi \times \Pi$. It encodes his interpretation of the semantic relationship between the arguments under consideration. We also define an \emph{argumentative state} as a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This, however, can be extended in future work, by nested application of the ideas we develop in the next sections.
+We are now prepared to offer our definition of an argumentative agent. To this end, let $\agents$ be a set of agent names. Then a \emph{view} for agent $a \in \agents$ is an AF $V_a \subseteq \Pi \times \Pi$. It encodes his interpretation of the meaning of the arguments under consideration. We also define an \emph{argumentative state} as a tuple $(V_a)_{a \in \agents}$, associating a view with each agent. In this paper, we will assume for simplicity that the argumentative state remains the same throughout the course of deliberation, so that the views of the agents are not themselves subject to revision as the debate unfolds. This assumption should be relaxed in future work, by nested application of the ideas we develop in the next sections.
 
-Now, given an agent $a \in \agents$ with a view $V_a$, we can add the modality $\cdia_a$ to perform (boolean) meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. In particular, we get the following multi-agent language $\lblack$
+Given an agent $a \in \agents$ with a view $V_a$, we can use a modality $\cdia_a$ to perform meta-reasoning about the acceptance status of arguments on AFs, under some arbitrary semantics $\sem$. This idea lead us to the following multi-agent language $\lblack$.
 $$
 \phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. 
 
-When we wish to reason about a single AF, we will omit reference to the single agent who instantiates it, and write simply $\cdia \alpha$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we can now define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$
+When we wish to reason about a single AF, we will omit reference to the single agent who instantiates it, and write simply $\cdia \alpha$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we can now define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$.
 \begin{equation}\label{eq:asem}
 \begin{array}{l}
 \views \models_\sem \cdia_a \alpha \text{ if there is } \clab \in \sem(V_a) \text{ s.t. } \overline \clab(\alpha) = 1 \\
@@ -171,7 +171,7 @@ When we wish to reason about a single AF, we will omit reference to the single a
 \end{array}
 \end{equation}
 
-For instance, assume we have a single agent $a$ and that his view, $V_a$, is given by the AF in Figure \ref{fig:1}. Then it is easily verified that the following claims holds for all semantics $\sem$.
+Assume we have a single agent $a$ and that his view $V_a$ is given by the AF in Figure \ref{fig:1}. Then it is easily verified that the following claims holds for all semantics $\sem$.
 \begin{itemize}
 \item $V_a \models_\sem \cdia q$
 \item $V_a \models_\sem \neg \cdia p \land \cdia \neg p$
@@ -183,11 +183,11 @@ We can now begin to explore formally what we mean by classically sound reasoning
 
 Interestingly, if the stable semantics captures classical reasoning, we can easily conclude that there are interpretations of semantic reality that makes such reasoning impossible. Consider, for instance, the argument that attacks itself. It is easy to see that it does not admit any stable assignment, and that it must by necessity obtain the value $\frac{1}{2}$ under all other semantics from Figure \ref{fig:sem}. In terms of logic, the self-attacking argument satisfies the formula $\cbox (x \leftrightarrow \neg x)$, expressing that $x$ is necessarily equivalent to its own negation.
 
-Having defined classical reasoning by the stable semantics, we can attempt to characterize the necessary failure of such reasoning in terms of graph structures for which no stable assignments exists. In fact, the combinatorial problem of when an AF admits a stable set has been analyzed in graph theory since the 1950s, by researchers using a different terminology, in the field of \emph{kernel theory}. The core result from this field, due to \cite{richardson}, immediately implies that any finite AF which has no directed odd cycle of attack admits a non-empty set of stable assignments.\footnote{This result was also rediscovered in \cite{dung}, but kernel theory offers many additional results and techniques, see for instance \cite{sanches}. These result can all be interpreted as providing conditions which ensure the possibility of imposing classical standards of reasoning on agents' interpretations of the world, establishing an interesting link between the formalism in this paper and an established subfield of graph theory.}
+Having defined classical reasoning by the stable semantics, we can also attempt to characterize the necessary failure of such reasoning in terms of graph structures for which no stable assignments exists. In fact, the combinatorial problem of when an AF admits a stable set has been analyzed in graph theory since the 1950s, by researchers using a different terminology, in the field of \emph{kernel theory}. The core result from this field, due to \cite{richardson}, immediately implies that any finite AF which has no directed odd cycle of attack admits a non-empty set of stable assignments.\footnote{This result was also rediscovered in \cite{dung}, but kernel theory offers many additional results and techniques, see for instance \cite{sanches}. These result ca be understood as providing conditions which ensure the possibility of imposing classical standards of reasoning on agents' interpretations of the world, establishing an interesting link between the formalism in this paper and an established subfield of graph theory.}
 
 \subsection{Extended example: Rain in Bergen}\label{ex:run}
 
-We now analyze a simple example to motivate the need for introducing subjective views, suggesting also some shortcomings of a traditional approach to argumentation in the context of multi-agent deliberation. For a concrete scenario we consider two agents $a,b$ who argue about whether it will rain in Bergen today. Formally, $r$ represents the claim that it will rain and $\overline r$ represents the claim that it will not. We first assume that neither of the agent argue in favor of their positions. However, their basic claims play an argumentative role in themselves, giving rise to their disagreement, and the AF shown on the left below depicts this. So far, however, the model appears to be an uncontroversial objective representation of the state of affairs. There is not yet any discernible need for introducing subjective views. 
+We now analyze a simple example to motivate the need for introducing subjective views, suggesting also some shortcomings of a traditional approach to argumentation in the context of multi-agent deliberation. For a concrete scenario we consider two agents $a,b$ who argue about whether it will rain in Bergen today. Formally, $r$ represents the claim that it will rain and $\overline r$ represents the claim that it will not. We first assume that neither of the agents argue any further in favor of their positions. Then their basic claims are the only semantic entities present, and the AF shown on the left below depicts their relationship. So far, the model appears to be an uncontroversial objective representation of the state of affairs. There is not yet any discernible need for introducing subjective views. 
 $$\begin{array}{ccc}
 \xymatrix{ r \ar@/_/[r] & \overline r \ar@/_/[l] } & \hspace{3em} &
 \xymatrix{ r \ar@/_/[r]_{{ a},{ b}} & \bar r \ar@/_/[l]_{{ a},{ b}} }
@@ -195,9 +195,9 @@ $$\begin{array}{ccc}
 
 On the right above, we show a simple agent-indexed AF which illustrates a naive attempt at introducing agency to the initial AF. We label the two attacks, from $r$ to $\overline r$ and from $\overline r$ to $r$, by both $a$ and $b$ to encode that they are \emph{common} to the agents. That is, both agents acknowledge that these attacks are present -- the agents agree that they disagree.
 
-In this case, the rational outcome, the claim that \emph{should} be accepted, is unclear. Both $r$ and $\bar r$ seem acceptable, since no further arguments have been made. Indeed, our formal semantics agree -- both $\{r\}$ and $\{\bar r\}$ (but not both) can be taken as true, for all semantics from Figure \ref{fig:sem}.
+The rational outcome, what claim we \emph{should} accept, remains unclear. Both $r$ and $\bar r$ seem acceptable, since no further arguments have been made. Indeed, our formal logic agrees -- either $r$ or $\bar r$ (but not both) can be taken as true, for all semantics from Figure \ref{fig:sem}.
 
-Assume that $a$ and $b$ begin to argue in favor of their claims. For simplicity we consider only two steps of debate: first $a$ introduces the argument that the weather report says that it will not rain, and then $b$ counters this by announcing that he has seen a puddle on the pavement, suggesting that it has already been raining today. Let us call the arguments provided by the weather report and the puddle $w$ and $p$ respectively. Then, noting that $w$ is an argument used by $a$ against $r$ and that $p$ is an argument used by $b$ as a retort against $w$ and also, let us assume, directly against $\bar r$, a naive representation in the traditional spirit would be to view the debate as progressing from $(1)$ to $(3)$, as depicted in Figure \ref{fig:wrong}.
+Assume that $a$ and $b$ begin to argue in favor of their claims. For simplicity we consider only two steps of debate: first $a$ introduces the argument that the weather report says that it will not rain, and then $b$ counters this by announcing that he has seen a puddle on the pavement, suggesting that it will be a rainy day. Let us call the arguments provided by the weather report and the puddle $w$ and $p$ respectively. Then, noting that $w$ is an argument used by $a$ against $r$ and that $p$ is an argument used by $b$ as a retort against $w$ and also, let us assume, directly against $\bar r$, a naive representation in the traditional spirit would be to view the debate as progressing from $(1)$ to $(3)$, as depicted in Figure \ref{fig:wrong}.
 \begin{figure}
 $$
 \begin{array}{ccc}
@@ -218,7 +218,7 @@ $$
 This is an uncontroversial depiction of the actual utterance made, but it results in a dubious model. In particular, if we look at the AF (3) depicted in Figure \ref{fig:wrong} above, we can easily conclude that $p, r$ must be assigned the value true, so that $\bar r, w$ are both defeated and become false. Hence it follows that agent ${b}$ won the debate. But is this really the rational way of looking at things?  Intuitively speaking, it seems problematic. Why would a puddle be conclusive evidence, and stronger evidence than a weather report? For an objective audience, a weather report might carry some weight, and so might a puddle, but neither seem particularly conclusive.
 
 We believe the problem is that the representation we gave in Figure \ref{fig:wrong} is too simplistic, since it fails to include information about the agents' view of each other's utterances.\footnote{In a perfect world, this might not matter, since all debate might eventually be settled conclusively by brute empirical fact, such as observing actual rain as opposed to consulting weather reports and puddles. However, in such a world, deliberation would certainly not be very interesting, and it is not how it tends to play out in the real one. Rather, a debate involves crucially a search for common ground, and common ground depends crucially on how agents perceive the statements made by others, as they reflect on the totality of the debate. This is why we need to be explicit about subjective views, and always ask for a representation of how each individual agent interprets the semantic meaning of all those claims that are relevant to the scenario at hand.}
-In particular, what is missing is some account of how agent $a$ views puddles, and what agent $b$ thinks of weather reports. Let us assume that their views are in fact the following.
+In particular, what is missing is some account of how agent $a$ views puddles, and what agent $b$ thinks of weather reports. Let us assume that their views are in fact those depicted in Figure \ref{rainview}.
 \begin{figure}
 $$\begin{array}{cc}
 V_{a} \hspace{3em} & V_{b} \\
@@ -234,7 +234,7 @@ Importantly, we can now reject the model presented in Figure \ref{fig:wrong}. Th
 
 \section{Argumentative deliberation: A formalization using modal logic}\label{sec:ddl}
 
-Given a basis which encodes agents' views of the arguments, we are interested in the possible ways agents may deliberate, and how deliberation can serve to create new, socially defined, interpretations of the arguments, interpretations that are aggregated from the views of the individual agents.  In short, we want to study the \emph{effect} of deliberation on semantic meaning.
+Given a basis which encodes agents' views of the arguments, we are interested in the possible ways agents may deliberate, and how deliberation can create new interpretations. In short, we want to study the \emph{effect} of deliberation on semantic meaning.
 
 Towards formalization, we first define the set of all possible interpretations that may result. These will be the states of our models, and we will represent them using AFs. At this stage there is only one requirement that we require such states to meet, namely that they are all based on the views of the agents. This is encoded in the following definition.
 \begin{definition}\label{def:dstate}
