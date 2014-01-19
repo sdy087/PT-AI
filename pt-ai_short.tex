@@ -162,7 +162,7 @@ Given an agent $a \in \agents$ with a view $V_a$, we can use a modality $\cdia_a
 $$
 \phi := \cdia_a \alpha \ \mid \ \neg \phi \ \mid \ \phi \land \phi $$ where $\alpha \in \lang$ and $a \in \agents$. 
 
-When we wish to reason about a single AF, we will omit reference to the single agent who instantiates it, and write simply $\cdia \alpha$. Given an argumentative state $\views = (V_a)_{a\in \agents}$, we can now define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$.
+Given an argumentative state $\views = (V_a)_{a\in \agents}$, we can now define truth for formulas from $\lblack$ inductively as follows, for all formulas $\phi$.
 \begin{equation}\label{eq:asem}
 \begin{array}{l}
 \views \models_\sem \cdia_a \alpha \text{ if there is } \clab \in \sem(V_a) \text{ s.t. } \overline \clab(\alpha) = 1 \\
@@ -173,15 +173,15 @@ When we wish to reason about a single AF, we will omit reference to the single a
 
 Assume we have a single agent $a$ and that his view $V_a$ is given by the AF in Figure \ref{fig:1}. Then it is easily verified that the following claims holds for all semantics $\sem$.
 \begin{itemize}
-\item $V_a \models_\sem \cdia q$
-\item $V_a \models_\sem \neg \cdia p \land \cdia \neg p$
-\item $V_a \models_\sem \cdia (\neg q \land q')$
-\item $V_a \models_\sem \cbox (\neg q \to (p \leftrightarrow \neg p))$
+\item $V_a \models_\sem \cdia_a q$
+\item $V_a \models_\sem \neg \cdia_a p \land \cdia_a \neg p$
+\item $V_a \models_\sem \cdia_a (\neg q \land q')$
+\item $V_a \models_\sem \cbox_a (\neg q \to (p \leftrightarrow \neg p))$
 \end{itemize}
 
 We can now begin to explore formally what we mean by classically sound reasoning. Since evaluation of complex formulas agrees with classical logic on the boolean values, it is tempting to say that an agent reasons classically if the argumentation semantics he uses always returns two-valued assignments. However, the core requirements underlying the semantics from Figure \ref{fig:sem} also seem to capture some crucial aspects of what we mean by classical soundness. Most importantly, they all disallow assignments where two arguments in conflict are assigned $1$, corresponding intuitively to the law of non-contradiction. Hence it appears that the stable semantics, which always require assignments that are both admissible and boolean valued, is the best candidate we have for a formalization of classical reasoning about AFs.\footnote{There is strong formal evidence supporting the claim that classical reasoning about AFs is captured by the stable semantics, in particular the result that AFs under the stable semantics provide a normal form for theories of propositional logic \cite{bezem}.}
 
-Interestingly, if the stable semantics captures classical reasoning, we can easily conclude that there are interpretations of semantic reality that makes such reasoning impossible. Consider, for instance, the argument that attacks itself. It is easy to see that it does not admit any stable assignment, and that it must by necessity obtain the value $\frac{1}{2}$ under all other semantics from Figure \ref{fig:sem}. In terms of logic, the self-attacking argument satisfies the formula $\cbox (x \leftrightarrow \neg x)$, expressing that $x$ is necessarily equivalent to its own negation.
+Interestingly, if the stable semantics captures classical reasoning, we can easily conclude that there are interpretations of semantic reality that makes such reasoning impossible. Consider, for instance, the argument that agent $a$ considers as attacking itself. It is easy to see that it does not admit any stable assignment, and that it must by necessity obtain the value $\frac{1}{2}$ under all other semantics from Figure \ref{fig:sem}. In terms of logic, the self-attacking argument satisfies the formula $\cbox_a (x \leftrightarrow \neg x)$, expressing that $x$ is necessarily equivalent to its own negation.
 
 Having defined classical reasoning by the stable semantics, we can also attempt to characterize the necessary failure of such reasoning in terms of graph structures for which no stable assignments exists. In fact, the combinatorial problem of when an AF admits a stable set has been analyzed in graph theory since the 1950s, by researchers using a different terminology, in the field of \emph{kernel theory}. The core result from this field, due to \cite{richardson}, immediately implies that any finite AF which has no directed odd cycle of attack admits a non-empty set of stable assignments.\footnote{This result was also rediscovered in \cite{dung}, but kernel theory offers many additional results and techniques, see for instance \cite{sanches}. These result can be understood as providing conditions which ensure the possibility of imposing classical standards of reasoning on agents' interpretations of the world, establishing an interesting link between the formalism in this paper and an established subfield of graph theory.}
 
